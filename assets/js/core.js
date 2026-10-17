@@ -200,7 +200,8 @@
       var cs = node.caseStudy;
       parts.push('<div class="block"><h4>分析案例 · 五段式</h4><div class="flow">' +
         step("具体问题", cs.problem) + step("使用方法", cs.method) +
-        step("依据与比较", cs.evidence) + step("当前判断", cs.judgment) +
+        step("依据与比较", cs.evidence, cs.compare ? "比较对象：" + cs.compare : "") +
+        step("当前判断", cs.judgment) +
         step("尚存疑问", cs.open) + "</div></div>");
     }
     if (node.revision) {
@@ -214,6 +215,11 @@
         node.tags.map(function (t) { return '<span class="chip">' + esc(t) + "</span>"; }).join("") + "</div></div>");
     }
 
+    if (node.pending) {
+      parts.push('<div class="block"><h4>还没连上的部分</h4>' +
+        '<p class="small" style="margin:0;color:var(--amber)">⚑ ' + esc(node.pending) + "</p></div>");
+    }
+
     parts.push('<div class="block"><h4>关系</h4>' + renderRelations(state, node) + "</div>");
     parts.push('<div class="block"><h4>来源</h4>' + renderSources(state, node._sourceIds) + "</div>");
 
@@ -223,8 +229,9 @@
     parts.push("</div>");
     return parts.join("");
   }
-  function step(label, text) {
-    return '<div class="flow-step"><b>' + esc(label) + "</b><p>" + esc(text || "未填") + "</p></div>";
+  function step(label, text, sub) {
+    return '<div class="flow-step"><b>' + esc(label) + "</b><p>" + esc(text || "未填") +
+      (sub ? '<span class="flow-sub">' + esc(sub) + "</span>" : "") + "</p></div>";
   }
 
   /* ---------- 空状态 ---------- */

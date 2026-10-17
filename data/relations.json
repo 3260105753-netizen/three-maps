@@ -1,15 +1,193 @@
 {
   "_note": "关系表（三张地图共用一张，天然支持跨图连线）。每条关系必须写清：谁指向谁（from → to）、类型、为什么成立（why）、依据（sourceIds）、证据类型（evidence）。未经证实的联系必须 inferred=true，界面上会显示「推断」。",
   "relations": [
-    { "id": "r-sample-01", "from": "d.sample-task", "to": "d.sample-concept", "type": "用于", "label": "需要先解决", "why": "示例：写清为什么这个任务离不开这个概念，而不是「两者有关」。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-02", "from": "d.sample-tool", "to": "d.sample-task", "type": "用于", "label": "提供执行手段", "why": "示例：这个工具在任务链里具体承担哪一环，换成别的工具会缺什么。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-03", "from": "d.sample-course", "to": "d.sample-concept", "type": "前置", "label": "是它的前置课程", "why": "示例：课程与概念的对应要有培养方案或大纲依据，没有就标待核实。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-plan"], "seed": true },
-    { "id": "r-sample-04", "from": "e.sample-conf", "to": "d.sample-concept", "type": "提供", "label": "是它成果的发布渠道", "why": "示例：生态对象与领域概念之间的具体关系，不能只写「相关」。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-05", "from": "e.sample-org", "to": "d.sample-tool", "type": "提供", "label": "产出并维护", "why": "示例：机构与工具的直接对应，写清谁产出、谁维护。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-06", "from": "e.sample-oss", "to": "d.sample-tool", "type": "对应", "label": "就是它的维护社区", "why": "示例：生态条目与领域条目指向同一对象时用「对应」，避免两处说法不一致。", "evidence": "事实", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-07", "from": "c.sample-method", "to": "c.sample-case", "type": "用于", "label": "在该案例中被使用", "why": "示例：每个分析方法至少要有一条连线指向真实案例，否则方法就是空的。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-08", "from": "c.sample-view", "to": "c.sample-case", "type": "用于", "label": "是该案例的观察框架", "why": "示例：说明这个「观」在分析里具体起了什么作用。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-09", "from": "c.sample-case", "to": "d.sample-task", "type": "体现", "label": "是该任务的一次具体分析", "why": "示例：认知地图与领域地图的连线，说明分析对象就是那个任务。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
-    { "id": "r-sample-10", "from": "c.sample-revise", "to": "d.sample-concept", "type": "质疑", "label": "修正了对它的理解", "why": "示例：认识修正必须指向被它改变的节点，这样才看得见「改了哪里」。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true }
+    {
+      "id": "r-sample-01",
+      "from": "d.sample-task",
+      "to": "d.sample-concept",
+      "type": "用于",
+      "label": "需要先解决",
+      "why": "示例：写清为什么这个任务离不开这个概念，而不是「两者有关」。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-sample-02",
+      "from": "d.sample-tool",
+      "to": "d.sample-task",
+      "type": "用于",
+      "label": "提供执行手段",
+      "why": "示例：这个工具在任务链里具体承担哪一环，换成别的工具会缺什么。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-sample-03",
+      "from": "d.sample-course",
+      "to": "d.sample-concept",
+      "type": "前置",
+      "label": "是它的前置课程",
+      "why": "示例：课程与概念的对应要有培养方案或大纲依据，没有就标待核实。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-plan"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-sample-04",
+      "from": "e.sample-conf",
+      "to": "d.sample-concept",
+      "type": "提供",
+      "label": "是它成果的发布渠道",
+      "why": "示例：生态对象与领域概念之间的具体关系，不能只写「相关」。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-sample-05",
+      "from": "e.sample-org",
+      "to": "d.sample-tool",
+      "type": "提供",
+      "label": "产出并维护",
+      "why": "示例：机构与工具的直接对应，写清谁产出、谁维护。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-sample-06",
+      "from": "e.sample-oss",
+      "to": "d.sample-tool",
+      "type": "对应",
+      "label": "就是它的维护社区",
+      "why": "示例：生态条目与领域条目指向同一对象时用「对应」，避免两处说法不一致。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-sample-10",
+      "from": "c.sample-revise",
+      "to": "d.sample-concept",
+      "type": "质疑",
+      "label": "修正了对它的理解",
+      "why": "示例：认识修正必须指向被它改变的节点，这样才看得见「改了哪里」。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "seed": true
+    },
+    {
+      "id": "r-c01-01",
+      "from": "c.c01",
+      "to": "c.method.problem-def",
+      "type": "用于",
+      "label": "在该案例中被使用",
+      "why": "案例把「老人能不能靠一次指令拿对药」重新定义成「能不能吃对药并在出错前被拦住」。这正是问题定义的作用：换问题比换方案更早决定成败。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.E02"
+      ]
+    },
+    {
+      "id": "r-c01-02",
+      "from": "c.c01",
+      "to": "c.method.decompose",
+      "type": "用于",
+      "label": "在该案例中被使用",
+      "why": "案例把一次拿药任务拆成识别、剂量确认、抓取、递送四段，才看出关键环节不在抓取动作上。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.E02"
+      ]
+    },
+    {
+      "id": "r-c02-01",
+      "from": "c.c02",
+      "to": "c.method.decompose",
+      "type": "用于",
+      "label": "在该案例中被使用",
+      "why": "案例用七层归因图把「换物体就失败」逐层排查，最终把怀疑从模型容量挪到感知材质与数据分布。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.E02",
+        "s.E05"
+      ]
+    },
+    {
+      "id": "r-c02-02",
+      "from": "c.view.system",
+      "to": "c.c02",
+      "type": "用于",
+      "label": "是该案例的观察框架",
+      "why": "系统观要求把失败看成链路耦合的结果而不是单点故障；案例正是按这个思路去查感知与数据，而不是只换更大的模型。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": []
+    },
+    {
+      "id": "r-c03-01",
+      "from": "c.c03",
+      "to": "c.method.compare",
+      "type": "用于",
+      "label": "在该案例中被使用",
+      "why": "案例先填比较条件四问（本体 / 物体集与失败判定 / 任务长度 / 数据口径），确认条件不等价后才放弃「谁更强」的问法。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.E02",
+        "s.E07"
+      ]
+    },
+    {
+      "id": "r-c03-02",
+      "from": "c.c03",
+      "to": "c.method.counter",
+      "type": "用于",
+      "label": "在该案例中被使用",
+      "why": "案例用反例检查发现「5% 数据比例的基准由作者自选」，换一个基准结论可能翻转，这条边界直接限制了结论强度。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.E09"
+      ]
+    },
+    {
+      "id": "r-c03-03",
+      "from": "c.c03",
+      "to": "c.c02",
+      "type": "对比",
+      "label": "与它共享同一个前提",
+      "why": "两个案例都在回答「证据够不够支撑结论」：C02 卡在缺真机实验，C03 卡在缺统一基准，属于同一类证据不足但形式不同。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": []
+    }
   ]
 }

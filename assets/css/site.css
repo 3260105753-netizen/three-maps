@@ -397,6 +397,7 @@ textarea { min-height: 90px; resize: vertical; }
 }
 .flow-step b { display: block; font-size: 12.5px; color: var(--accent); letter-spacing: 0.04em; margin-bottom: 2px; }
 .flow-step p { margin: 0; font-size: 13.5px; color: var(--text-dim); line-height: 1.78; }
+.flow-sub { display: block; margin-top: 6px; font-size: 12.5px; color: var(--muted); border-left: 2px solid var(--line-strong); padding-left: 8px; }
 
 /* ---------- 分区浏览 ---------- */
 .type-group { margin-top: 26px; }
