@@ -117,7 +117,10 @@
       }).join("") + "</ul>";
     }
     if (!html) {
-      html = '<div class="empty" style="padding:16px"><p>这个节点还没有登记来源。按规范，重要内容必须有可追溯的依据；没有就先标“来源待补”。</p></div>';
+      var hintText = (opts && opts.verify === "已核实")
+        ? "这个节点没有登记外部来源。若依据是本组自己的操作记录（习惯类常见），请在「理解程度」的说明里写清记录在哪；否则应把核实状态改成「来源待补」。"
+        : "这个节点还没有登记来源。按规范，重要内容必须有可追溯的依据；没有就先标“来源待补”。";
+      html = '<div class="empty" style="padding:16px"><p>' + esc(hintText) + "</p></div>";
     }
     return html;
   }
@@ -221,7 +224,7 @@
     }
 
     parts.push('<div class="block"><h4>关系</h4>' + renderRelations(state, node) + "</div>");
-    parts.push('<div class="block"><h4>来源</h4>' + renderSources(state, node._sourceIds) + "</div>");
+    parts.push('<div class="block"><h4>来源</h4>' + renderSources(state, node._sourceIds, { verify: node.verify }) + "</div>");
 
     if (node.seed) {
       parts.push('<div class="block"><h4>这是一条示例数据</h4><p class="small muted">它只用来验证渲染与跳转。替换方式见 <a href="data/README.md">data/README.md</a> 与 <a href="docs/01-节点字段契约.md">字段契约</a>。</p></div>');
