@@ -19,14 +19,23 @@
       "contribution": "它汇集了哪类工作、评审偏好什么，用一句话写。",
       "whyIncluded": "为什么选它而不是别的会议，给出可核对的理由。",
       "results": "哪类代表工作在此发表过。",
-      "relatedNodes": ["d.sample-concept"],
+      "relatedNodes": [
+        "d.sample-concept"
+      ],
       "understanding": "待深入学习",
       "understandingNote": "示例数据，待负责人填写。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.sample-doc"],
-      "tags": ["示例", "会议"],
-      "flags": ["示例数据，待替换"],
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "tags": [
+        "示例",
+        "会议"
+      ],
+      "flags": [
+        "示例数据，待替换"
+      ],
       "owner": "骨架示例",
       "updated": "2026-10-17",
       "seed": true
@@ -39,14 +48,23 @@
       "contribution": "它实际产出了什么，而不是它被报道了多少次。",
       "whyIncluded": "选它是因为它在任务链的哪一环上不可替代。",
       "results": "可核对的具体成果或产品。",
-      "relatedNodes": ["d.sample-tool"],
+      "relatedNodes": [
+        "d.sample-tool"
+      ],
       "understanding": "待深入学习",
       "understandingNote": "示例数据，待负责人填写。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.sample-doc"],
-      "tags": ["示例", "企业"],
-      "flags": ["示例数据，待替换"],
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "tags": [
+        "示例",
+        "企业"
+      ],
+      "flags": [
+        "示例数据，待替换"
+      ],
       "owner": "骨架示例",
       "updated": "2026-10-17",
       "seed": true
@@ -59,14 +77,23 @@
       "contribution": "它维护的具体项目或标准。",
       "whyIncluded": "它是不是本组实际动手的第一站。",
       "results": "可运行的代码、数据集或规范。",
-      "relatedNodes": ["d.sample-tool"],
+      "relatedNodes": [
+        "d.sample-tool"
+      ],
       "understanding": "已经尝试",
       "understandingNote": "示例数据，待负责人填写。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.sample-doc"],
-      "tags": ["示例", "开源"],
-      "flags": ["示例数据，待替换"],
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "tags": [
+        "示例",
+        "开源"
+      ],
+      "flags": [
+        "示例数据，待替换"
+      ],
       "owner": "骨架示例",
       "updated": "2026-10-17",
       "seed": true

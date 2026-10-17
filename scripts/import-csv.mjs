@@ -28,9 +28,55 @@ function arg(name) {
   return i >= 0 ? args[i + 1] : null;
 }
 const dry = args.includes("--dry");
+const replaceMap = arg("replace-map");
 const nodeFile = arg("nodes") || path.join(ROOT, "inbox", "节点表.csv");
 const relFile = arg("relations") || path.join(ROOT, "inbox", "关系表.csv");
 const srcFile = arg("sources") || path.join(ROOT, "inbox", "来源表.csv");
+
+/* 允许的写法差异：负责人们用词不完全统一时在这里兜住 */
+const TYPE_ALIAS = {
+  "认识方法": "认识方法（观）",
+  "观": "认识方法（观）",
+  "方法": "分析方法"
+};
+
+/* 「原以为：…｜触发：…｜现在：…｜仍不知道：…」这种一行写法也能吃 */
+function parseRevisionText(s) {
+  const parts = String(s).split(/[｜|]/).map((t) => t.trim()).filter(Boolean);
+  const out = {};
+  parts.forEach((p) => {
+    const m = p.match(/^([^：:]{1,14})[：:]\s*([\s\S]*)$/);
+    if (!m) return;
+    const head = m[1].trim();
+    const val = m[2].trim();
+    if (!val) return;
+    if (/原以为|原来以为/.test(head)) out.before = val;
+    else if (/触发|什么改变/.test(head)) out.trigger = val;
+    else if (/^现在/.test(head)) out.now = val;
+    else if (/仍不知道|还不知道|未知/.test(head)) out.unknown = val;
+  });
+  return Object.keys(out).length >= 3 ? out : null;
+}
+
+/* 案例如果被写成一整段「问题：…｜方法：…」，也尽力还原成五段 */
+function parseCaseText(s) {
+  const parts = String(s).split(/[｜|]/).map((t) => t.trim()).filter(Boolean);
+  const out = {};
+  parts.forEach((p) => {
+    const m = p.match(/^([^：:]{1,14})[：:]\s*([\s\S]*)$/);
+    if (!m) return;
+    const head = m[1].trim();
+    const val = m[2].trim();
+    if (!val) return;
+    if (/具体问题|^问题/.test(head)) out.problem = val;
+    else if (/方法/.test(head)) out.method = val;
+    else if (/依据|比较/.test(head)) out.evidence = val;
+    else if (/判断/.test(head)) out.judgment = val;
+    else if (/疑问|不知道/.test(head)) out.open = val;
+  });
+  return Object.keys(out).length >= 4 ? out : null;
+}
+
 
 /* ---------- 字段映射 ---------- */
 const NODE_FIELDS = ["id", "map", "name", "type", "summary", "detail", "understanding", "understandingNote",
@@ -66,14 +112,28 @@ function toNode(row) {
     const list = splitList(row[k]);
     if (list.length) node[k] = list;
   });
+  if (node.type && TYPE_ALIAS[node.type]) {
+    console.log(C.dim("  类型别名：" + node.type + " → " + TYPE_ALIAS[node.type] + "（节点 " + (row.id || "?") + "）"));
+    node.type = TYPE_ALIAS[node.type];
+  }
   NODE_JSON.forEach((k) => {
     const raw = (row[k] || "").trim();
     if (!raw) return;
     try {
       node[k] = JSON.parse(raw);
+      return;
     } catch (e) {
-      problems.push(`节点表第 ${row.__row} 行：${k} 不是合法 JSON（${e.message}）`);
+      /* JSON 失败时再试「一行文字」写法，仍失败才报错 */
     }
+    if (k === "revision") {
+      const parsed = parseRevisionText(raw);
+      if (parsed) { node[k] = parsed; return; }
+    }
+    if (k === "caseStudy") {
+      const parsed = parseCaseText(raw);
+      if (parsed) { node[k] = parsed; return; }
+    }
+    problems.push(`节点表第 ${row.__row} 行：${k} 既不是合法 JSON，也无法按「标签：内容｜标签：内容」解析`);
   });
   return node;
 }
@@ -103,6 +163,23 @@ function toSource(row) {
 /* ---------- 合并 ---------- */
 const data = loadData();
 const report = { nodesAdded: 0, nodesUpdated: 0, relAdded: 0, relUpdated: 0, srcAdded: 0, srcUpdated: 0 };
+
+/* --replace-map cognitive：先用这批数据整体替换某张地图，并清掉指向旧节点的连线 */
+if (replaceMap) {
+  if (!["domain", "ecosystem", "cognitive"].includes(replaceMap)) {
+    console.error(C.red("✗ --replace-map 只能是 domain / ecosystem / cognitive"));
+    process.exit(1);
+  }
+  const old = data[replaceMap].nodes || [];
+  const oldIds = new Set(old.map((n) => n.id));
+  const before = (data.relations.relations || []).length;
+  data[replaceMap].nodes = [];
+  data.relations.relations = (data.relations.relations || []).filter(
+    (r) => !oldIds.has(r.from) && !oldIds.has(r.to)
+  );
+  const dropped = before - data.relations.relations.length;
+  console.log(C.dim("替换模式：" + replaceMap + " 清空 " + old.length + " 个旧节点，移除 " + dropped + " 条指向它们的连线"));
+}
 
 const nodeTable = readTable(nodeFile, "节点表");
 if (nodeTable) {

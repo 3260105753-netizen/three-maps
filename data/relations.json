@@ -86,108 +86,186 @@
       "seed": true
     },
     {
-      "id": "r-sample-10",
-      "from": "c.sample-revise",
-      "to": "d.sample-concept",
-      "type": "质疑",
-      "label": "修正了对它的理解",
-      "why": "示例：认识修正必须指向被它改变的节点，这样才看得见「改了哪里」。",
+      "id": "r100",
+      "from": "c.m-problem",
+      "to": "c.case-medicine",
+      "type": "用于",
+      "label": "用来重写验收标准",
+      "why": "该案例先追问用户真正困难的是什么，才把\"能不能抓住\"改成\"能不能吃对药\"；这一步决定了后面所有分析的方向，否则会一直在硬件上找答案。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r101",
+      "from": "c.m-decompose",
+      "to": "c.case-cup",
+      "type": "用于",
+      "label": "逐层排除",
+      "why": "换物体失败能落到具体层，靠的是七层归因表逐层排除；不拆层就只能说\"模型不行\"，无法继续追问。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r102",
+      "from": "c.m-compare",
+      "to": "c.case-stronger",
+      "type": "用于",
+      "label": "先查可比性",
+      "why": "判断两种VLA路线能否比较高下，先逐项检查本体、物体集与失败判定、任务长度、数据口径是否等价，四问有一问不等价就不能下结论。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r103",
+      "from": "c.m-counter",
+      "to": "c.case-stronger",
+      "type": "用于",
+      "label": "找结论的失效边界",
+      "why": "主动问\"这个结论在哪不成立\"，才逼出评测口径这一层原因，否则会停在\"跨物体泛化很强\"的乐观表述上。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r104",
+      "from": "c.case-cup",
+      "to": "c.system-view",
+      "type": "体现",
+      "label": "是系统观的一次落地",
+      "why": "这个案例里失败同时牵涉材质感知与训练数据分布，任何单层改进都解释不了，正是系统观要处理的现象。",
       "evidence": "团队推断",
       "verify": "待核实",
       "sourceIds": [
-        "s.sample-doc"
+        "s.helix",
+        "s.vla-survey"
       ],
-      "seed": true
+      "inferred": true
     },
     {
-      "id": "r-c01-01",
-      "from": "c.c01",
-      "to": "c.method.problem-def",
-      "type": "用于",
-      "label": "在该案例中被使用",
-      "why": "案例把「老人能不能靠一次指令拿对药」重新定义成「能不能吃对药并在出错前被拦住」。这正是问题定义的作用：换问题比换方案更早决定成败。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.E02"
-      ]
-    },
-    {
-      "id": "r-c01-02",
-      "from": "c.c01",
-      "to": "c.method.decompose",
-      "type": "用于",
-      "label": "在该案例中被使用",
-      "why": "案例把一次拿药任务拆成识别、剂量确认、抓取、递送四段，才看出关键环节不在抓取动作上。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.E02"
-      ]
-    },
-    {
-      "id": "r-c02-01",
-      "from": "c.c02",
-      "to": "c.method.decompose",
-      "type": "用于",
-      "label": "在该案例中被使用",
-      "why": "案例用七层归因图把「换物体就失败」逐层排查，最终把怀疑从模型容量挪到感知材质与数据分布。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.E02",
-        "s.E05"
-      ]
-    },
-    {
-      "id": "r-c02-02",
-      "from": "c.view.system",
-      "to": "c.c02",
-      "type": "用于",
-      "label": "是该案例的观察框架",
-      "why": "系统观要求把失败看成链路耦合的结果而不是单点故障；案例正是按这个思路去查感知与数据，而不是只换更大的模型。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": []
-    },
-    {
-      "id": "r-c03-01",
-      "from": "c.c03",
-      "to": "c.method.compare",
-      "type": "用于",
-      "label": "在该案例中被使用",
-      "why": "案例先填比较条件四问（本体 / 物体集与失败判定 / 任务长度 / 数据口径），确认条件不等价后才放弃「谁更强」的问法。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.E02",
-        "s.E07"
-      ]
-    },
-    {
-      "id": "r-c03-02",
-      "from": "c.c03",
-      "to": "c.method.counter",
-      "type": "用于",
-      "label": "在该案例中被使用",
-      "why": "案例用反例检查发现「5% 数据比例的基准由作者自选」，换一个基准结论可能翻转，这条边界直接限制了结论强度。",
-      "evidence": "他人观点",
-      "verify": "待核实",
-      "sourceIds": [
-        "s.E09"
-      ]
-    },
-    {
-      "id": "r-c03-03",
-      "from": "c.c03",
-      "to": "c.c02",
-      "type": "对比",
-      "label": "与它共享同一个前提",
-      "why": "两个案例都在回答「证据够不够支撑结论」：C02 卡在缺真机实验，C03 卡在缺统一基准，属于同一类证据不足但形式不同。",
+      "id": "r105",
+      "from": "c.case-medicine",
+      "to": "c.system-view",
+      "type": "体现",
+      "label": "暴露跨层耦合",
+      "why": "确认环节不在任何单一层，跨语义理解、权限确认与人机交互；把它当\"加个功能\"就会漏掉纠错路径。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "inferred": true,
-      "sourceIds": []
+      "sourceIds": [
+        "s.helix"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r106",
+      "from": "c.case-stronger",
+      "to": "c.dev-view",
+      "type": "体现",
+      "label": "对应阶段性限制",
+      "why": "它的结论是\"评测口径未统一\"而不是\"能力不足\"，正对应发展观里\"每个新阶段都会引入新限制\"的分析路径。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.vla-survey"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r107",
+      "from": "c.system-view",
+      "to": "c.m-decompose",
+      "type": "包含",
+      "label": "落地的操作方式",
+      "why": "系统观要能执行，就得按层拆解并逐层排除；没有拆解动作，系统观只剩一句口号，无法支撑任何判断。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r108",
+      "from": "c.dev-view",
+      "to": "c.m-compare",
+      "type": "包含",
+      "label": "要先保证条件可比",
+      "why": "发展观要判断\"成立条件变了什么\"，必须先确认两个阶段或两个方案的条件可比，否则会把条件差异误当成能力进步。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true
+    },
+    {
+      "id": "r109",
+      "from": "c.rev-1",
+      "to": "c.dev-view",
+      "type": "体现",
+      "label": "修正走的是发展观路径",
+      "why": "这次改判的触发是数据规模与评测口径的变化，符合发展观\"成立条件改变导致判断改变\"的路径，而不是单纯换了偏好。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.helix",
+        "s.vla-survey"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r110",
+      "from": "c.h-think",
+      "to": "c.rev-1",
+      "type": "用于",
+      "label": "提供推翻原判断的素材",
+      "why": "反例清单是修正记录里\"哪份材料带来变化\"那一段的直接来源；没有它，修正只能靠回忆，容易写成编的故事。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r111",
+      "from": "c.h-update",
+      "to": "c.rev-1",
+      "type": "用于",
+      "label": "提供对照证据",
+      "why": "预期与实际的对照表记录了我们原本预测什么、实际差在哪，是修正记录最硬的原始材料。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r112",
+      "from": "c.h-learn",
+      "to": "c.m-decompose",
+      "type": "依赖",
+      "label": "依赖先拆到层",
+      "why": "要从失败反查知识缺口，前提是先把失败拆到具体层，否则不知道该补感知、控制还是数据方面的知识。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true
+    },
+    {
+      "id": "r113",
+      "from": "c.h-think",
+      "to": "c.m-counter",
+      "type": "依赖",
+      "label": "把方法变习惯",
+      "why": "每周找反例本质上是把\"反例与边界检查\"从案例里的一次动作变成日常动作，否则方法只在大作业时用一次。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true
+    },
+    {
+      "id": "r114",
+      "from": "c.case-medicine",
+      "to": "c.case-stronger",
+      "type": "对比",
+      "label": "两种不可比",
+      "why": "两个案例分别暴露\"验收标准不同\"和\"比较条件不同\"，合起来才能说明为什么成功率数字不能横比，单看一个容易以为是特例。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.vla-survey"
+      ],
+      "inferred": true
     }
   ]
 }
