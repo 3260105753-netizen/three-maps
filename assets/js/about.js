@@ -45,7 +45,6 @@
             "<dt>领域</dt><dd>" + esc(site.domain || "待填") + "</dd>" +
             "<dt>学期</dt><dd>" + esc(site.term || "—") + "</dd>" +
             "<dt>版本</dt><dd>" + esc(site.version || "—") + "（更新 " + esc(site.updated || "—") + "）</dd>" +
-            "<dt>联系</dt><dd>" + esc(site.contact || "待填") + "</dd>" +
           "</dl></div>" +
         '<div class="panel"><h3 style="margin-top:0">这个网站是什么</h3>' +
           '<p class="small">三张地图共用一套节点、关系、来源与更新记录，所以从一个节点可以跳到另一个视角，而不是三份互不相干的页面。</p>' +
