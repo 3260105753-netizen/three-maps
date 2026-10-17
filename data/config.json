@@ -15,8 +15,8 @@
     "scopeOut": "（待填）明确不展开的部分。写清边界比写全更重要，也避免被追问到无法回答的地方。",
     "direction": "（待填）主要取向：AI 科学家 / AI 工程师 / AI 设计师，以及为什么是这个。",
     "contact": "（待填）组长联系方式或群号",
-    "repoUrl": "",
-    "siteUrl": "",
+    "repoUrl": "https://github.com/3260105753-netizen/three-maps",
+    "siteUrl": "https://3260105753-netizen.github.io/three-maps/",
     "aiEngineNote": "本站 AI 能力是「地图内检索引擎 + 关系推理」：每个回答都从 data/ 的节点、关系、来源里取，不调用大模型、不需要密钥，所以不会编造课程与论文，也能在现场离线稳定演示。"
   },
   "demoContent": true,

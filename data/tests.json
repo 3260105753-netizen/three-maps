@@ -2,6 +2,17 @@
   "_note": "部署与访问测试记录。课程警告「发布成功不等于其他人能够访问」，所以每次发布都要记：谁测的、什么设备、什么网络、发现什么问题、怎么修。result 只有两种说法：通过 / 未通过。",
   "tests": [
     {
+      "id": "t-20261017-ghpages",
+      "date": "2026-10-17",
+      "who": "技术负责人（本人，非本组同学）",
+      "device": "Windows 11 · Edge（无头）1440px",
+      "network": "公网 HTTPS（GitHub Pages）https://3260105753-netizen.github.io/three-maps/",
+      "scope": "首页 + 6 个子页 + assets/js、assets/css + data/*.json 共 11 个资源全部 200；首页 JS 渲染正常，统计显示 11 节点 / 10 关系 / 27 来源；顶部「骨架演示模式」提示条正常出现",
+      "result": "通过",
+      "problems": "第一次部署失败：Pages 的 Source 没设成 GitHub Actions，deploy 步骤报错；同时公网地址返回 404",
+      "fix": "Settings → Pages → Source 改为 GitHub Actions，然后 Actions 里 Re-run all jobs，约 1 分钟后首页返回 200"
+    },
+    {
       "id": "t-20261017-local",
       "date": "2026-10-17",
       "who": "技术负责人（本人，非本组同学）",
