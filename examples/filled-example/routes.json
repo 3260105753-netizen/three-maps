@@ -1,0 +1,35 @@
+{
+  "_note": "技术路线表，供 AI 能力「路线比较」使用。一条路线 = 一组节点 + 适用条件 + 局限；比较时自动算共有/独有依赖与风险项。",
+  "routes": [
+    {
+      "id": "route.e2e",
+      "name": "端到端 VLA 路线",
+      "summary": "从像素直接到动作，用一个大模型吃掉感知与决策，中间不显式建图与规划。",
+      "nodes": ["d.route-e2e", "d.vla", "d.pretrain", "d.data-oxe", "d.model-openvla", "d.model-rt2"],
+      "conditions": "需要大规模跨本体操作数据与较高推理算力；适合指令多样、单次任务较短的场景。",
+      "limits": "调试困难（只给一个失败结果）、数据覆盖要求高、单次推理延迟大。",
+      "ecosystem": ["e.lab.deepmind", "e.data.oxe", "e.channel.arxiv"],
+      "sourceIds": ["s.rt2", "s.openvla", "s.oxe"]
+    },
+    {
+      "id": "route.modular",
+      "name": "模块化分层路线",
+      "summary": "把系统拆成感知、规划、控制几个模块，接口明确，每层可单独测试与替换。",
+      "nodes": ["d.route-modular", "d.perception", "d.action-space", "d.frames", "d.sw-ros2", "d.course-control"],
+      "conditions": "需要工程能力与中间件经验；适合任务固定、对可解释性与可维护性要求高的场景。",
+      "limits": "模块间误差累积；每个模块都要单独维护，人力成本高。",
+      "ecosystem": ["e.oss.ros", "e.conf.icra"],
+      "sourceIds": ["s.ros2", "s.icra"]
+    },
+    {
+      "id": "route.rl-sim",
+      "name": "仿真强化学习路线",
+      "summary": "在大量并行仿真环境里用强化学习练出策略，再想办法迁移到真机。",
+      "nodes": ["d.route-rl-sim", "d.rl", "d.sw-isaac", "d.sw-mujoco", "d.domain-rand", "d.problem-sim2real"],
+      "conditions": "需要 GPU 并行仿真资源；适合奖励容易定义、可以大量试错的任务。",
+      "limits": "仿真到现实的差距是固有风险；奖励设计本身很难，容易训出钻空子的策略。",
+      "ecosystem": ["e.bench.rlbench", "e.conf.neurips"],
+      "sourceIds": ["s.isaaclab", "s.mujoco", "s.serl"]
+    }
+  ]
+}

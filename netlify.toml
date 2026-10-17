@@ -1,0 +1,16 @@
+# Netlify 直接拖拽本文件夹即可发布，不需要构建命令。
+[build]
+  publish = "."
+  command = ""
+
+# 数据文件不要被 CDN 长时间缓存，否则改了内容别人看到的还是旧的
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    cache-control = "no-cache"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    x-content-type-options = "nosniff"
+    referrer-policy = "strict-origin-when-cross-origin"

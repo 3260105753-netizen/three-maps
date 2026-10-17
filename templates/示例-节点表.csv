@@ -1,0 +1,3 @@
+﻿﻿id,map,name,type,summary,detail,understanding,understandingNote,evidence,verify,sourceIds,tags,flags,owner,updated,courseLabel,courseAbility,courseBasis,contribution,whyIncluded,results,caseStudy,revision
+"d.demo-1",domain,示例：概念节点,概念,一句话说清它是什么、解决什么问题。,写两句展开：为什么值得单独拿出来讲。,已初步理解,读过官方文档并做过一个小实验。,事实,已核实,s.demo-doc,标签A;标签B,,张三,2026-10-17,,,,,,,,
+"e.demo-1",ecosystem,示例：机构节点,企业,一句话说清它做什么、在任务链哪一环。,可留空。,待深入学习,只读过新闻，没核对官方文档。,团队推断,待核实,s.demo-doc,,,张三,2026-10-17,,,,主要贡献写这里,入选理由写这里,相关成果写这里,,

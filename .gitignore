@@ -1,0 +1,8 @@
+# 导入前的自动备份，不进仓库
+data/.backup/
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/

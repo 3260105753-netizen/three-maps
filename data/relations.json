@@ -1,0 +1,15 @@
+{
+  "_note": "关系表（三张地图共用一张，天然支持跨图连线）。每条关系必须写清：谁指向谁（from → to）、类型、为什么成立（why）、依据（sourceIds）、证据类型（evidence）。未经证实的联系必须 inferred=true，界面上会显示「推断」。",
+  "relations": [
+    { "id": "r-sample-01", "from": "d.sample-task", "to": "d.sample-concept", "type": "用于", "label": "需要先解决", "why": "示例：写清为什么这个任务离不开这个概念，而不是「两者有关」。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-02", "from": "d.sample-tool", "to": "d.sample-task", "type": "用于", "label": "提供执行手段", "why": "示例：这个工具在任务链里具体承担哪一环，换成别的工具会缺什么。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-03", "from": "d.sample-course", "to": "d.sample-concept", "type": "前置", "label": "是它的前置课程", "why": "示例：课程与概念的对应要有培养方案或大纲依据，没有就标待核实。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-plan"], "seed": true },
+    { "id": "r-sample-04", "from": "e.sample-conf", "to": "d.sample-concept", "type": "提供", "label": "是它成果的发布渠道", "why": "示例：生态对象与领域概念之间的具体关系，不能只写「相关」。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-05", "from": "e.sample-org", "to": "d.sample-tool", "type": "提供", "label": "产出并维护", "why": "示例：机构与工具的直接对应，写清谁产出、谁维护。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-06", "from": "e.sample-oss", "to": "d.sample-tool", "type": "对应", "label": "就是它的维护社区", "why": "示例：生态条目与领域条目指向同一对象时用「对应」，避免两处说法不一致。", "evidence": "事实", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-07", "from": "c.sample-method", "to": "c.sample-case", "type": "用于", "label": "在该案例中被使用", "why": "示例：每个分析方法至少要有一条连线指向真实案例，否则方法就是空的。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-08", "from": "c.sample-view", "to": "c.sample-case", "type": "用于", "label": "是该案例的观察框架", "why": "示例：说明这个「观」在分析里具体起了什么作用。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-09", "from": "c.sample-case", "to": "d.sample-task", "type": "体现", "label": "是该任务的一次具体分析", "why": "示例：认知地图与领域地图的连线，说明分析对象就是那个任务。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true },
+    { "id": "r-sample-10", "from": "c.sample-revise", "to": "d.sample-concept", "type": "质疑", "label": "修正了对它的理解", "why": "示例：认识修正必须指向被它改变的节点，这样才看得见「改了哪里」。", "evidence": "团队推断", "verify": "待核实", "sourceIds": ["s.sample-doc"], "seed": true }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "_note": "领域地图数据表。当前只有 4 个「示例节点」，作用是验证渲染、筛选、跳转与 AI 能力是否跑通；正式内容由领域地图负责人按 docs/01-节点字段契约.md 填入，填完删掉 seed 节点即可。",
+  "map": {
+    "id": "domain",
+    "name": "领域地图",
+    "subtitle": "这个领域有什么知识、方法和工具？它们怎样关联？以后在哪里学？",
+    "purpose": "先给整体结构：典型任务 → 它暴露的问题 → 需要的概念、方法、技术路线 → 具体模型与软件 → 课程入口与动手资源。",
+    "owner": "（待填）领域地图负责人",
+    "accent": "#5eead4",
+    "updated": "2026-10-17",
+    "dataset": "seed"
+  },
+  "nodes": [
+    {
+      "id": "d.sample-task",
+      "name": "典型任务（示例）",
+      "type": "典型任务",
+      "summary": "示例节点：这里放本领域一个能被讲清楚、能被评测的具体任务，所有概念与工具都从它出发。",
+      "detail": "为什么从任务开始？因为「这个领域有什么」很难回答，「完成这个任务需要什么」可以回答。正式内容请替换为你们组的那个具体任务。",
+      "understanding": "已初步理解",
+      "understandingNote": "示例数据，理解程度待负责人填写。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "任务"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    },
+    {
+      "id": "d.sample-concept",
+      "name": "核心概念（示例）",
+      "type": "概念",
+      "summary": "示例节点：这里放一个支撑上面那个任务的关键概念，用一句话说清它解决什么问题。",
+      "understanding": "待深入学习",
+      "understandingNote": "示例数据，待负责人填写真实状态。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "概念"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    },
+    {
+      "id": "d.sample-tool",
+      "name": "关键工具（示例）",
+      "type": "软件",
+      "summary": "示例节点：这里放一个真正能上手用的软件、框架或模型，写清它承担任务链里的哪一环。",
+      "understanding": "已经尝试",
+      "understandingNote": "示例数据，待负责人填写是否亲手跑过。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "工具"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    },
+    {
+      "id": "d.sample-course",
+      "name": "相关课程（示例）",
+      "type": "课程",
+      "summary": "示例节点：课程节点必须写清「对应什么能力、依据哪份培养方案」，没有依据就标待核实。",
+      "understanding": "待深入学习",
+      "understandingNote": "示例数据，待负责人对照培养方案确认。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-plan"],
+      "tags": ["示例", "课程"],
+      "flags": ["示例数据，待替换"],
+      "courseLabel": "前置基础",
+      "courseAbility": "学完能解释什么、能做什么，用一句话写。",
+      "courseBasis": "待补：必须引用本专业培养方案或课程大纲原文，不能只凭课名猜测。",
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    }
+  ]
+}

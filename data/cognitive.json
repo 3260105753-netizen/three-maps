@@ -1,0 +1,94 @@
+{
+  "_note": "认知地图数据表。分析方法节点必须配一个本组真实做过的案例（问题→方法→依据→判断→疑问）；认识修正节点必须写清「原来以为 / 什么改变了 / 现在如何理解 / 仍不知道」。",
+  "map": {
+    "id": "cognitive",
+    "name": "认知地图",
+    "subtitle": "面对这个领域的问题，我们怎样思考、分析、实践，并持续成长？",
+    "purpose": "这一层不放知识，只放「怎么想」：认识方法（观）、可复用的分析方法（必须配案例）、能落到行动的习惯。",
+    "owner": "（待填）认知地图负责人",
+    "accent": "#fbbf24",
+    "updated": "2026-10-17",
+    "dataset": "seed"
+  },
+  "nodes": [
+    {
+      "id": "c.sample-view",
+      "name": "系统观（示例）",
+      "type": "认识方法（观）",
+      "summary": "示例节点：用「各部分怎样相互影响」的方式看问题，而不是把失败归给某一个环节。",
+      "understanding": "已初步理解",
+      "understandingNote": "示例数据，待负责人填写真实状态。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "观"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    },
+    {
+      "id": "c.sample-method",
+      "name": "系统拆解（示例）",
+      "type": "分析方法",
+      "summary": "示例节点：把一次失败拆到具体环节，逐个排出「如果问题在这，应该还能观察到什么」。",
+      "understanding": "已经尝试",
+      "understandingNote": "示例数据，待负责人填写。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "分析方法"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    },
+    {
+      "id": "c.sample-case",
+      "name": "案例：一次失败定位（示例）",
+      "type": "案例",
+      "summary": "示例节点：案例必须按固定五段写，让同学看到分析过程而不是结论。",
+      "caseStudy": {
+        "problem": "具体问题：把一次真实遇到的困难写清楚，不要写「效果不好」这种笼统描述。",
+        "method": "使用方法：用了哪个分析方法，为什么是它。",
+        "evidence": "依据与比较：查了什么、比了什么、观察到什么。",
+        "judgment": "当前判断：现在的结论是什么，以及它是事实、他人观点还是团队推断。",
+        "open": "尚存疑问：什么条件下这个判断会不成立、还缺哪一步验证。"
+      },
+      "relatedNodes": ["c.sample-method", "d.sample-task"],
+      "understanding": "已初步理解",
+      "understandingNote": "示例数据，待负责人填写。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "案例"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    },
+    {
+      "id": "c.sample-revise",
+      "name": "认识修正：一次判断的改变（示例）",
+      "type": "认识修正",
+      "summary": "示例节点：这四栏是评分表里「中期以来有实际更新和认识变化」的直接证据，不能编造。",
+      "revision": {
+        "before": "原来以为：我们原来的判断是什么。",
+        "trigger": "什么改变了：哪份资料、哪次尝试或哪条同学反馈带来了变化。",
+        "now": "现在如何理解：改动后的判断，以及它影响的节点或关系。",
+        "unknown": "仍不知道：这次修正之后，还剩下什么问题没有答案。"
+      },
+      "relatedNodes": ["d.sample-concept"],
+      "understanding": "已初步理解",
+      "understandingNote": "示例数据，待负责人填写。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": ["s.sample-doc"],
+      "tags": ["示例", "认识修正"],
+      "flags": ["示例数据，待替换"],
+      "owner": "骨架示例",
+      "updated": "2026-10-17",
+      "seed": true
+    }
+  ]
+}

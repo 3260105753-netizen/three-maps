@@ -1,0 +1,2 @@
+﻿﻿id,from,to,type,label,why,evidence,verify,inferred,sourceIds
+"r.demo-1",d.demo-1,e.demo-1,依赖,需要它提供能力,"为什么这条连线成立：该概念的实际落地依赖这家机构提供的东西。",团队推断,待核实,是,s.demo-doc
