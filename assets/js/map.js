@@ -168,7 +168,7 @@
           svg.push('<g class="g-node" data-id="' + esc(n.id) + '" tabindex="0" role="button" aria-label="' + esc(n.name) + '">' +
             "<title>" + esc(n.name) + " · " + esc(n.type) + "</title>" +
             '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + p.r + '" fill="' + tone + '" fill-opacity="0.18" stroke="' + tone + '" stroke-width="2"></circle>' +
-            '<text x="' + p.x + '" y="' + (p.y + p.r + 13) + '" text-anchor="middle">' + esc(truncate(n.name, 14)) + "</text></g>");
+            '<text x="' + p.x + '" y="' + (p.y + p.r + 13) + '" text-anchor="middle">' + esc(truncate(n.name, 18)) + "</text></g>");
         });
         svg.push("</svg>");
         host.innerHTML = svg.join("");

@@ -8,7 +8,7 @@
     "owner": "（待填）认知地图负责人",
     "accent": "#fbbf24",
     "updated": "2026-10-17",
-    "dataset": "seed"
+    "dataset": "mixed"
   },
   "nodes": [
     {
@@ -21,7 +21,10 @@
       "evidence": "他人观点",
       "verify": "已核实",
       "sourceIds": [],
-      "tags": ["观", "课堂方法"],
+      "tags": [
+        "观",
+        "课堂方法"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -35,7 +38,10 @@
       "evidence": "他人观点",
       "verify": "已核实",
       "sourceIds": [],
-      "tags": ["观", "课堂方法"],
+      "tags": [
+        "观",
+        "课堂方法"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -49,8 +55,13 @@
       "evidence": "团队推断",
       "verify": "待核实",
       "sourceIds": [],
-      "tags": ["观", "待补"],
-      "flags": ["内容待补充"],
+      "tags": [
+        "观",
+        "待补"
+      ],
+      "flags": [
+        "内容待补充"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -64,7 +75,10 @@
       "evidence": "他人观点",
       "verify": "已核实",
       "sourceIds": [],
-      "tags": ["分析方法", "课堂方法"],
+      "tags": [
+        "分析方法",
+        "课堂方法"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -78,7 +92,10 @@
       "evidence": "他人观点",
       "verify": "已核实",
       "sourceIds": [],
-      "tags": ["分析方法", "课堂方法"],
+      "tags": [
+        "分析方法",
+        "课堂方法"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -92,7 +109,10 @@
       "evidence": "他人观点",
       "verify": "已核实",
       "sourceIds": [],
-      "tags": ["分析方法", "课堂方法"],
+      "tags": [
+        "分析方法",
+        "课堂方法"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -106,7 +126,10 @@
       "evidence": "他人观点",
       "verify": "已核实",
       "sourceIds": [],
-      "tags": ["分析方法", "课堂方法"],
+      "tags": [
+        "分析方法",
+        "课堂方法"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -128,8 +151,16 @@
       "understandingNote": "分析做过一轮，但没有真实用户访谈支撑。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.E02", "s.E01"],
-      "tags": ["案例", "问题定义", "系统拆解", "用药场景"],
+      "sourceIds": [
+        "s.E02",
+        "s.E01"
+      ],
+      "tags": [
+        "案例",
+        "问题定义",
+        "系统拆解",
+        "用药场景"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -151,8 +182,18 @@
       "understandingNote": "归因思路清楚，但缺真机实验，结论仍是推断。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.E02", "s.E05", "s.E06", "s.E07"],
-      "tags": ["案例", "系统拆解", "失败归因", "sim2real"],
+      "sourceIds": [
+        "s.E02",
+        "s.E05",
+        "s.E06",
+        "s.E07"
+      ],
+      "tags": [
+        "案例",
+        "系统拆解",
+        "失败归因",
+        "sim2real"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -174,8 +215,17 @@
       "understandingNote": "方法层面想清楚了，但没跑过任何一组受控实验。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.E02", "s.E07", "s.E09"],
-      "tags": ["案例", "对照比较", "反例检查", "路线比较"],
+      "sourceIds": [
+        "s.E02",
+        "s.E07",
+        "s.E09"
+      ],
+      "tags": [
+        "案例",
+        "对照比较",
+        "反例检查",
+        "路线比较"
+      ],
       "owner": "（待补）",
       "updated": "2026-10-17"
     },
@@ -190,14 +240,25 @@
         "now": "现在如何理解：改动后的判断，以及它影响了地图上的哪个节点或哪条关系。",
         "unknown": "仍不知道：这次修正之后还剩什么问题。"
       },
-      "relatedNodes": ["c.c01", "c.c02", "c.c03"],
+      "relatedNodes": [
+        "c.c01",
+        "c.c02",
+        "c.c03"
+      ],
       "understanding": "待深入学习",
       "understandingNote": "示例数据，等本组补真实经历。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "sourceIds": ["s.sample-doc"],
-      "tags": ["示例", "认识修正"],
-      "flags": ["示例数据，待替换"],
+      "sourceIds": [
+        "s.sample-doc"
+      ],
+      "tags": [
+        "示例",
+        "认识修正"
+      ],
+      "flags": [
+        "示例数据，待替换"
+      ],
       "owner": "骨架示例",
       "updated": "2026-10-17",
       "seed": true
