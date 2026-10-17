@@ -88,12 +88,6 @@
           " · " + MS.esc(cfg.term || "") + "</p>" +
         "</div>" +
         "<div><h5>页面</h5>" + pages + "</div>" +
-        "<div><h5>给组内看</h5>" +
-          '<a href="data/README.md">数据怎么替换</a>' +
-          '<a href="docs/01-节点字段契约.md">节点字段契约</a>' +
-          '<a href="docs/03-AI能力计划.md">AI 能力计划</a>' +
-          '<a href="docs/04-部署与访问测试记录.md">部署与访问测试</a>' +
-        "</div>" +
       "</div>" +
       '<div class="wrap footer-bottom">' +
         "<span>纯静态站点：不收集任何访问数据，不需要登录，不索取模型密钥。</span>" +

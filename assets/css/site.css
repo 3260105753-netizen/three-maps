@@ -254,7 +254,7 @@ hr.sep { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 
-.stat-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 36px; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 36px; }
 @media (max-width: 720px) { .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .stat {
   border: 1px solid var(--line); border-radius: var(--radius-sm);
@@ -539,7 +539,7 @@ tbody tr:hover { background: rgba(148, 163, 184, 0.04); }
   font-size: 13px; color: var(--muted);
   background: linear-gradient(to bottom, transparent, rgba(7, 10, 20, 0.7));
 }
-.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 26px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 26px; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 18px; } }
 .footer-grid h5 { margin: 0 0 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
 .footer-grid a { color: var(--muted); display: block; padding: 2px 0; font-size: 13px; }

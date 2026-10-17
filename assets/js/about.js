@@ -15,15 +15,13 @@
         '<header class="page-head">' +
           '<p class="eyebrow">关于与贡献</p>' +
           "<h1>谁做了什么，能解释到什么程度</h1>" +
-          '<p class="page-q">这一页是给互评和期末展示用的：谁负责哪块、谁测过、哪些验收项已经过、内容是怎么进系统的。课程要求「每位成员能够解释自己的贡献」，所以每人写的不是职位，是能被追问的部分。</p>' +
+          '<p class="page-q">谁负责哪块、谁测过、哪些验收项已经过。课程要求「每位成员能够解释自己的贡献」，所以每人写的不是职位，是能被追问的部分。</p>' +
         "</header>" +
 
         groupBlock(site) +
-        rolesBlock() +
         membersBlock(state) +
         accessBlock(state) +
         selfCheckBlock(cfg) +
-        pipelineBlock() +
         techBlock(state) +
       "</div>";
 
@@ -49,50 +47,16 @@
             "<dt>版本</dt><dd>" + esc(site.version || "—") + "（更新 " + esc(site.updated || "—") + "）</dd>" +
             "<dt>联系</dt><dd>" + esc(site.contact || "待填") + "</dd>" +
           "</dl></div>" +
-        '<div class="panel"><h3 style="margin-top:0">这个网站的角色</h3>' +
-          '<p class="small">它不替谁写内容，它负责让内容<strong>能被结构化地放进去、公开访问、可探索</strong>，并让至少一项 AI 能力真正围绕地图数据工作。</p>' +
+        '<div class="panel"><h3 style="margin-top:0">这个网站是什么</h3>' +
+          '<p class="small">三张地图共用一套节点、关系、来源与更新记录，所以从一个节点可以跳到另一个视角，而不是三份互不相干的页面。</p>' +
           '<ul class="small" style="padding-left:18px;line-height:1.9">' +
             "<li>七个页面：首页 / 三张地图 / AI 能力 / 更新记录 / 关于与贡献</li>" +
-            "<li>四类字段：节点、关系、来源、理解程度</li>" +
-            "<li>三项 AI 能力：查课程、解释关系、比较路线</li>" +
-            "<li>两条管道：CSV 模板 → 校验脚本 → JSON → 页面自动渲染</li>" +
+            "<li>每个节点都写清：类型、一句话说明、关系与理由、来源、理解程度</li>" +
+            "<li>三项 AI 能力：查课程、解释关系、比较路线，回答都带来源</li>" +
           "</ul>" +
         "</div>" +
       "</div>" +
     "</section>";
-  }
-
-  function rolesBlock() {
-    return '<section class="section-block" id="roles">' +
-      '<div class="section-head"><div><h2>三类对接：各自给对方什么</h2>' +
-      "<p>分工不清是这类作业最常见的失败原因。所以对接方式写死在这里：谁交什么、交成什么格式、缺了会怎样。</p></div></div>" +
-      '<div class="grid g3">' +
-        roleCard("对三位地图负责人", "#5eead4", [
-          "给他们固定字段，不接受只交一段文字",
-          "每个节点必须有：名称、类型、一句话说明、关系、来源、理解程度",
-          "关系要写清「谁指向谁、为什么」",
-          "用 templates/节点表.csv 填，我负责导入与校验"
-        ]) +
-        roleCard("对证据负责人", "#fbbf24", [
-          "来源链接必须能追溯：可打开、能定位到具体段落",
-          "来源失效或可信度低，在 verify 字段标「待核实」",
-          "没有链接就留空并标「来源待补」，不要用课名猜",
-          "每条重要关系也要有依据，不只是节点有"
-        ]) +
-        roleCard("对组长 / 互评负责人", "#a78bfa", [
-          "公开链接与反馈入口由我提供并保证可用",
-          "每周更新日志的技术部分由我维护，内容部分由各组负责人补",
-          "反馈进来后逐条转成任务：改哪个节点、哪条关系、哪个页面",
-          "期末展示的技术部分（结构 + AI 演示）由我准备"
-        ]) +
-      "</div>" +
-    "</section>";
-  }
-  function roleCard(title, tone, items) {
-    return '<div class="card" style="--tone:' + tone + '">' +
-      '<span class="badge" style="--tone:' + tone + '">' + esc(title) + "</span>" +
-      '<ul class="small" style="padding-left:18px;line-height:1.95;margin:12px 0 0">' +
-      items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul></div>";
   }
 
   function membersBlock(state) {
@@ -110,7 +74,6 @@
           '<td class="small muted">' + esc((m.records || []).join("、") || "—") + "</td>" +
           "<td>" + MS.badge(m.status || "待填", m.status === "待填" ? "warn" : "ok") + "</td></tr>";
       }).join("") + "</tbody></table></div>" +
-      '<p class="small muted" style="margin-top:12px">数据在 <a href="data/members.json">data/members.json</a>，每人只改自己那一行。</p>' +
     "</section>";
   }
 
@@ -209,59 +172,26 @@
     }
   }
 
-  function pipelineBlock() {
-    return '<section class="section-block" id="pipeline">' +
-      '<div class="section-head"><div><h2>内容怎么进系统</h2>' +
-      "<p>三位负责人不需要碰代码，也不需要碰 HTML。填表 → 跑一个校验命令 → 页面自动更新。校验不过会指到具体行号，避免「三张地图各说各话」。</p></div></div>" +
-      '<div class="grid g2">' +
-        '<div class="panel"><ol class="steps">' +
-          "<li><b>填表</b><span class=\"small muted\">用 templates/ 下的三个 CSV：节点表、关系表、来源表。Excel / WPS / Numbers 都能开。</span></li>" +
-          "<li><b>校验</b><span class=\"small muted\"><code class=\"mono\">node scripts/import-csv.mjs</code>：缺字段、枚举值不对、关系指向不存在的节点、来源编号没登记，都会报错并给行号。</span></li>" +
-          "<li><b>生成</b><span class=\"small muted\">校验通过后写入 data/*.json，页面刷新即生效。</span></li>" +
-          "<li><b>记录</b><span class=\"small muted\">在 data/changelog.json 加一条：日期、改了什么、依据、为什么。忘了写，这一项在互评时会先被看到。</span></li>" +
-        "</ol></div>" +
-        '<div class="panel"><h4 style="margin-top:0">三条硬规则</h4>' +
-          '<ul class="small" style="padding-left:18px;line-height:2">' +
-            "<li><strong>关系必须有 why</strong>：写「有关」等于没写，必须说清谁指向谁、为什么成立。</li>" +
-            "<li><strong>证据必须分类型</strong>：事实 / 他人观点 / 团队推断，推断还要在关系上标 inferred。</li>" +
-            "<li><strong>不确定就标出来</strong>：待核实、来源待补会以黄色告警出现在页面上，这不是扣分项，是诚实项。</li>" +
-          "</ul>" +
-          '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">' +
-            '<a class="btn btn-sm btn-primary" href="docs/01-节点字段契约.md">字段契约</a>' +
-            '<a class="btn btn-sm" href="docs/02-数据怎么进来.md">负责人操作手册</a>' +
-          "</div>" +
-        "</div>" +
-      "</div>" +
-    "</section>";
-  }
 
   function techBlock(state) {
     var s = state.stats;
     return '<section class="section-block" id="tech">' +
       '<div class="section-head"><div><h2>技术说明</h2>' +
-      "<p>这一节是给「现场演示会不会翻车」准备的：说明它为什么稳，以及它的边界在哪。</p></div></div>" +
-      '<div class="grid g3">' +
+      "<p>为什么现场演示不容易翻车，以及它的边界在哪。</p></div></div>" +
+      '<div class="grid g2">' +
         '<div class="panel"><h4 style="margin-top:0">为什么稳</h4><ul class="small" style="padding-left:18px;line-height:1.95">' +
-          "<li>纯静态：HTML + CSS + 原生 JS，无构建步骤</li>" +
-          "<li>无外部依赖：不加载 CDN、字体、分析脚本</li>" +
-          "<li>无后端、无数据库、无账号体系</li>" +
-          "<li>AI 能力本地推理，不调用 API、不需要密钥</li>" +
+          "<li>纯静态：HTML + CSS + 原生 JS，无构建、无 CDN、无外部字体</li>" +
+          "<li>无后端、无数据库、不需要登录</li>" +
+          "<li>AI 能力在浏览器里本地推理，不调用 API、不索取密钥</li>" +
+          "<li>读屏、键盘操作、手机窄屏都能用</li>" +
         "</ul></div>" +
-        '<div class="panel"><h4 style="margin-top:0">当前数据量</h4><dl class="kv">' +
-          "<dt>节点</dt><dd>" + s.nodes + " 个</dd>" +
-          "<dt>关系</dt><dd>" + s.relations + " 条（推断 " + s.inferred + " 条）</dd>" +
-          "<dt>来源</dt><dd>" + s.sources + " 条，其中 " + s.withSources + " 个节点有可打开来源</dd>" +
-          "<dt>路线</dt><dd>" + s.routes + " 条</dd>" +
-          "<dt>待核实</dt><dd>" + s.unverified + " 个节点</dd>" +
-        "</dl></div>" +
         '<div class="panel"><h4 style="margin-top:0">边界</h4><ul class="small" style="padding-left:18px;line-height:1.95">' +
-          "<li>不做用户登录与权限，所有内容公开</li>" +
-          "<li>不收集访问数据，反馈靠复制粘贴</li>" +
-          "<li>关系图在 60 个节点以内最清楚，再多需要拆分</li>" +
-          "<li>内容质量仍取决于负责人，脚本只保证结构一致</li>" +
+          "<li>不收集任何访问数据，反馈靠复制粘贴</li>" +
+          "<li>内容对错取决于负责人，脚本只保证结构一致</li>" +
+          "<li>AI 只回答地图里有的东西，查不到就明说查不到</li>" +
+          "<li>当前：" + s.nodes + " 个节点 · " + s.relations + " 条关系 · " + s.withSources + " 个节点有可打开来源</li>" +
         "</ul></div>" +
       "</div>" +
-      (state.config.demoContent ? '<div class="panel" style="margin-top:16px;border-color:rgba(251,191,36,.4)"><p class="small" style="margin:0;color:#f6d99a">当前处于<strong>骨架演示模式</strong>：示例文案与示例节点只用于验证结构。替换 data/ 后把 data/config.json 里的 <code>demoContent</code> 改成 false，顶部提示条会消失。</p></div>' : "") +
     "</section>";
   }
 })(window.MS = window.MS || {});

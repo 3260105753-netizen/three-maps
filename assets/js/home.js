@@ -4,7 +4,6 @@
 (function (MS) {
   "use strict";
   var esc = MS.esc;
-
   MS.pages.home = function render(state, root) {
     var cfg = state.config.site || {};
     var s = state.stats;
@@ -12,7 +11,6 @@
     var latest = (state.changelog.entries || []).slice().sort(function (a, b) {
       return String(b.date).localeCompare(String(a.date));
     }).slice(0, 3);
-
     root.innerHTML =
       '<div class="wrap">' +
         hero(cfg, s, maps, !!state.config.demoContent) +
@@ -22,9 +20,7 @@
         growthBlock(cfg) +
         weeklyBlock(state) +
         latestBlock(latest) +
-        milestoneBlock(state) +
       "</div>";
-
     var year = new Date().getFullYear();
     var copy = root.querySelector("[data-copy-link]");
     if (copy) {
@@ -36,7 +32,6 @@
     }
     root.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = year; });
   };
-
   function hero(cfg, s, maps, demo) {
     return '<header class="hero">' +
       '<p class="eyebrow">' + esc(cfg.groupName || "小组名称待填") + " · " + esc(cfg.term || "") + " · " + esc(cfg.version || "V0") + "</p>" +
@@ -64,7 +59,6 @@
     "</header>";
   }
   function tile(v, label) { return '<div class="stat"><b>' + esc(v) + "</b><span>" + esc(label) + "</span></div>"; }
-
   function scopeBlock(cfg) {
     return '<section class="section-block" id="scope">' +
       '<div class="section-head"><div><h2>这个网站讲什么、不讲什么</h2>' +
@@ -80,12 +74,10 @@
       '<div class="panel" style="margin-top:16px">' +
         '<p class="small" style="margin:0"><strong>选题一句话</strong>（按课程要求，每组用一段话说清）：' +
         "我们研究 <em>" + esc(cfg.domain || "领域") + "</em>，希望帮助同学理解 <em>" + esc(cfg.focus || "这个任务的整体结构") +
-        "</em>；以 <em>" + esc(cfg.focus || "典型任务") + "</em> 作为例子；<em>" + esc((cfg.scopeOut || "若干内容").slice(0, 40)) +
-        "</em> 暂不展开。</p>" +
+        "</em>；<em>" + esc(cfg.scopeOut || "若干内容") + "</em> 暂不展开。</p>" +
       "</div>" +
     "</section>";
   }
-
   function mapEntries(state, maps) {
     return '<section class="section-block" id="maps">' +
       '<div class="section-head"><div><h2>三张地图，同一个网站</h2>' +
@@ -109,7 +101,6 @@
       }).join("") + "</div>" +
     "</section>";
   }
-
   function aiBlock(state) {
     var caps = [
       { t: "概念查课程", d: "输入一个概念，返回相关课程、学习基础和相关工具，并标出每门课的依据与理解程度。", h: "ai.html#panel-1" },
@@ -129,7 +120,6 @@
       '<p class="small muted" style="margin-top:14px">' + esc((state.config.site || {}).aiEngineNote || "") + "</p>" +
     "</section>";
   }
-
   function growthBlock(cfg) {
     var routes = [
       { name: "AI 科学家", q: "为什么会这样？现有解释有什么不足？", way: "提出问题 → 查阅研究 → 形成假设 → 构建方法 → 检验与解释", habit: "追问原理、区分证据与猜测、比较不同解释、保留反例" },
@@ -147,7 +137,6 @@
       '<p class="small muted" style="margin-top:12px">不按专业固定分组，也不要求同学提前达到专业水平。本组取向见上方，三张地图里凡是「待深入学习」的节点就是我们还没到位的部分。</p>' +
     "</section>";
   }
-
   function weeklyBlock(state) {
     var w = state.config.weekly || {};
     return '<section class="section-block" id="weekly">' +
@@ -163,7 +152,6 @@
     return '<div class="panel"><h4 style="margin-top:0;color:var(--accent);font-size:12.5px;letter-spacing:.05em">' + esc(q) + "</h4>" +
       '<p class="small" style="margin:0">' + esc(a || "（待填）") + "</p></div>";
   }
-
   function latestBlock(entries) {
     if (!entries.length) {
       return '<section class="section-block" id="latest"><div class="section-head"><div><h2>最新更新</h2></div></div>' +
@@ -179,20 +167,6 @@
           "<h4 style=\"margin:8px 0 6px\">" + esc(e.target || e.what) + "</h4>" +
           '<p class="small" style="margin:0">' + esc(e.what) + "</p></div>";
       }).join("") + "</div>" +
-    "</section>";
-  }
-
-  function milestoneBlock(state) {
-    var ms = state.config.milestones || [];
-    if (!ms.length) return "";
-    return '<section class="section-block" id="milestones">' +
-      '<div class="section-head"><div><h2>七周进度</h2>' +
-      "<p>课程按 7 周组织。第 3 周要有部署与访问测试，第 4 周中期三张地图 V0 必须公开可访问。</p></div></div>" +
-      '<div class="table-wrap"><table><thead><tr><th>周次</th><th>工作重点</th><th>本周应有的成果</th><th>状态</th></tr></thead><tbody>' +
-        ms.map(function (m) {
-          var tone = m.status === "已完成" ? "ok" : (m.status === "进行中" ? "info" : "plain");
-          return "<tr><td class=\"nowrap\">" + esc(m.week) + "</td><td>" + esc(m.goal) + "</td><td class=\"small muted\">" + esc(m.note || "—") + "</td><td>" + MS.badge(m.status, tone) + "</td></tr>";
-        }).join("") + "</tbody></table></div>" +
     "</section>";
   }
 })(window.MS = window.MS || {});

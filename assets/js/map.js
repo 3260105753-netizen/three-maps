@@ -335,7 +335,6 @@
         statTile(nodes.length, "本图节点") +
         statTile(withSrc + "/" + nodes.length, "有可打开来源") +
         statTile(gaps, "待核实 / 来源待补") +
-        statTile(meta.dataset === "seed" ? "示例" : (state.config.demoContent ? "演示" : "正式"), "数据状态") +
       "</div>" +
       '<p class="tiny muted" style="margin-top:12px">负责人：' + esc(meta.owner || "待指定") + " · 数据更新：" + esc(meta.updated || "—") + "</p>" +
       "</header>";

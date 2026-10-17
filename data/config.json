@@ -19,7 +19,7 @@
     "siteUrl": "https://3260105753-netizen.github.io/three-maps/",
     "aiEngineNote": "本站 AI 能力是「地图内检索引擎 + 关系推理」：每个回答都从 data/ 的节点、关系、来源里取，不调用大模型、不需要密钥，所以不会编造课程与论文，也能在现场离线稳定演示。"
   },
-  "demoContent": true,
+  "demoContent": false,
   "vocab": {
     "understandingLevels": [
       { "value": "已初步理解", "desc": "能够解释基本作用和主要关系", "tone": "ok" },

@@ -410,15 +410,6 @@
           s.sources + " 条来源，其中 " + s.inferred + " 条关系标为团队推断。</p>" +
         "</div>" +
       "</div>" +
-      '<div class="panel" style="margin-top:16px"><h3 style="margin-top:0">怎么把能力用在自己的内容上</h3>' +
-        '<p class="small">三项能力完全不依赖具体学科，只依赖数据结构。只要按字段契约填好节点与关系：' +
-        "挂上「前置」关系就会自动出现在查课程里；连成路径就能做关系解释；在 <code>routes.json</code> 里写两条路线就能做比较。</p>" +
-        '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
-          '<a class="btn btn-sm" href="docs/01-节点字段契约.md">字段契约</a>' +
-          '<a class="btn btn-sm" href="docs/03-AI能力计划.md">AI 能力计划</a>' +
-          '<a class="btn btn-sm" href="domain.html">去地图里补节点</a>' +
-        "</div>" +
-      "</div>" +
     "</section>";
   }
 })(window.MS = window.MS || {});
