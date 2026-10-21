@@ -1,27 +1,25 @@
 {
-  "_note": "技术路线表，供 AI 能力「路线比较」使用。一条路线就是一组节点 + 适用条件 + 局限，比较时会自动算共有/独有依赖。",
+  "_note": "技术路线表，供 AI 能力「路线比较」使用。两条路线依据领域地图的 r203（模仿学习 对比 VLA：两条路线常被放在一起比较）搭成，节点全部取自领域地图现有节点，未引入新概念。措辞待领域负责人确认。",
   "routes": [
     {
-      "id": "route.sample-a",
-      "name": "路线 A（示例）",
-      "summary": "示例路线：把这条路线依赖的节点列进来，比较功能就能自动算出它与另一条路线的共有项与独有项。",
-      "nodes": ["d.sample-task", "d.sample-concept", "d.sample-tool"],
-      "conditions": "这条路线在什么条件下成立、需要多少数据或算力。",
-      "limits": "它的主要局限，以及什么情况下应该换路线。",
-      "ecosystem": ["e.sample-org", "e.sample-oss"],
-      "sourceIds": ["s.sample-doc"],
-      "seed": true
+      "id": "route.vla",
+      "name": "端到端 VLA 路线",
+      "summary": "用一个大模型把图像与语言指令直接映射成动作，靠大规模跨本体示教数据换取泛化能力。",
+      "nodes": ["d.vla-concept", "d.openvla", "d.dataset-oxe", "d.task-fetch-deliver"],
+      "conditions": "需要大规模跨本体示教数据与可观算力；适合指令多样、单件任务较短的取物递送场景。",
+      "limits": "评测口径尚未统一，跨方案比较不可靠；开源只降低复现门槛，真机部署仍需数据与算力投入。",
+      "ecosystem": [],
+      "sourceIds": ["s.vla-survey", "s.openvla"]
     },
     {
-      "id": "route.sample-b",
-      "name": "路线 B（示例）",
-      "summary": "示例路线：换一个技术取向，让两条路线的差异能被比较出来。",
-      "nodes": ["d.sample-task", "d.sample-course"],
-      "conditions": "这条路线对团队能力与基础设施的要求。",
-      "limits": "它的主要局限。",
-      "ecosystem": ["e.sample-conf"],
-      "sourceIds": ["s.sample-plan"],
-      "seed": true
+      "id": "route.imitation",
+      "name": "模仿学习（专用小模型）路线",
+      "summary": "用遥操作示教数据训练一个专用策略，数据可控、模型小，但泛化范围被数据覆盖限制。",
+      "nodes": ["d.imitation-learning", "d.lerobot", "d.dataset-oxe", "d.task-fetch-deliver"],
+      "conditions": "有稳定采集条件、任务边界清楚时性价比最高；适合单一场景里反复执行。",
+      "limits": "换成没见过的物体就明显掉点（对应跨物体泛化失败）；泛化要靠扩充数据分布，不是换更大模型。",
+      "ecosystem": [],
+      "sourceIds": ["s.act", "s.dp", "s.lerobot"]
     }
   ]
 }

@@ -5,107 +5,188 @@
     "name": "领域地图",
     "subtitle": "这个领域有什么知识、方法和工具？它们怎样关联？以后在哪里学？",
     "purpose": "先给整体结构：典型任务 → 它暴露的问题 → 需要的概念、方法、技术路线 → 具体模型与软件 → 课程入口与动手资源。",
-    "owner": "（待填）领域地图负责人",
+    "owner": "卢哲瑜",
     "accent": "#5eead4",
     "updated": "2026-10-17",
     "dataset": "seed"
   },
   "nodes": [
     {
-      "id": "d.sample-task",
-      "name": "典型任务（示例）",
+      "id": "d.task-fetch-deliver",
+      "name": "一句话取物与递送",
       "type": "典型任务",
-      "summary": "示例节点：这里放本领域一个能被讲清楚、能被评测的具体任务，所有概念与工具都从它出发。",
-      "detail": "为什么从任务开始？因为「这个领域有什么」很难回答，「完成这个任务需要什么」可以回答。正式内容请替换为你们组的那个具体任务。",
+      "summary": "机器人听懂一句自然语言指令，在桌面找到指定物体、抓起并递到使用者手上，是本组选定的典型任务。",
+      "detail": "选它因为它同时牵动感知、决策、控制与交互四个环节，成败能被直接观察（东西有没有到手上）。所有概念与工具节点都从这条任务链出发。",
       "understanding": "已初步理解",
-      "understandingNote": "示例数据，理解程度待负责人填写。",
+      "understandingNote": "能讲清任务链各环节，但尚未亲手完成仿真或真机演示。",
       "evidence": "团队推断",
       "verify": "待核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
       "sourceIds": [
-        "s.sample-doc"
+        "s.helix",
+        "s.vla-survey"
       ],
       "tags": [
-        "示例",
-        "任务"
-      ],
-      "flags": [
-        "示例数据，待替换"
-      ],
-      "owner": "骨架示例",
-      "updated": "2026-10-17",
-      "seed": true
+        "典型任务",
+        "操作",
+        "人机交互"
+      ]
     },
     {
-      "id": "d.sample-concept",
-      "name": "核心概念（示例）",
+      "id": "d.cross-object-gap",
+      "name": "跨物体泛化失败",
+      "type": "问题",
+      "summary": "同一策略换成训练时没见过的物体就容易抓取失败，是取物任务走向日常使用的核心障碍。",
+      "detail": "失败与物体材质、形状和训练数据分布强相关，不能只看演示视频里的成功率判断真实能力。",
+      "understanding": "已初步理解",
+      "understandingNote": "结合统一案例 C02 讨论过失败归因，但没读过原始实验数据。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
+      "sourceIds": [
+        "s.vla-survey",
+        "s.helix"
+      ],
+      "tags": [
+        "泛化",
+        "失败模式"
+      ]
+    },
+    {
+      "id": "d.vla-concept",
+      "name": "视觉-语言-动作模型",
       "type": "概念",
-      "summary": "示例节点：这里放一个支撑上面那个任务的关键概念，用一句话说清它解决什么问题。",
-      "understanding": "待深入学习",
-      "understandingNote": "示例数据，待负责人填写真实状态。",
-      "evidence": "团队推断",
-      "verify": "待核实",
+      "summary": "把相机图像和语言指令直接映射为机器人动作的大模型范式，让听懂指令和动手执行合进一个模型。",
+      "detail": "代表工作 RT-2 把动作编码成文本 token 与视觉语言数据联合训练；综述统计已有 80 余个 VLA 模型，但评测口径尚不统一。",
+      "understanding": "已初步理解",
+      "understandingNote": "能解释输入输出以及和分层流水线的区别，没读过训练细节。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
       "sourceIds": [
-        "s.sample-doc"
+        "s.rt2",
+        "s.vla-survey"
       ],
       "tags": [
-        "示例",
-        "概念"
-      ],
-      "flags": [
-        "示例数据，待替换"
-      ],
-      "owner": "骨架示例",
-      "updated": "2026-10-17",
-      "seed": true
+        "VLA",
+        "大模型",
+        "端到端"
+      ]
     },
     {
-      "id": "d.sample-tool",
-      "name": "关键工具（示例）",
+      "id": "d.imitation-learning",
+      "name": "模仿学习（示教学习）",
+      "type": "方法",
+      "summary": "从人类遥操作示教数据中直接学习动作策略的方法，不依赖人工编写控制规则。",
+      "detail": "ACT 用低成本双臂硬件采集示教，Diffusion Policy 用扩散模型输出动作序列；适合数据可采集的场景，泛化能力受数据覆盖范围限制。",
+      "understanding": "已初步理解",
+      "understandingNote": "读过论文摘要与解读文章，没跑过训练代码。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
+      "sourceIds": [
+        "s.act",
+        "s.dp"
+      ],
+      "tags": [
+        "模仿学习",
+        "遥操作",
+        "数据采集"
+      ]
+    },
+    {
+      "id": "d.openvla",
+      "name": "OpenVLA 开源模型",
+      "type": "模型",
+      "summary": "开源权重与训练代码的 VLA 模型，降低了复现与横向比较的门槛，但真机部署仍需数据与算力投入。",
+      "detail": "在 Open X-Embodiment 聚合的约 97 万条真实机器人示教轨迹上训练；开源降的是复现门槛，不是数据与真机验证门槛。",
+      "understanding": "待深入学习",
+      "understandingNote": "知道它是开源 VLA 的代表，尚未下载权重或跑过推理。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
+      "sourceIds": [
+        "s.openvla",
+        "s.oxe"
+      ],
+      "tags": [
+        "开源",
+        "VLA",
+        "复现"
+      ]
+    },
+    {
+      "id": "d.lerobot",
+      "name": "LeRobot 开源工具链",
       "type": "软件",
-      "summary": "示例节点：这里放一个真正能上手用的软件、框架或模型，写清它承担任务链里的哪一环。",
-      "understanding": "已经尝试",
-      "understandingNote": "示例数据，待负责人填写是否亲手跑过。",
-      "evidence": "团队推断",
-      "verify": "待核实",
+      "summary": "Hugging Face 维护的机器人学习开源库，集成数据采集、训练脚本与 ACT、Diffusion Policy 等策略实现。",
+      "detail": "对新生最友好的动手入口之一：可用公开数据集在本地跑通一次策略训练，再谈真机部署。",
+      "understanding": "待深入学习",
+      "understandingNote": "读过仓库 README 与教程目录，尚未亲手跑通训练示例（跑过之后改成「已经尝试」）。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
       "sourceIds": [
-        "s.sample-doc"
+        "s.lerobot"
       ],
       "tags": [
-        "示例",
-        "工具"
-      ],
-      "flags": [
-        "示例数据，待替换"
-      ],
-      "owner": "骨架示例",
-      "updated": "2026-10-17",
-      "seed": true
+        "开源工具",
+        "动手入口"
+      ]
     },
     {
-      "id": "d.sample-course",
-      "name": "相关课程（示例）",
-      "type": "课程",
-      "summary": "示例节点：课程节点必须写清「对应什么能力、依据哪份培养方案」，没有依据就标待核实。",
-      "understanding": "待深入学习",
-      "understandingNote": "示例数据，待负责人对照培养方案确认。",
-      "evidence": "团队推断",
-      "verify": "待核实",
+      "id": "d.dataset-oxe",
+      "name": "Open X-Embodiment 数据集",
+      "type": "数据与资源",
+      "summary": "跨 21 家机构、22 种机器人本体聚合的真实操作数据集，是训练通用操作模型的基础资源。",
+      "detail": "配套 RT-X 模型实验显示跨本体数据能提升迁移能力；项目主页提供数据下载入口与本体清单。",
+      "understanding": "已初步理解",
+      "understandingNote": "能说明规模与用途，没下载过数据本体。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
       "sourceIds": [
-        "s.sample-plan"
+        "s.oxe",
+        "s.oxe-site"
       ],
       "tags": [
-        "示例",
-        "课程"
+        "数据集",
+        "跨本体"
+      ]
+    },
+    {
+      "id": "d.course-ml",
+      "name": "机器学习（按本校课表改名）",
+      "type": "课程",
+      "summary": "提供监督学习与梯度下降等基础，是理解模仿学习和 VLA 训练方式的前置课程。",
+      "detail": "占位节点：请替换成本专业培养方案里的真实课程名，并补 courseBasis 原文依据；拿不到原文就保持「待核实」。",
+      "understanding": "已初步理解",
+      "understandingNote": "课程内容以培养方案为准，目前未核对原文。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "owner": "卢哲瑜",
+      "updated": "2026-10-18",
+      "courseLabel": "前置基础",
+      "courseAbility": "学完能解释损失函数、梯度下降与过拟合，为理解策略训练打基础。",
+      "courseBasis": "待补：需引用本专业培养方案或课程大纲原文，不能只凭课名判断。",
+      "sourceIds": [
+        "s.plan-gap"
+      ],
+      "tags": [
+        "课程",
+        "前置基础"
       ],
       "flags": [
-        "示例数据，待替换"
-      ],
-      "courseLabel": "前置基础",
-      "courseAbility": "学完能解释什么、能做什么，用一句话写。",
-      "courseBasis": "待补：必须引用本专业培养方案或课程大纲原文，不能只凭课名猜测。",
-      "owner": "骨架示例",
-      "updated": "2026-10-17",
-      "seed": true
+        "待核实",
+        "来源待补"
+      ]
     }
   ]
 }

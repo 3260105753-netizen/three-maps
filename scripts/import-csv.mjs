@@ -33,11 +33,11 @@ const nodeFile = arg("nodes") || path.join(ROOT, "inbox", "节点表.csv");
 const relFile = arg("relations") || path.join(ROOT, "inbox", "关系表.csv");
 const srcFile = arg("sources") || path.join(ROOT, "inbox", "来源表.csv");
 
-/* 允许的写法差异：负责人们用词不完全统一时在这里兜住 */
+/* 允许的写法差异：负责人们用词不完全统一时在这里兜住
+   注意：别名必须与「哪张地图」匹配，否则会把领域地图合法的「方法」误改成「分析方法」 */
 const TYPE_ALIAS = {
   "认识方法": "认识方法（观）",
-  "观": "认识方法（观）",
-  "方法": "分析方法"
+  "观": "认识方法（观）"
 };
 
 /* 「原以为：…｜触发：…｜现在：…｜仍不知道：…」这种一行写法也能吃 */

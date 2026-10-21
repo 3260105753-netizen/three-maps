@@ -244,12 +244,12 @@
     {
       "id": "s.plan-gap",
       "title": "培养方案 / 课程大纲（来源待补）",
-      "url": "",
-      "publisher": "",
-      "date": "",
-      "kind": "待补",
-      "verify": "来源待补",
-      "note": "课程关联必须依据培养方案、课程大纲或教师说明。本组尚未取得原文，因此所有课程节点标为待核实。"
+      "url": "https://zdbk.zju.edu.cn/jwglxt/js/plugins/pdfjs/web/viewer.htm?file=/jwglxt/pyfagl/pyfayl_cxPyfaylPdf.html%3Fid%3D20262117%26doType%3Dquery&gnmkdm=N153020&su=3260101175",
+      "publisher": "Zhejiang University",
+      "date": "2026",
+      "kind": "培养方案",
+      "verify": "待核实",
+      "note": "链接指向校内教务系统（需登录、含会话参数），其他人无法验证，因此按规范降为「待核实」。建议导出培养方案 PDF 或截图留档后，再改成已核实并说明见第几页。"
     },
     {
       "id": "s.sample-doc",
@@ -289,7 +289,7 @@
       "date": "2025-02",
       "kind": "官方页面",
       "verify": "已核实",
-      "note": "支撑具体事实：上半身35自由度、200Hz输出、S2约7—9Hz、S1为80M参数、约500小时遥操作数据、数千种未见物品、头与躯干运动历史上造成不稳定。同时它是厂商自述，涉及比较的部分须当\"他人观点\"处理。"
+      "note": "支撑具体事实：上半身35自由度、200Hz输出、数千种未见物品等。注意它是厂商自述，涉及比较的部分须当「他人观点」处理。"
     },
     {
       "id": "s.saycan",
