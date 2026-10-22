@@ -5,7 +5,7 @@
     "name": "认知地图",
     "subtitle": "面对这个领域的问题，我们怎样思考、分析、实践，并持续成长？",
     "purpose": "这一层不放知识，只放「怎么想」：认识方法（观）、可复用的分析方法（必须配案例）、能落到行动的习惯。",
-    "owner": "认知负责人",
+    "owner": "徐晨凯",
     "accent": "#fbbf24",
     "updated": "2026-10-17"
   },
@@ -20,7 +20,7 @@
       "understandingNote": "已用七层图做过一次\"换物体就失败\"的归因，能指出大概落在哪层；但没有真机实验，无法排除控制层。",
       "evidence": "事实",
       "verify": "来源待补",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course"
@@ -41,7 +41,7 @@
       "understandingNote": "三段能讲清并配了锚点论文；但第三段的\"评测口径不统一\"还没找到可直接引用的段落与页码。",
       "evidence": "事实",
       "verify": "来源待补",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course",
@@ -63,7 +63,7 @@
       "understandingNote": "在拿药案例上用过一次，把\"能不能抓住\"改写成\"能不能吃对药\"，结论随之从硬件转向交互。",
       "evidence": "事实",
       "verify": "来源待补",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course"
@@ -83,7 +83,7 @@
       "understandingNote": "表已做成，也用它分析过换杯子失败；但缺可视化调试记录，无法把感知失败与控制失败分开。",
       "evidence": "事实",
       "verify": "已核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "tags": [
         "分析方法",
@@ -101,7 +101,7 @@
       "understandingNote": "方法能说清并用在\"谁更强\"这个案例上；但还没读过两篇原文的实验设置章节，四问目前是形式上的检查。",
       "evidence": "事实",
       "verify": "来源待补",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course"
@@ -122,7 +122,7 @@
       "understandingNote": "三个案例都补了证伪方式；但只有反例清单真正跑起来之后才算形成习惯。",
       "evidence": "事实",
       "verify": "来源待补",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course"
@@ -143,7 +143,7 @@
       "understandingNote": "结构和推理已完成；完全没有真实用户访谈，结论强度只能算中等偏弱。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.helix",
@@ -172,7 +172,7 @@
       "understandingNote": "没有真机、也没跑过任何策略，控制层无法排除，这条判断目前只能算待验证的假设。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.helix",
@@ -201,7 +201,7 @@
       "understandingNote": "方法用对了，但依据全部来自官方博客与综述，没有一手复现，结论强度中等偏弱。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.helix",
@@ -231,7 +231,7 @@
       "understandingNote": "这是本组真实发生的排序变化，但需全体成员确认认同，避免写成\"个人想法\"。",
       "evidence": "团队推断",
       "verify": "待核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
         "s.helix",
@@ -259,7 +259,7 @@
       "understandingNote": "已开始记，但还没有连续四周的记录，暂时只能算启动。",
       "evidence": "事实",
       "verify": "已核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "tags": [
         "习惯",
@@ -277,7 +277,7 @@
       "understandingNote": "已登记手眼标定与力控两个缺口，但还没补完，解释能力仍停在\"知道它重要\"。",
       "evidence": "事实",
       "verify": "已核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "tags": [
         "习惯",
@@ -295,7 +295,7 @@
       "understandingNote": "还没开始实操，目前所有案例结论都来自二手材料，这是本组最大的短板。",
       "evidence": "事实",
       "verify": "已核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "tags": [
         "习惯",
@@ -313,7 +313,7 @@
       "understandingNote": "方法已定，但还没有真正跑过一次对照，属计划中。",
       "evidence": "事实",
       "verify": "已核实",
-      "owner": "认知负责人",
+      "owner": "徐晨凯",
       "updated": "2026-10-17",
       "tags": [
         "习惯",
