@@ -289,7 +289,7 @@
       "date": "2025-02",
       "kind": "官方页面",
       "verify": "已核实",
-      "note": "支撑具体事实：上半身35自由度、200Hz输出、数千种未见物品等。注意它是厂商自述，涉及比较的部分须当「他人观点」处理。"
+      "note": "支撑具体事实：上半身35自由度、200Hz输出、S2约7—9Hz、S1为80M参数、约500小时遥操作数据、数千种未见物品、头与躯干运动历史上造成不稳定。同时它是厂商自述，涉及比较的部分须当\"他人观点\"处理。"
     },
     {
       "id": "s.saycan",
@@ -350,6 +350,96 @@
       "kind": "待补",
       "verify": "来源待补",
       "note": "用于支撑\"安全约束会反向影响控制策略与可接受任务边界\"。"
+    },
+    {
+      "id": "s.agibot-world",
+      "title": "AgiBot World 数据集",
+      "url": "https://agibot-world.com/",
+      "publisher": "智元机器人",
+      "date": "2025",
+      "kind": "官方页面",
+      "verify": "待核实",
+      "note": "百万级真实采集轨迹的开源具身数据集，代表整机厂自建数据工厂路线。"
+    },
+    {
+      "id": "s.bd",
+      "title": "Boston Dynamics 官网",
+      "url": "https://www.bostondynamics.com/",
+      "publisher": "Boston Dynamics",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "Atlas 与 Spot 的运动控制长期作为高端整机性能参照系。"
+    },
+    {
+      "id": "s.droid",
+      "title": "DROID 数据集",
+      "url": "https://droid-dataset.github.io/",
+      "publisher": "DROID Team",
+      "date": "2024",
+      "kind": "官方页面",
+      "verify": "待核实",
+      "note": "强调场景与任务覆盖面的真实机器人操作数据集；规模与许可条款需核对。"
+    },
+    {
+      "id": "s.galbot",
+      "title": "银河通用机器人官网",
+      "url": "https://www.galbot.com/",
+      "publisher": "北京银河通用机器人",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "待核实",
+      "note": "轮式人形路线，选择零售等半结构化场景落地。"
+    },
+    {
+      "id": "s.libero",
+      "title": "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning",
+      "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "publisher": "GitHub",
+      "date": "2023",
+      "kind": "代码仓库",
+      "verify": "已核实",
+      "note": "长程操作与知识迁移基准；评测重点是迁移能力而非单任务成功率。"
+    },
+    {
+      "id": "s.shlab",
+      "title": "上海人工智能实验室官网",
+      "url": "https://www.shlab.org.cn/",
+      "publisher": "上海人工智能实验室",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "待核实",
+      "note": "国内具身智能开源侧的参与方之一；具体开源项目需补充核对。"
+    },
+    {
+      "id": "s.tesla",
+      "title": "Tesla AI",
+      "url": "https://www.tesla.com/AI",
+      "publisher": "Tesla",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "待核实",
+      "note": "Optimus 人形机器人项目的官方入口；量产进度需另行核对，厂商自述按他人观点处理。"
+    },
+    {
+      "id": "s.tsinghua",
+      "title": "清华大学官网",
+      "url": "https://www.tsinghua.edu.cn/",
+      "publisher": "清华大学",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "仅支持校级层面的机构存在；具体课题组与代表工作待细化，不得据此推断研究实力。"
+    },
+    {
+      "id": "s.ubtech",
+      "title": "优必选科技官网",
+      "url": "https://www.ubtrobot.com/",
+      "publisher": "深圳市优必选科技",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "人形机器人商用落地的先行厂商之一，走行业客户与教育场景。"
     }
   ]
 }

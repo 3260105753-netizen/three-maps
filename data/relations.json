@@ -321,6 +321,410 @@
       "sourceIds": [
         "s.vla-survey"
       ]
+    },
+    {
+      "id": "r.e01",
+      "from": "e.oss-oxe",
+      "to": "e.ds-oxe",
+      "type": "提供",
+      "label": "发布统一格式数据集",
+      "why": "Open X-Embodiment 项目把二十余种本体的轨迹整理成统一格式发布，是该数据集的直接来源，不是二次整理。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.oxe"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r.e02",
+      "from": "e.lab-deepmind",
+      "to": "e.ds-oxe",
+      "type": "采用",
+      "label": "用跨本体数据训练单一策略",
+      "why": "RT-X 系列在该数据集上联合训练，用多本体数据验证跨本体迁移是否真的成立。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.rt1"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r.e03",
+      "from": "e.co-pi",
+      "to": "e.ds-oxe",
+      "type": "采用",
+      "label": "用跨本体数据做预训练",
+      "why": "通用策略路线依赖大规模跨本体数据做预训练，单本体数据量不足以支撑泛化。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.pi0"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r.e04",
+      "from": "e.co-agibot",
+      "to": "e.ds-agibot-world",
+      "type": "提供",
+      "label": "开源自采真实轨迹",
+      "why": "智元把自家采集体系产出的轨迹整理成开源数据集发布，是整机厂把数据资产外溢的做法。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.agibot",
+        "s.agibot-world"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r.e05",
+      "from": "e.co-agibot",
+      "to": "e.oss-isaaclab",
+      "type": "采用",
+      "label": "用 GPU 仿真做训练与验证",
+      "why": "整机厂在大规模真机采集前，需要先用仿真批量筛掉不可行策略以控制采集成本。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.isaaclab"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e06",
+      "from": "e.lab-stanford",
+      "to": "e.oss-mujoco",
+      "type": "采用",
+      "label": "用物理仿真做前期验证",
+      "why": "低成本硬件路线需要先在高保真仿真里筛掉不可行的采集方案，再上真机。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.mujoco",
+        "s.act"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e07",
+      "from": "e.oss-lerobot",
+      "to": "e.oss-mujoco",
+      "type": "采用",
+      "label": "底层依赖物理仿真",
+      "why": "开源开发栈的仿真与数据回放环节需要物理引擎提供一致的接触行为。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.lerobot",
+        "s.mujoco"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r.e08",
+      "from": "e.oss-lerobot",
+      "to": "e.co-unitree",
+      "type": "协同",
+      "label": "低成本硬件配开源栈",
+      "why": "便宜本体加免费软件栈，才让高校与小团队既买得起又跑得动整套流程。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.lerobot",
+        "s.unitree"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e09",
+      "from": "e.lab-deepmind",
+      "to": "e.bench-libero",
+      "type": "采用",
+      "label": "用迁移基准做评测",
+      "why": "跨本体策略的价值要靠迁移能力证明，单任务成功率不足以说明真的泛化。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.libero"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e10",
+      "from": "e.lab-deepmind",
+      "to": "e.bench-rlbench",
+      "type": "采用",
+      "label": "用仿真基准做对照实验",
+      "why": "受控仿真条件下才能公平比较不同方法在同一批任务上的成功率。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.rlbench"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e11",
+      "from": "e.co-figure",
+      "to": "e.co-tesla",
+      "type": "竞争",
+      "label": "争夺人形整机的同一生态位",
+      "why": "两者都以人形整机加量产降本为目标，抢的是同一批场景客户与同一批工程人才。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.helix"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e12",
+      "from": "e.co-unitree",
+      "to": "e.co-agibot",
+      "type": "竞争",
+      "label": "在本体供给上直接竞争",
+      "why": "两者都向高校与创业团队供本体，价格与交付能力是正面交锋点。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.unitree",
+        "s.agibot"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e13",
+      "from": "e.co-ubtech",
+      "to": "e.co-agibot",
+      "type": "竞争",
+      "label": "争抢商用落地订单",
+      "why": "优必选先接行业客户、智元走整机加数据，两者都要拿下第一批付费场景。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.ubtech",
+        "s.agibot"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e14",
+      "from": "e.co-galbot",
+      "to": "e.co-agibot",
+      "type": "竞争",
+      "label": "在零售半结构化场景竞争",
+      "why": "两者都选择用可控场景先落地，零售货架是重合度最高的一块。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.galbot",
+        "s.agibot"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e15",
+      "from": "e.co-bd",
+      "to": "e.co-unitree",
+      "type": "对比",
+      "label": "高端与低成本两条路线常被比较",
+      "why": "波士顿动力证明性能上限，宇树证明成本下限，两者对照才能看出价格与能力的取舍。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.bd",
+        "s.unitree"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e16",
+      "from": "e.co-bd",
+      "to": "e.co-tesla",
+      "type": "对比",
+      "label": "常被放在一起比较整机路线",
+      "why": "两者都追求高动态运动能力，但一个卖整机方案、一个自用产线，商业路径完全不同。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.bd"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e17",
+      "from": "e.co-pi",
+      "to": "e.lab-deepmind",
+      "type": "竞争",
+      "label": "在同一技术路线上争夺先发",
+      "why": "两者都押注跨本体通用策略，学术团队与商业公司在此正面重叠。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.pi0",
+        "s.rt2"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e18",
+      "from": "e.conf-corl",
+      "to": "e.lab-stanford",
+      "type": "体现",
+      "label": "低成本遥操作工作在此发表",
+      "why": "ALOHA 一类低成本双臂采集方法是这一会议系列的代表性方向。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.corl",
+        "s.act"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r.e19",
+      "from": "e.co-agibot",
+      "to": "e.bench-libero",
+      "type": "采用",
+      "label": "用公开基准对外证明能力",
+      "why": "整机厂需要可对照的第三方评测来说明策略水平，不能只报自家场景数据。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.libero"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e20",
+      "from": "e.conf-icra",
+      "to": "e.conf-rss",
+      "type": "对比",
+      "label": "覆盖广度对方法严谨",
+      "why": "一个覆盖面广、录用量大，一个单轨严审、强调方法与理论保证；同一项工作投哪个，反映的是作者对贡献类型的自我定位。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.icra",
+        "s.rss"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e21",
+      "from": "e.conf-corl",
+      "to": "e.conf-icra",
+      "type": "对比",
+      "label": "专题会议对综合会议",
+      "why": "前者只收机器人学习方向、评审看真实机器人实验，后者覆盖本体控制感知全栈；偏学习的方法常两边都投，最终取决于实验偏真实还是偏系统。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.corl",
+        "s.icra"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e22",
+      "from": "e.ds-oxe",
+      "to": "e.ds-droid",
+      "type": "对比",
+      "label": "横向多本体对纵向多场景",
+      "why": "前者横向铺二十余种本体换泛化，后者纵向挖单一方向下的场景多样性；两者代表数据集设计的两种取向，选哪种取决于要证明泛化还是证明鲁棒。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.oxe",
+        "s.droid"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e23",
+      "from": "e.lab-shlab",
+      "to": "e.oss-isaaclab",
+      "type": "采用",
+      "label": "用 GPU 仿真做训练",
+      "why": "国内实验室要在有限真机数量下做大规模试错，只能依赖 GPU 并行仿真把训练吞吐拉起来。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.isaaclab",
+        "s.shlab"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e24",
+      "from": "e.lab-tsinghua",
+      "to": "e.bench-libero",
+      "type": "采用",
+      "label": "用公开基准对外评测",
+      "why": "高校团队要让结果可比，必须挂到公共基准上，否则单校自建任务的成功率无法与外部工作对照。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.libero",
+        "s.tsinghua"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r310",
+      "from": "e.ds-oxe",
+      "to": "d.dataset-oxe",
+      "type": "对应",
+      "label": "就是它的领域侧条目",
+      "why": "生态地图里的这份数据集与领域地图的 Open X-Embodiment 数据集是同一对象，两处分开写容易出现规模与机构数不一致，用「对应」把它们绑在一起。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.oxe"
+      ]
+    },
+    {
+      "id": "r311",
+      "from": "e.oss-lerobot",
+      "to": "d.lerobot",
+      "type": "对应",
+      "label": "就是它的领域侧条目",
+      "why": "生态里的 LeRobot 开源社区与领域里的 LeRobot 工具链是同一个项目，社区侧讲维护与生态位，领域侧讲它在任务链里承担哪一环。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lerobot"
+      ]
+    },
+    {
+      "id": "r312",
+      "from": "c.case-medicine",
+      "to": "e.co-figure",
+      "type": "采用",
+      "label": "依据的是它的公开材料",
+      "why": "拿药案例里「公开演示的验收是物体被拿起」这一判断，依据来自 Figure 关于 Helix 的官方说明，所以这条案例直接建立在它的公开材料上。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.helix"
+      ]
+    },
+    {
+      "id": "r313",
+      "from": "c.case-stronger",
+      "to": "e.co-figure",
+      "type": "质疑",
+      "label": "质疑其对比口径",
+      "why": "「谁更强不能直接比」这个案例质疑的正是把厂商自家测试结果当横向对比依据的做法，因此与它的宣传口径构成质疑关系。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.helix"
+      ]
     }
   ]
 }
