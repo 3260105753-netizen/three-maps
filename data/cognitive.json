@@ -24,7 +24,8 @@
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course",
-        "s.helix"
+        "s.helix",
+        "s.course-excerpt"
       ],
       "tags": [
         "认识方法",
@@ -50,7 +51,11 @@
         "s.saycan",
         "s.pi0",
         "s.gr1",
-        "s.rt1"
+        "s.rt1",
+        "s.assignment",
+        "s.cleargrasp",
+        "s.helix",
+        "s.openvla"
       ],
       "tags": [
         "认识方法",
@@ -71,7 +76,8 @@
       "owner": "徐晨凯",
       "updated": "2026-10-17",
       "sourceIds": [
-        "s.course"
+        "s.course",
+        "s.assignment"
       ],
       "tags": [
         "分析方法",
@@ -85,7 +91,7 @@
       "summary": "把失败按层拆开做排除法，找出到底是哪一层出的问题。",
       "detail": "我们做了一张七层归因表：每层配上\"若失败呈现这种特征就指向该层\"的判据，例如失败集中在透明反光物体则先怀疑感知层。",
       "understanding": "已经尝试",
-      "understandingNote": "表已做成，也用它分析过换杯子失败；但缺可视化调试记录，无法把感知失败与控制失败分开。 来源状态：其一，竞赛排障记录已按「训练 / 备份 / 传输」分阶段归因（见 s.debug-manual）；其二，21 局评测结果可按任务所需能力分层（见 s.robotwin-eval）。",
+      "understandingNote": "表已做成，也用它分析过换杯子失败；但缺可视化调试记录，无法把感知失败与控制失败分开。 来源状态：其一，竞赛排障记录已按「训练 / 备份 / 传输」分阶段归因（见 s.debug-manual）；其二，21 局评测结果可按任务所需能力分层（见 s.robotwin-eval）。 另有一次可视化调试：自建最小仿真（2026-10-17，见 s.sim-debug），按归因表把失败定位到感知层（透明杯面 27.7% 无深度）与标定层（外参偏 2°/15mm → 16.2mm 偏移）；因是合成场景，不能给出真实失败率。",
       "evidence": "事实",
       "verify": "待核实",
       "owner": "徐晨凯",
@@ -97,7 +103,11 @@
       ],
       "sourceIds": [
         "s.robotwin-eval",
-        "s.debug-manual"
+        "s.debug-manual",
+        "s.assignment",
+        "s.course",
+        "s.sim-debug",
+        "s.course-excerpt"
       ]
     },
     {
@@ -114,7 +124,8 @@
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course",
-        "s.vla-survey"
+        "s.vla-survey",
+        "s.assignment"
       ],
       "tags": [
         "分析方法",
@@ -136,7 +147,8 @@
       "updated": "2026-10-17",
       "sourceIds": [
         "s.course",
-        "s.popper"
+        "s.popper",
+        "s.assignment"
       ],
       "tags": [
         "分析方法",
@@ -274,7 +286,7 @@
       "summary": "每周记下一条能推翻我们自己判断的证据，写不出就说明结论太安全。",
       "detail": "反例直接进入对应案例的\"尚存疑问\"，避免结论停在不可证伪的说法上。",
       "understanding": "已经尝试",
-      "understandingNote": "已开始记，但还没有连续四周的记录，暂时只能算启动。 来源状态：习惯是否真的在执行，只能靠带日期的记录证明；目前只启动了一次，故标待核实，连续四周有记录后改已核实。",
+      "understandingNote": "已开始记，但还没有连续四周的记录，暂时只能算启动。 来源状态：W1 已有两条真实反例（PPT 无三观定义、方法表在作业说明而非 PPT），记录见 s.habit-log；连续四周才够「已核实」，W2–W4 尚未发生，当前只能算启动。",
       "evidence": "事实",
       "verify": "待核实",
       "owner": "徐晨凯",
@@ -283,6 +295,9 @@
         "习惯",
         "思维",
         "反例"
+      ],
+      "sourceIds": [
+        "s.habit-log"
       ]
     },
     {
@@ -303,7 +318,8 @@
         "知识缺口"
       ],
       "sourceIds": [
-        "s.debug-manual"
+        "s.debug-manual",
+        "s.habit-log"
       ]
     },
     {
@@ -325,7 +341,8 @@
       ],
       "sourceIds": [
         "s.robotwin-eval",
-        "s.robotwin-record"
+        "s.robotwin-record",
+        "s.habit-log"
       ]
     },
     {
@@ -335,7 +352,7 @@
       "summary": "每次尝试前先写下预测，事后对照差在哪，作为修正记录的原始素材。",
       "detail": "对照表三列：预测 / 实际 / 差异原因。没有预测的尝试不算一次有效尝试。",
       "understanding": "待深入学习",
-      "understandingNote": "方法已定，但还没有真正跑过一次对照，属计划中。 来源状态：对照表方法已定但没跑过一次，故标待核实。",
+      "understandingNote": "方法已定，但还没有真正跑过一次对照，属计划中。 来源状态：W1 已有两组预期与实际对照（标定误差原以为可忽略 → 实际 16.2mm；原以为 RGB 能看出失败 → 实际画面正常），记录见 s.habit-log；够三次才改「已核实」。",
       "evidence": "事实",
       "verify": "待核实",
       "owner": "徐晨凯",
@@ -344,6 +361,9 @@
         "习惯",
         "认识更新",
         "记录"
+      ],
+      "sourceIds": [
+        "s.habit-log"
       ]
     },
     {

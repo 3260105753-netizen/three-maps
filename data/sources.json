@@ -35,11 +35,11 @@
       "id": "s.rt1",
       "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
       "url": "https://arxiv.org/abs/2212.06817",
-      "publisher": "arXiv",
+      "publisher": "arXiv（Google DeepMind）",
       "date": "2022-12",
       "kind": "论文",
       "verify": "已核实",
-      "note": "大规模真实数据 + Transformer 策略的代表工作。"
+      "note": "用大规模真机演示训练 transformer 策略，把模仿学习做到多任务、上千条指令的量级；作为发展观第二段（学习式）的锚点：证明规模能换来任务覆盖。"
     },
     {
       "id": "s.openvla",
@@ -289,7 +289,7 @@
       "date": "2025-02",
       "kind": "官方页面",
       "verify": "已核实",
-      "note": "支撑具体事实：上半身35自由度、200Hz输出、数千种未见物品等。注意它是厂商自述，涉及比较的部分须当「他人观点」处理。"
+      "note": "支撑具体事实：上半身35自由度、200Hz输出、S2约7—9Hz、S1为80M参数、约500小时遥操作数据、数千种未见物品、头与躯干运动历史上造成不稳定。同时它是厂商自述，涉及比较的部分须当\"他人观点\"处理。"
     },
     {
       "id": "s.saycan",
@@ -313,11 +313,12 @@
     },
     {
       "id": "s.course",
-      "title": "课程讲义：人工智能前沿与创新（认识方法与分析方法部分）",
+      "title": "2026-10-17 第三讲《三张活地图》课堂 PPT（孙凌云）",
       "publisher": "课程讲义",
-      "kind": "待补",
+      "kind": "官方文档",
       "verify": "来源待补",
-      "note": "系统观、发展观与六种分析方法的出处。尚未取得可公开引用的原文，需向老师索取或截图留档后再补url。补上这一个来源，可一次性解决 c.system-view、c.m-problem、c.m-compare、c.m-counter 四个节点的来源问题。"
+      "note": "原件在组内。P28 讲三张地图的分工，认知地图＝思考方法＋具体案例＋成长习惯；P29 用系统观拆开过程、逐步检查问题出在哪一环；P30 讲协作、中期公开网站与至少3名非本组同学独立反馈。全篇只出现「系统观」，未点名另外两个观，也没有六种分析方法的表格。未上网，故标来源待补；要公开链接就把 PDF 放进仓库 docs/。",
+      "date": "2026-10-17"
     },
     {
       "id": "s.calib",
@@ -341,11 +342,11 @@
     },
     {
       "id": "s.sim2real",
-      "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World（Tobin et al.，域随机化）",
-      "publisher": "arXiv（IROS 2017 录用）",
+      "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World",
+      "publisher": "arXiv（IROS 2017）",
       "kind": "论文",
       "verify": "已核实",
-      "note": "徐晨凯已登记的 Tobin 域随机化论文：通过随机化仿真渲染参数让策略对仿真与真实的差异鲁棒，支撑「仿真到现实存在系统性分布差异」。本条只作更新，不整表覆盖其他来源。",
+      "note": "用域随机化把仿真图像随机化后迁移到真机，首次做到只用仿真RGB图像就完成真实抓取；用于支撑：仿真是降成本手段，可信度取决于迁移手段，结论必须真机复核。",
       "url": "https://arxiv.org/abs/1703.06907",
       "date": "2017-03"
     },
@@ -473,21 +474,21 @@
       "id": "s.cleargrasp",
       "title": "ClearGrasp: 3D Shape Estimation of Transparent Objects for Manipulation",
       "url": "https://arxiv.org/abs/1910.02550",
-      "publisher": "arXiv（Synthesis.ai / Google / Columbia）",
+      "publisher": "arXiv（ICRA）",
       "date": "2019-10",
       "kind": "论文",
       "verify": "已核实",
-      "note": "摘要指出：透明物体因折射与镜面反射不满足经典立体视觉的几何假设，标准 3D 传感器给出的深度往往是「有噪声或失真的近似」，需要专门方法修正。它支撑的是机制，不是相关性——「换物体就失败」里最难的那类（透明、反光、无纹理）确实会让感知层先失效。（2026-10-23 核：读 PDF 首页摘要）"
+      "note": "指出透明物体的独特视觉属性会让标准3D传感器产生噪声或扭曲的深度估计，并专门训练网络修复深度后再交给抓取算法；是分模块思路的当代例子，也是C02案例中材质失效的直接依据。"
     },
     {
       "id": "s.gr1",
       "title": "Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation（GR-1）",
       "url": "https://arxiv.org/abs/2312.13139",
-      "publisher": "arXiv（ByteDance Research）",
+      "publisher": "arXiv（字节跳动）",
       "date": "2023-12",
       "kind": "论文",
       "verify": "已核实",
-      "note": "GR-1：GPT 式模型先在大规模视频上做生成式预训练，再在机器人数据上微调；在 CALVIN 基准上成功率 88.9%→94.9%，未见场景零样本 53.3%→85.4%。两点用处：(1) 是「基础模型＋预训练」阶段的一条具体路线；(2) 说明 CALVIN 这类基准真实存在且被用来横向报数——这与「没有统一基准」的说法需要区分开。（2026-10-23 核：读 PDF 首页摘要）"
+      "note": "用大规模视频生成预训练得到可迁移表征，再在机器人数据上微调；CALVIN 上成功率由88.9%升到94.9%，零样本未见场景由53.3%升到85.4%。作为发展观第三段的锚点：通用性来自预训练规模。"
     },
     {
       "id": "s.zju-plan",
@@ -588,6 +589,46 @@
       "kind": "内部记录",
       "verify": "已核实",
       "note": "按「训练 / 检查点与备份 / 文件传输」三个阶段整理的 30 类报错，每条含现象、根因、改法（例如：管道加 timeout 会丢缓冲区、备份脚本让两个盘互相纠正会死循环、sftp 在高延迟下比 scp 慢两个数量级）。它证明的是排障过程本身，不含模型效果数据。"
+    },
+    {
+      "id": "s.assignment",
+      "title": "课程大作业《三张活地图》作业说明",
+      "url": "https://icnw85hd2glo.feishuapp.com/app/app_17fwqe7be7c#assignment",
+      "publisher": "课程讲义（飞书）",
+      "date": "2026-10-17",
+      "kind": "官方文档",
+      "verify": "已核实",
+      "note": "发展观的定义、六种分析方法（问题定义／系统拆解／对照比较／演进分析／多目标取舍／反例与边界检查）、三张地图如何关联、中期与期末提交要求、同学互评办法都出自这里。另外「课程讲授的三个观」也只在这份说明里出现，且只举例系统观与发展观。"
+    },
+    {
+      "id": "s.sim-debug",
+      "title": "本组记录：一次可视化调试（自建最小仿真）",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-17-%E6%9C%80%E5%B0%8F%E4%BB%BF%E7%9C%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%B0%83%E8%AF%95/README.md",
+      "publisher": "本组（徐晨凯）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "自建最小仿真的一次可视化调试：原始画面 + 检测叠加 + 深度缺失图 + 标定偏移图，附参数（含随机种子 7）、一句话结论与可复跑脚本。结果：透明杯面 27.7% 像素无深度读数；外参偏 2°/15mm 造成 16.2mm 抓取点偏移。属于合成场景，只证明机制与量级，不代表真实失败率。"
+    },
+    {
+      "id": "s.habit-log",
+      "title": "本组记录：四条习惯的周记录（W1 已填，W2–W4 待续）",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-17-%E4%B9%A0%E6%83%AF%E8%AE%B0%E5%BD%95-W1.md",
+      "publisher": "本组（徐晨凯）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "W1（2026-10-17）真实记录：两条反例（PPT 里没有三观定义、六种分析方法表在作业说明里而不在 PPT）、一个知识缺口闭环（透明物体为何让深度失效）、一次小规模尝试、两组预期与实际对照。W2–W4 留空未编。"
+    },
+    {
+      "id": "s.course-excerpt",
+      "title": "本组整理：课程材料原文摘录（含 PPT 页码与作业说明方法表）",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-17-%E8%AF%BE%E7%A8%8B%E6%9D%90%E6%96%99%E5%8E%9F%E6%96%87%E6%91%98%E5%BD%95.md",
+      "publisher": "本组（徐晨凯整理）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "逐条摘录并标页码：第三讲 PPT 的 P28（三张地图分工）、P29（系统观用法）、P30（互评要求）；作业说明里的六种分析方法表原文。关键事实：六种分析方法不在 PPT 里，只在作业说明里——所以方法节点挂作业说明（s.assignment）才正确。为遵守版权未公开课件原文件，只公开摘录与页码。"
     }
   ]
 }
