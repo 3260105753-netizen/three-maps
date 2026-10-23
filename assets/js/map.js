@@ -131,16 +131,42 @@
         var W = 780, H = 540;
         // 节点多的时候标签会互相压住，默认只显示重点节点的标签
         var crowded = nodes.length > 14;
+        var LABEL_MAX = nodes.length > 20 ? 12 : 18;
         var layout = E.computeLayout(nodes, edges, {
-          width: W, height: H, iterations: crowded ? 460 : 340,
+          width: W, height: H, iterations: crowded ? 560 : 340,
           pad: crowded ? 54 : 84,
-          linkLength: crowded ? 78 : Math.max(70, Math.min(130, 1100 / Math.max(3, nodes.length)))
+          linkLength: crowded ? 104 : Math.max(70, Math.min(130, 1100 / Math.max(3, nodes.length)))
         });
         var pos = layout.positions;
         layoutCache = pos;
 
         // 按实际占用范围收紧 viewBox：图上没有大片空白，宽度也用满了
         var bb = layout.bbox || { minX: 0, minY: 0, maxX: W, maxY: H };
+
+        // 节点标签是水平居中的，靠边的节点会把字切掉（label 不计入 bbox）。
+        // 这里按标签实际宽度把 bbox 往左右各撑开「不够的那部分」，只撑需要的量。
+        function estLabelHalf(s) {
+          var w = 0;
+          for (var i = 0; i < s.length; i++) {
+            w += s.charCodeAt(i) > 0x2e80 ? 10.5 : 6;
+          }
+          return w / 2;
+        }
+        var overflowL = 0, overflowR = 0;
+        nodes.forEach(function (n) {
+          var p = pos[n.id];
+          if (!p) return;
+          var half = estLabelHalf(truncate(n.name, LABEL_MAX));
+          overflowL = Math.max(overflowL, half - (p.x - bb.minX));
+          overflowR = Math.max(overflowR, half - (bb.maxX - p.x));
+        });
+        bb = {
+          minX: bb.minX - Math.max(0, overflowL),
+          maxX: bb.maxX + Math.max(0, overflowR),
+          minY: bb.minY,
+          maxY: bb.maxY
+        };
+
         var vpad = 54;
         var vbX = Math.floor(bb.minX - vpad), vbY = Math.floor(bb.minY - vpad);
         var vbW = Math.max(120, Math.ceil(bb.maxX - bb.minX + vpad * 2));
@@ -169,7 +195,7 @@
           svg.push('<g class="g-node" data-id="' + esc(n.id) + '" tabindex="0" role="button" aria-label="' + esc(n.name) + '">' +
             "<title>" + esc(n.name) + " · " + esc(n.type) + "</title>" +
             '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + p.r + '" fill="' + tone + '" fill-opacity="0.18" stroke="' + tone + '" stroke-width="2"></circle>' +
-            '<text x="' + p.x + '" y="' + (p.y + p.r + 13) + '" text-anchor="middle">' + esc(truncate(n.name, 18)) + "</text></g>");
+            '<text x="' + p.x + '" y="' + (p.y + p.r + 13) + '" text-anchor="middle">' + esc(truncate(n.name, LABEL_MAX)) + "</text></g>");
         });
         svg.push("</svg>");
         host.innerHTML = svg.join("");

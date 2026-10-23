@@ -1010,6 +1010,32 @@
         "s.robotwin-record",
         "s.sim2real"
       ]
+    },
+    {
+      "id": "r240",
+      "from": "c.case-bench",
+      "to": "c.m-decompose",
+      "type": "用于",
+      "label": "在该案例中被使用",
+      "why": "案例没有停在「成功率 61.9%」这个总数上，而是按任务需要的能力分组再比，这正是系统拆解的动作：先分层，再判断失败落在哪一层。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.robotwin-eval"
+      ]
+    },
+    {
+      "id": "r241",
+      "from": "c.case-bench",
+      "to": "d.bench-robotwin",
+      "type": "体现",
+      "label": "是它的一次具体评测",
+      "why": "领域地图只写「RoboTwin 是双臂操作基准」，认知地图这一条给出该基准上的一次真实评测与拆解过程，两处合起来才能说明这个基准到底怎么用。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.robotwin-eval"
+      ]
     }
   ]
 }
