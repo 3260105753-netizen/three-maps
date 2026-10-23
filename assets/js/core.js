@@ -226,6 +226,13 @@
     parts.push('<div class="block"><h4>关系</h4>' + renderRelations(state, node) + "</div>");
     parts.push('<div class="block"><h4>来源</h4>' + renderSources(state, node._sourceIds, { verify: node.verify }) + "</div>");
 
+    /* 对此内容提反馈：把地图与条目带进反馈页（本站无后端，页面里只做引导，不做假表单） */
+    var fbMap = (node.id || "").split(".")[0] === "d" ? "domain" : (node.id || "").split(".")[0] === "e" ? "ecosystem" : "cognitive";
+    parts.push('<div class="block fb-entry"><a class="btn btn-sm" href="feedback.html?map=' + fbMap +
+      "&node=" + encodeURIComponent(node.id) +
+      '">对此内容提反馈</a><span class="tiny muted" style="margin-left:10px">会带上「' +
+      esc(node.name) + '」的出处，方便我们定位</span></div>');
+
     if (node.seed) {
       parts.push('<div class="block"><h4>这是一条示例数据</h4><p class="small muted">它只用来验证渲染与跳转。替换方式见 <a href="data/README.md">data/README.md</a> 与 <a href="docs/01-节点字段契约.md">字段契约</a>。</p></div>');
     }

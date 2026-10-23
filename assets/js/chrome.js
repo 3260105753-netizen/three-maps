@@ -12,6 +12,7 @@
     { id: "cognitive", label: "认知地图", href: "cognitive.html" },
     { id: "ai", label: "AI 能力", href: "ai.html" },
     { id: "changelog", label: "更新记录", href: "changelog.html" },
+    { id: "feedback", label: "反馈与建议", href: "feedback.html" },
     { id: "about", label: "关于与贡献", href: "about.html" }
   ];
 
@@ -42,7 +43,7 @@
         "</a>" +
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="展开导航">☰</button>' +
         '<nav class="nav" id="site-nav" aria-label="主导航">' + links +
-          '<a class="nav-cta" href="changelog.html#feedback">给本组反馈</a>' +
+          '<a class="nav-cta" href="feedback.html">给本组反馈</a>' +
         "</nav>" +
       "</div>";
 

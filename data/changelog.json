@@ -1,6 +1,43 @@
 {
-  "_note": "更新记录。课程要求记录「日期、更新对象、依据、修改内容及原因」，所以每条都必须有 date / target / what / why / basis。type 决定页面上的颜色：技术、内容、反馈、修正、发布。",
+  "_note": "更新记录，按时间倒序。字段：version 版本号 / date 日期 / target 涉及条目 / what 具体修改 / why 原因 / basis 依据 / who 分工 / open 尚存问题 / next 下一步 / check 检查结果 / feedbackIds 相关反馈编号。 版本划分：v0.1（10-17 首版）、v0.2（10-21）、v0.3（10-22）、v0.4（10-23 集中更新）。早期条目缺 open/next 的显示为「未记录」，不事后补写。",
   "entries": [
+    {
+      "id": "ch-20261023-29",
+      "version": "v0.5",
+      "date": "2026-10-23",
+      "week": "第 6 周",
+      "type": "内容",
+      "who": "张艺邦",
+      "target": "新增「反馈与建议」独立页；条目详情加提反馈入口；更新记录补版本号与四栏",
+      "what": "1) 新建 feedback.html：说明本站是静态站点、页面内不能直接提交，给出三条可行渠道（课程群 / GitHub Issue / 课堂当面），并列出收到的反馈与处理状态，支持按地图与状态筛选；2) 每个条目详情加「对此内容提反馈」，跳转时带上地图与条目并给出可复制的模板；3) 更新记录补 version 字段（v0.1–v0.5）与「尚存问题 / 下一步 / 检查结果 / 相关反馈编号」四栏；4) 首页版本号改读 config.site.version。",
+      "why": "课程把「反馈与建议」列为六个页面之一，原来只有更新记录页里的一个区块。另外无法在线提交时必须如实说明——放一个点了没反应的按钮，比不放更糟。",
+      "basis": "课程教程第四、六、九、十二节",
+      "open": "收到第一条真实反馈后，才能验证「反馈 → 版本 → 互相跳转」这条链路。",
+      "next": "邀请至少 3 位非本组同学试用，把反馈录进 data/feedback.json。",
+      "check": "页面已渲染核对（含带参数跳转）；结构与字段校验通过",
+      "links": [
+        "feedback.html",
+        "changelog.html"
+      ]
+    },
+    {
+      "id": "ch-20261023-30",
+      "version": "v0.5",
+      "date": "2026-10-23",
+      "week": "第 6 周",
+      "type": "修正",
+      "who": "张艺邦",
+      "target": "全站配色：深色主题 → 近白背景、深色文字",
+      "what": "把 CSS 变量与硬编码色值统一改为浅色体系：正文底色 #f6f7f9、卡片纯白、正文 #16202e、强调色改为深青 #0d7c6b；去掉大面积彩色渐变，保留极淡的网格底纹。",
+      "why": "课程要求「整体正式、干净，适合大学课程：近白背景、深色文字」，原站是深色主题，与要求相反。改色只动样式，不动任何内容。",
+      "basis": "课程教程第十三节「视觉与操作要求」",
+      "open": "深色主题下调整过的对比度需要重新抽查一遍（地图节点、徽章、图表）。",
+      "next": "逐页抽查对比度，必要时单独调徽章与图表的亮色。",
+      "check": "首页、认知地图、更新记录、反馈页已截图核对；结构与字段校验通过",
+      "links": [
+        "index.html"
+      ]
+    },
     {
       "id": "ch-20261023-28",
       "date": "2026-10-23",
@@ -13,7 +50,9 @@
       "basis": "组内确认：项目于 2026-10-17 至 10-23 集中完成",
       "links": [
         "cognitive.html#node=c.h-think"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-27",
@@ -28,7 +67,9 @@
       "links": [
         "cognitive.html#node=c.h-learn",
         "evidence/2026-10-17-手眼标定闭环.md"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-26",
@@ -42,7 +83,9 @@
       "basis": "huggingface/lerobot pyproject.toml；huggingface/gym-aloha pyproject.toml",
       "links": [
         "ecosystem.html#node=e.oss-lerobot"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-24",
@@ -56,7 +99,9 @@
       "basis": "交付包中的《课程讲义原文摘录》（PPT 逐页文本提取 + 作业说明原文表）",
       "links": [
         "cognitive.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-25",
@@ -71,7 +116,9 @@
       "links": [
         "cognitive.html#node=c.m-decompose",
         "evidence/2026-10-17-最小仿真可视化调试/README.md"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-23",
@@ -86,7 +133,9 @@
       "links": [
         "cognitive.html#node=c.h-learn",
         "evidence/2026-10-23-训练与传输报错排查手册.md"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-22",
@@ -100,7 +149,9 @@
       "basis": "OpenVLA 论文（arXiv 2406.09246）正文与图注逐句核对；路线与概念的定义见 d.route-vla、d.vla-concept 节点",
       "links": [
         "domain.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-21",
@@ -114,7 +165,9 @@
       "basis": "RoboTwin 评测输出截图（2026-10-23，21 局 13 次成功）",
       "links": [
         "cognitive.html#node=c.case-bench"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-20",
@@ -129,7 +182,9 @@
       "links": [
         "domain.html#node=d.bench-robotwin",
         "cognitive.html#node=c.h-practice"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-19",
@@ -145,7 +200,9 @@
         "ecosystem.html#node=e.co-robbyant",
         "domain.html#node=d.bench-robotwin",
         "evidence/2026-10-23-RoboTwin转LeRobot操作记录.md"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-18",
@@ -159,7 +216,9 @@
       "basis": "培养方案第 6 页专业必修课程表（截图为来源）；先修依赖为团队推断",
       "links": [
         "domain.html#node=d.course-llm"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-17",
@@ -173,7 +232,9 @@
       "basis": "培养方案第 6、7 页建议修读学期（截图为来源）；先修依赖关系为团队推断",
       "links": [
         "domain.html#node=d.course-ml"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-16",
@@ -188,7 +249,9 @@
       "links": [
         "domain.html#node=d.course-embodied",
         "evidence/README.md"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-14",
@@ -202,7 +265,9 @@
       "basis": "《2026级人工智能专业培养方案》第 7 页（原文不公开，本组核对）",
       "links": [
         "domain.html#node=d.course-embodied"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-15",
@@ -216,7 +281,9 @@
       "basis": "组内决定：校内文件不公开",
       "links": [
         "domain.html#node=d.course-ml"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-12",
@@ -231,7 +298,9 @@
       "links": [
         "domain.html#node=d.course-ml",
         "evidence/2026-10-23-培养方案-2026级人工智能专业.pdf"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-13",
@@ -245,7 +314,9 @@
       "basis": "两次导入领域地图时观察到跨图连线从 8 条掉到 4 条",
       "links": [
         "domain.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-11",
@@ -259,7 +330,9 @@
       "basis": "导入后复查（audit.mjs + 逐条核对）",
       "links": [
         "domain.html#node=d.sim2real"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-10",
@@ -273,7 +346,9 @@
       "basis": "卢哲瑜 2026-10-23 提交的初稿（1）三表",
       "links": [
         "domain.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-08",
@@ -287,7 +362,9 @@
       "basis": "徐晨凯 2026-10-23 提交的关系表（16 行）",
       "links": [
         "cognitive.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-09",
@@ -301,7 +378,9 @@
       "basis": "徐晨凯 2026-10-23 第 6 版填写说明 §10②",
       "links": [
         "cognitive.html#node=c.rev-1"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-07",
@@ -316,7 +395,9 @@
       "links": [
         "ai.html#panel-3",
         "docs/07-待办清单.md"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-05",
@@ -330,7 +411,9 @@
       "basis": "组内提供的三篇 PDF 首页摘要（ClearGrasp 1910.02550、GR-1 2312.13139、RT-1 2212.06817）",
       "links": [
         "cognitive.html#node=c.case-cup"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-06",
@@ -344,7 +427,9 @@
       "basis": "GR-1 论文（arXiv 2312.13139）在 CALVIN 上报告 88.9%→94.9%；生态地图已有 LIBERO、RLBench 两个基准节点",
       "links": [
         "cognitive.html#node=c.case-stronger"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-04",
@@ -358,7 +443,9 @@
       "basis": "导入第 3 版节点表后的复查",
       "links": [
         "cognitive.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-03",
@@ -372,7 +459,9 @@
       "basis": "徐晨凯 2026-10-23 提交的 节点表/来源表（第 3 版）与 00-填写说明",
       "links": [
         "cognitive.html"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-02",
@@ -386,7 +475,9 @@
       "basis": "关系类型定义见 docs/01-节点字段契约.md；ALOHA 论文（arXiv 2304.13705）为 RSS 2023",
       "links": [
         "ecosystem.html#node=e.conf-corl"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261023-01",
@@ -401,7 +492,9 @@
       "links": [
         "domain.html#node=d.openvla",
         "ecosystem.html#node=e.co-agibot"
-      ]
+      ],
+      "version": "v0.4",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261022-01",
@@ -415,7 +508,9 @@
       "basis": "生态负责人 2026-10-18 提交的 节点表/关系表/来源表 与 three-maps-已配置.zip",
       "links": [
         "ecosystem.html"
-      ]
+      ],
+      "version": "v0.3",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261022-02",
@@ -430,7 +525,9 @@
       "links": [
         "ecosystem.html",
         "cognitive.html"
-      ]
+      ],
+      "version": "v0.3",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261021-01",
@@ -445,7 +542,9 @@
       "links": [
         "domain.html",
         "ai.html#panel-3"
-      ]
+      ],
+      "version": "v0.2",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261021-02",
@@ -459,7 +558,9 @@
       "basis": "原始链接含 jwglxt 会话参数与学号，非公开资源",
       "links": [
         "domain.html#node=d.course-ml"
-      ]
+      ],
+      "version": "v0.2",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-08",
@@ -473,7 +574,9 @@
       "basis": "认知负责人 2026-10-17 提交的 节点表/关系表/来源表 与 00-填写说明.md",
       "links": [
         "cognitive.html"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-07",
@@ -487,7 +590,9 @@
       "basis": "本组飞书案例表（2026-10-17 版）+ 课程讲义六种分析方法与三个「观」",
       "links": [
         "cognitive.html#node=c.c01"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-06",
@@ -502,7 +607,9 @@
       "links": [
         "docs/04-部署与访问测试记录.md",
         "about.html#access"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-05",
@@ -516,7 +623,9 @@
       "basis": "课程要求 8.4「中期起必须公开访问」",
       "links": [
         "docs/04-部署与访问测试记录.md"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-04",
@@ -530,7 +639,9 @@
       "basis": "课程要求第十一部分「反馈必须得到回应」",
       "links": [
         "changelog.html#feedback"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-03",
@@ -545,7 +656,9 @@
       "links": [
         "ai.html",
         "docs/03-AI能力计划.md"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-02",
@@ -560,7 +673,9 @@
       "links": [
         "docs/01-节点字段契约.md",
         "templates/节点表.csv"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     },
     {
       "id": "ch-20261017-01",
@@ -574,7 +689,9 @@
       "basis": "课程要求 10.1「中期提交」与 8.4「公开访问」",
       "links": [
         "index.html"
-      ]
+      ],
+      "version": "v0.1",
+      "check": "结构与字段校验通过（node scripts/validate.mjs）；页面已刷新核对"
     }
   ],
   "template": {

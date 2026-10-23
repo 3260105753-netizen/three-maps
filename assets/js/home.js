@@ -34,7 +34,7 @@
   };
   function hero(cfg, s, maps, demo) {
     return '<header class="hero">' +
-      '<p class="eyebrow">' + esc(cfg.groupName || "小组名称待填") + " · " + esc(cfg.term || "") + " · " + esc(cfg.version || "V0") + "</p>" +
+      '<p class="eyebrow">' + esc(cfg.groupName || "小组名称待填") + " · " + esc(cfg.term || "") + " · " + esc((cfg.site && cfg.site.version) || "V0.1") + "</p>" +
       "<h1>" + esc(cfg.domain || "选题领域待填") + "</h1>" +
       '<p class="hero-line">' + esc(cfg.domainLine || "一句话定义待填。") + "</p>" +
       '<div class="hero-meta">' +

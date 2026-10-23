@@ -16,7 +16,7 @@
         '<header class="page-head">' +
           '<p class="eyebrow">更新记录</p>' +
           "<h1>改了什么、为什么改</h1>" +
-          '<p class="page-q">课程要求「重要更新记录：日期、更新对象、依据、修改内容及原因」。所以每条记录都有这五项，缺一项就算没写。反馈处理也在这一页：同学提出什么 → 我们怎样核实 → 修改了什么 → 为什么调整或保留原判断。</p>' +
+          '<p class="page-q">课程要求「重要更新记录：日期、更新对象、依据、修改内容及原因」。所以每条记录都有这五项，缺一项就算没写。版本号从 v0.1 起，按发布日期归并。反馈的完整列表与处理状态见 <a href="feedback.html">反馈与建议</a> 页；这一页只在版本记录里引用反馈编号。</p>' +
           '<div class="stat-row" style="margin-top:22px">' +
             '<div class="stat"><b>' + entries.length + "</b><span>条更新记录</span></div>" +
             '<div class="stat"><b>' + (state.feedback.items || []).length + "</b><span>条非本组反馈</span></div>" +
@@ -50,14 +50,24 @@
       host.innerHTML = '<ul class="timeline">' + list.map(function (e) {
         var tone = e.type === "反馈" ? "var(--amber)" : (e.type === "修正" ? "var(--rose)" : (e.type === "发布" ? "var(--blue)" : "var(--accent)"));
         return '<li class="tl-item" style="--tone:' + tone + '">' +
-          '<div class="tl-head"><span class="tl-date">' + esc(e.date) + "</span>" +
+          '<div class="tl-head">' +
+            (e.version ? '<span class="badge ver">' + esc(e.version) + "</span>" : "") +
+            '<span class="tl-date">' + esc(e.date) + "</span>" +
             '<span class="badge plain">' + esc(e.type) + "</span>" +
             '<span>' + esc(e.week || "") + "</span>" +
             '<span class="mono tiny">' + esc(e.id || "") + "</span></div>" +
           "<h4>" + esc(e.target || "") + "</h4>" +
           '<p class="tl-what">' + esc(e.what) + "</p>" +
           '<p class="tl-why">为什么改：' + esc(e.why || "—") + "</p>" +
-          '<p class="tl-basis">依据：' + esc(e.basis || "—") + " · 记录人：" + esc(e.who || "—") + "</p>" +
+          '<p class="tl-basis">依据：' + esc(e.basis || "—") + " · 分工：" + esc(e.who || "—") + "</p>" +
+          '<p class="tl-basis">尚存问题：' + esc(e.open || "未记录") +
+            "　·　下一步：" + esc(e.next || "未记录") + "</p>" +
+          '<p class="tl-basis">检查结果：' + esc(e.check || "待检查") + "</p>" +
+          (e.feedbackIds && e.feedbackIds.length
+            ? '<p class="tl-basis">相关反馈：' + e.feedbackIds.map(function (f) {
+                return '<a href="feedback.html#fb-' + esc(f) + '">' + esc(f) + "</a>";
+              }).join("、") + "</p>"
+            : "") +
           ((e.links || []).length ? '<div class="chip-row" style="margin-top:6px">' + e.links.map(function (l) {
             return '<a class="chip" href="' + esc(l) + '">' + esc(l) + "</a>";
           }).join("") + "</div>" : "") +
@@ -81,7 +91,7 @@
 
     return '<section class="section-block" id="feedback">' +
       '<div class="section-head"><div><h2>非本组同学反馈及处理结果</h2>' +
-      "<p>课程要求至少 3 名非本组同学的独立反馈，并且每条都要有回应：提出了什么 → 我们怎样核实 → 修改了什么 → 为什么调整或保留原判断。不采纳也要写理由。</p></div>" +
+      "<p>课程要求至少 3 名非本组同学的独立反馈，并且每条都要有回应：提出了什么 → 我们怎样核实 → 修改了什么 → 为什么调整或保留原判断。不采纳也要写理由。完整列表与处理状态见 <a href=\"feedback.html\">反馈与建议</a> 页；这一页负责在版本记录里引用反馈编号。</p></div>" +
       '<span class="chip">已收到 ' + items.length + " / 至少 3 条</span></div>" +
 
       '<div class="grid g2">' +
