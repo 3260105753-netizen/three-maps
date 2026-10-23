@@ -48,8 +48,8 @@
       "publisher": "arXiv",
       "date": "2024-06",
       "kind": "论文",
-      "verify": "已核实",
-      "note": "开源VLA权重降低了复现与横向比较的门槛；用于说明开源降的是复现门槛而不是数据与真机门槛。（2026-10-23 核：arXiv 2406.09246 摘要写明 7B 开源 VLA、97 万条真实示教、支持在 Open X-Embodiment 上训练）"
+      "verify": "待核实",
+      "note": "开源VLA权重降低了复现与横向比较的门槛；用于说明开源降的是复现门槛而不是数据与真机门槛。"
     },
     {
       "id": "s.dp",
@@ -317,39 +317,47 @@
       "publisher": "课程讲义",
       "kind": "待补",
       "verify": "来源待补",
-      "note": "系统观、发展观与六种分析方法的出处。尚未取得可公开引用的原文，需向老师索取或截图留档后再补url。"
+      "note": "系统观、发展观与六种分析方法的出处。尚未取得可公开引用的原文，需向老师索取或截图留档后再补url。补上这一个来源，可一次性解决 c.system-view、c.m-problem、c.m-compare、c.m-counter 四个节点的来源问题。"
     },
     {
       "id": "s.calib",
-      "title": "手眼标定与坐标变换（文献待定）",
-      "publisher": "待补",
-      "kind": "待补",
-      "verify": "来源待补",
-      "note": "用于支撑\"标定存在系统性偏差时，物体看得见但总差一点\"的判断；目前无可靠出处。"
+      "title": "Hand-Eye Calibration",
+      "publisher": "The International Journal of Robotics Research（HAL开放存档）",
+      "kind": "论文",
+      "verify": "待核实",
+      "note": "手眼标定的经典论文，讨论 AX=XB 的求解；用于支撑：标定存在系统性偏差时，物体会看得见但总是差一点。卷期与页码尚未在DBLP核对，故标待核实。",
+      "url": "https://inria.hal.science/inria-00590034",
+      "date": "1995-06"
     },
     {
       "id": "s.longhorizon",
-      "title": "长时序操作中的误差累积（文献待定）",
-      "publisher": "待补",
-      "kind": "待补",
-      "verify": "来源待补",
-      "note": "用于支撑\"单步更准不等于整条任务完成率更高\"；需指定具体文献与页码。"
+      "title": "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning",
+      "publisher": "arXiv（AISTATS 2011）",
+      "kind": "论文",
+      "verify": "已核实",
+      "note": "指出序列预测中未来的观测依赖此前的动作，独立同分布假设不成立，误差会沿轨迹被放大；用于支撑：单步更准不等于整条任务的完成率更高。",
+      "url": "https://arxiv.org/abs/1011.0686",
+      "date": "2010-11"
     },
     {
       "id": "s.sim2real",
-      "title": "仿真到真机迁移与域随机化（文献待定）",
-      "publisher": "待补",
-      "kind": "待补",
-      "verify": "来源待补",
-      "note": "用于支撑\"仿真是降成本手段，不是可信度来源，结论必须真机复核\"。"
+      "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World",
+      "publisher": "arXiv（IROS 2017）",
+      "kind": "论文",
+      "verify": "已核实",
+      "note": "用域随机化把仿真图像随机化后迁移到真机，首次做到只用仿真RGB图像就完成真实抓取；用于支撑：仿真是降成本手段，可信度取决于迁移手段，结论必须真机复核。",
+      "url": "https://arxiv.org/abs/1703.06907",
+      "date": "2017-03"
     },
     {
       "id": "s.safety",
-      "title": "人机共处场景的安全要求与责任划分（来源待定）",
-      "publisher": "待补",
-      "kind": "待补",
-      "verify": "来源待补",
-      "note": "用于支撑\"安全约束会反向影响控制策略与可接受任务边界\"。"
+      "title": "ISO/TS 15066:2016 Robots and robotic devices — Collaborative robots",
+      "publisher": "ISO",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "协作机器人安全要求（力、速度、人机距离）的官方标准页；用于支撑：安全约束会反过来改变控制策略与可接受任务边界。注意它针对工业协作机器人，家庭场景需另找依据。",
+      "url": "https://www.iso.org/standard/62996.html",
+      "date": "2016-02"
     },
     {
       "id": "s.agibot-world",
@@ -440,6 +448,26 @@
       "kind": "官方页面",
       "verify": "已核实",
       "note": "人形机器人商用落地的先行厂商之一，走行业客户与教育场景。"
+    },
+    {
+      "id": "s.popper",
+      "title": "Karl Popper（Stanford Encyclopedia of Philosophy）",
+      "url": "https://plato.stanford.edu/entries/popper/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "date": "2026-07",
+      "kind": "信息渠道",
+      "verify": "已核实",
+      "note": "以可证伪性作为判断一个说法是否有经验内容的依据：不能被任何观察推翻的表述不构成科学陈述；用于支撑：每个结论都要写清什么证据能推翻它。"
+    },
+    {
+      "id": "s.who-med",
+      "title": "Medication Without Harm",
+      "url": "https://www.who.int/initiatives/medication-without-harm",
+      "publisher": "World Health Organization",
+      "date": "2017-03",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "用药错误会发生在开方、转抄、调配、给药与监测等多个环节，是全球可避免伤害的主要来源之一；用于支撑：拿药场景的真正风险在识别与确认环节，而不在抓取。"
     }
   ]
 }
