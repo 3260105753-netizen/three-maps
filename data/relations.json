@@ -184,145 +184,6 @@
       "inferred": true
     },
     {
-      "id": "r200",
-      "from": "d.vla-concept",
-      "to": "d.task-fetch-deliver",
-      "type": "用于",
-      "label": "提供端到端执行手段",
-      "why": "取物递送需要同时理解语言指令和生成动作，VLA 把这两步合进一个模型，是完成该任务的主流手段之一。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.rt2",
-        "s.vla-survey"
-      ],
-      "inferred": false
-    },
-    {
-      "id": "r201",
-      "from": "d.task-fetch-deliver",
-      "to": "d.cross-object-gap",
-      "type": "暴露",
-      "label": "让泛化问题显现",
-      "why": "任务要求对没见过的日常物体也能成功，这直接暴露策略跨物体泛化不足，演示视频的成功率掩盖不了它。",
-      "evidence": "团队推断",
-      "verify": "待核实",
-      "sourceIds": [
-        "s.vla-survey"
-      ],
-      "inferred": true
-    },
-    {
-      "id": "r202",
-      "from": "d.openvla",
-      "to": "d.vla-concept",
-      "type": "体现",
-      "label": "是该范式的开源实例",
-      "why": "OpenVLA 按 VLA 范式把视觉、语言、动作联合训练并开放权重，是这个概念可以上手检验的具体实例。（核对依据：该论文标题与摘要即自述为 Vision-Language-Action Model 的开源实现，arXiv 2406.09246）",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.openvla"
-      ],
-      "inferred": false
-    },
-    {
-      "id": "r203",
-      "from": "d.imitation-learning",
-      "to": "d.vla-concept",
-      "type": "对比",
-      "label": "专用小模型对通用大模型",
-      "why": "两条路线常被放在一起比较：示教学习数据可控但泛化受限，VLA 泛化更强但依赖海量数据与算力。",
-      "evidence": "他人观点",
-      "verify": "待核实",
-      "sourceIds": [
-        "s.vla-survey"
-      ],
-      "inferred": false
-    },
-    {
-      "id": "r204",
-      "from": "d.openvla",
-      "to": "d.dataset-oxe",
-      "type": "依赖",
-      "label": "训练数据来自它",
-      "why": "OpenVLA 的策略能力来自 Open X-Embodiment 聚合的跨本体示教数据，缺了这批数据就无法复现其性能。（核对依据：摘要写明 trained on 970k real-world robot demonstrations，并支持 on Open X-Embodiment datasets 训练）",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.openvla",
-        "s.oxe"
-      ],
-      "inferred": false
-    },
-    {
-      "id": "r205",
-      "from": "d.lerobot",
-      "to": "d.imitation-learning",
-      "type": "提供",
-      "label": "提供官方实现与训练脚本",
-      "why": "LeRobot 内置 ACT 与 Diffusion Policy 的实现和训练脚本，是亲手验证模仿学习方法成本最低的工具入口。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.lerobot"
-      ],
-      "inferred": false
-    },
-    {
-      "id": "r206",
-      "from": "d.course-ml",
-      "to": "d.imitation-learning",
-      "type": "前置",
-      "label": "是它的前置课程",
-      "why": "理解示教学习的策略训练需要损失函数与梯度下降等机器学习基础，所以这门课应先于该方法节点学习。",
-      "evidence": "团队推断",
-      "verify": "待核实",
-      "sourceIds": [
-        "s.plan-gap"
-      ],
-      "inferred": true
-    },
-    {
-      "id": "r207",
-      "from": "c.case-cup",
-      "to": "d.cross-object-gap",
-      "type": "体现",
-      "label": "是该问题的具体案例",
-      "why": "认知地图的「换物体就失败」案例正是跨物体泛化问题的一次具体呈现，可以作为该问题节点的分析入口。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "inferred": false
-    },
-    {
-      "id": "r300",
-      "from": "c.case-medicine",
-      "to": "d.task-fetch-deliver",
-      "type": "体现",
-      "label": "说明抓取不是瓶颈",
-      "why": "拿药案例说明：当验收标准从「抓起来」变成「吃对药」时，抓取能力不再是瓶颈，这会修正领域地图对取物递送任务权重的判断。",
-      "evidence": "团队推断",
-      "verify": "待核实",
-      "inferred": true,
-      "sourceIds": [
-        "s.helix"
-      ]
-    },
-    {
-      "id": "r301",
-      "from": "c.case-stronger",
-      "to": "d.vla-concept",
-      "type": "质疑",
-      "label": "质疑乐观表述",
-      "why": "这个案例质疑「某方案更强」这类表述，指出评测口径不统一使跨方案比较不成立，因此不能把 VLA 的能力当成已被证实的优势。",
-      "evidence": "团队推断",
-      "verify": "待核实",
-      "inferred": true,
-      "sourceIds": [
-        "s.vla-survey"
-      ]
-    },
-    {
       "id": "r.e01",
       "from": "e.oss-oxe",
       "to": "e.ds-oxe",
@@ -674,32 +535,6 @@
       "inferred": true
     },
     {
-      "id": "r310",
-      "from": "e.ds-oxe",
-      "to": "d.dataset-oxe",
-      "type": "对应",
-      "label": "就是它的领域侧条目",
-      "why": "生态地图里的这份数据集与领域地图的 Open X-Embodiment 数据集是同一对象，两处分开写容易出现规模与机构数不一致，用「对应」把它们绑在一起。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.oxe"
-      ]
-    },
-    {
-      "id": "r311",
-      "from": "e.oss-lerobot",
-      "to": "d.lerobot",
-      "type": "对应",
-      "label": "就是它的领域侧条目",
-      "why": "生态里的 LeRobot 开源社区与领域里的 LeRobot 工具链是同一个项目，社区侧讲维护与生态位，领域侧讲它在任务链里承担哪一环。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.lerobot"
-      ]
-    },
-    {
       "id": "r312",
       "from": "c.case-medicine",
       "to": "e.co-figure",
@@ -739,6 +574,301 @@
         "s.cleargrasp"
       ],
       "inferred": true
+    },
+    {
+      "id": "r200",
+      "from": "d.vla-concept",
+      "to": "d.task-fetch-deliver",
+      "type": "用于",
+      "label": "提供端到端执行手段",
+      "why": "取物递送需要同时理解语言指令和生成动作，VLA 把这两步合进一个模型，是完成该任务的主流手段之一。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.rt2",
+        "s.vla-survey"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r201",
+      "from": "d.task-fetch-deliver",
+      "to": "d.cross-object-gap",
+      "type": "暴露",
+      "label": "让泛化问题显现",
+      "why": "任务要求对没见过的日常物体也能成功，这直接暴露策略跨物体泛化不足，演示视频的成功率掩盖不了它。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.vla-survey"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r203",
+      "from": "d.route-il",
+      "to": "d.route-vla",
+      "type": "对比",
+      "label": "专用小模型对通用大模型",
+      "why": "两条技术路线常被放在一起比较：模仿学习路线数据可控但泛化受限，端到端 VLA 路线泛化更强但依赖海量数据与算力。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.vla-survey"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r204",
+      "from": "d.openvla",
+      "to": "d.dataset-oxe",
+      "type": "依赖",
+      "label": "训练数据来自它",
+      "why": "OpenVLA 的策略能力来自 Open X-Embodiment 聚合的跨本体示教数据，缺了这批数据就无法复现其性能。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.openvla",
+        "s.oxe"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r205",
+      "from": "d.lerobot",
+      "to": "d.imitation-learning",
+      "type": "提供",
+      "label": "提供官方实现与训练脚本",
+      "why": "LeRobot 内置 ACT 与 Diffusion Policy 的实现和训练脚本，是亲手验证模仿学习方法成本最低的工具入口。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lerobot"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r206",
+      "from": "d.course-dl",
+      "to": "d.imitation-learning",
+      "type": "前置",
+      "label": "是它的前置课程",
+      "why": "理解示教学习的策略训练需要神经网络与梯度下降等深度学习基础，培养方案将该课列为专业核心必修，因此它是该方法的前置课程。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.zju-plan"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r207",
+      "from": "c.case-cup",
+      "to": "d.cross-object-gap",
+      "type": "体现",
+      "label": "是该问题的具体案例",
+      "why": "认知地图的「换物体就失败」案例正是跨物体泛化问题的一次具体呈现，可以作为该问题节点的分析入口。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "inferred": false
+    },
+    {
+      "id": "r208",
+      "from": "d.route-vla",
+      "to": "d.vla-concept",
+      "type": "采用",
+      "label": "以该范式为核心",
+      "why": "端到端 VLA 路线的核心做法就是把视觉、语言、动作联合进一个模型，VLA 概念是这条路线的定义性基础。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.rt2",
+        "s.vla-survey"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r209",
+      "from": "d.route-il",
+      "to": "d.imitation-learning",
+      "type": "采用",
+      "label": "以该方法为核心",
+      "why": "模仿学习小模型路线以遥操作示教加行为克隆为基本方法，ACT 与扩散策略都是这条路线的代表实现。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.act",
+        "s.dp"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r210",
+      "from": "d.sim2real",
+      "to": "d.task-fetch-deliver",
+      "type": "用于",
+      "label": "提供低成本训练手段",
+      "why": "取物策略可先在仿真中大规模训练再迁移真机，仿真降低了数据采集成本，但分布差异要求结论必须真机复核。",
+      "evidence": "团队推断",
+      "verify": "来源待补",
+      "sourceIds": [
+        "s.sim2real"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r211",
+      "from": "c.case-cup",
+      "to": "d.sim2real",
+      "type": "体现",
+      "label": "核心判断指向它",
+      "why": "认知地图 C02 案例把换物体失败归因到仿真与真机的分布差异，正是仿真到真机迁移这一概念所描述的问题。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sim2real"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r212",
+      "from": "d.cross-object-gap",
+      "to": "d.vla-concept",
+      "type": "依赖",
+      "label": "对策依赖这类模型",
+      "why": "缓解跨物体泛化失败需要扩大训练数据的分布覆盖，VLA 这类用大规模跨本体数据训练的模型正是当前主流对策；但评测口径未统一，对策效果仍待核实。",
+      "evidence": "他人观点",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.vla-survey"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r213",
+      "from": "d.vla-concept",
+      "to": "d.imitation-learning",
+      "type": "依赖",
+      "label": "训练依赖该方法",
+      "why": "VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法，只是数据规模与模型体量更大。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.openvla",
+        "s.vla-survey"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r214",
+      "from": "d.route-vla",
+      "to": "d.imitation-learning",
+      "type": "采用",
+      "label": "训练同样用它",
+      "why": "端到端 VLA 路线的模型同样以行为克隆在示教数据上训练；两条路线的差异在模型规模与数据来源，不在是否使用模仿学习。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.openvla",
+        "s.vla-survey"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r215",
+      "from": "d.route-vla",
+      "to": "d.openvla",
+      "type": "包含",
+      "label": "代表模型",
+      "why": "OpenVLA 是端到端 VLA 路线的开源代表实现，该路线的能力边界与复现门槛可由它具体检验。",
+      "evidence": "事实",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.openvla"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r216",
+      "from": "d.route-il",
+      "to": "d.act",
+      "type": "包含",
+      "label": "代表模型",
+      "why": "ACT 是模仿学习小模型路线的代表实现，低成本双臂加示教数据即可完成精细操作，体现该路线数据可控、成本低的特点。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.act"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r217",
+      "from": "d.lerobot",
+      "to": "d.route-il",
+      "type": "提供",
+      "label": "提供官方实现与数据工具",
+      "why": "LeRobot 把该路线所需的 ACT、Diffusion Policy 实现、示教数据集与训练脚本开源并标准化，是这条路线成本最低的实践入口。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lerobot"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r300",
+      "from": "c.case-medicine",
+      "to": "d.task-fetch-deliver",
+      "type": "体现",
+      "label": "说明抓取不是瓶颈",
+      "why": "拿药案例说明：当验收标准从「抓起来」变成「吃对药」时，抓取能力不再是瓶颈，这会修正领域地图对取物递送任务权重的判断。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.helix"
+      ]
+    },
+    {
+      "id": "r301",
+      "from": "c.case-stronger",
+      "to": "d.vla-concept",
+      "type": "质疑",
+      "label": "质疑乐观表述",
+      "why": "这个案例质疑「某方案更强」这类表述，指出评测口径不统一使跨方案比较不成立，因此不能把 VLA 的能力当成已被证实的优势。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.vla-survey"
+      ]
+    },
+    {
+      "id": "r310",
+      "from": "e.ds-oxe",
+      "to": "d.dataset-oxe",
+      "type": "对应",
+      "label": "就是它的领域侧条目",
+      "why": "生态地图里的这份数据集与领域地图的 Open X-Embodiment 数据集是同一对象，两处分开写容易出现规模与机构数不一致，用「对应」把它们绑在一起。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.oxe"
+      ]
+    },
+    {
+      "id": "r311",
+      "from": "e.oss-lerobot",
+      "to": "d.lerobot",
+      "type": "对应",
+      "label": "就是它的领域侧条目",
+      "why": "生态里的 LeRobot 开源社区与领域里的 LeRobot 工具链是同一个项目，社区侧讲维护与生态位，领域侧讲它在任务链里承担哪一环。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lerobot"
+      ]
     }
   ]
 }

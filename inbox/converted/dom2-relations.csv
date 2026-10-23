@@ -1,0 +1,18 @@
+﻿id,from,to,type,label,why,evidence,verify,inferred,sourceIds
+r200,d.vla-concept,d.task-fetch-deliver,用于,提供端到端执行手段,取物递送需要同时理解语言指令和生成动作，VLA 把这两步合进一个模型，是完成该任务的主流手段之一。,事实,已核实,,s.rt2;s.vla-survey
+r201,d.task-fetch-deliver,d.cross-object-gap,暴露,让泛化问题显现,任务要求对没见过的日常物体也能成功，这直接暴露策略跨物体泛化不足，演示视频的成功率掩盖不了它。,团队推断,待核实,是,s.vla-survey
+r203,d.route-il,d.route-vla,对比,专用小模型对通用大模型,两条技术路线常被放在一起比较：模仿学习路线数据可控但泛化受限，端到端 VLA 路线泛化更强但依赖海量数据与算力。,他人观点,待核实,,s.vla-survey
+r204,d.openvla,d.dataset-oxe,依赖,训练数据来自它,OpenVLA 的策略能力来自 Open X-Embodiment 聚合的跨本体示教数据，缺了这批数据就无法复现其性能。,事实,待核实,,s.openvla;s.oxe
+r205,d.lerobot,d.imitation-learning,提供,提供官方实现与训练脚本,LeRobot 内置 ACT 与 Diffusion Policy 的实现和训练脚本，是亲手验证模仿学习方法成本最低的工具入口。,事实,已核实,,s.lerobot
+r206,d.course-dl,d.imitation-learning,前置,是它的前置课程,理解示教学习的策略训练需要神经网络与梯度下降等深度学习基础，培养方案将该课列为专业核心必修，因此它是该方法的前置课程。,事实,已核实,,s.zju-plan
+r207,c.case-cup,d.cross-object-gap,体现,是该问题的具体案例,认知地图的「换物体就失败」案例正是跨物体泛化问题的一次具体呈现，可以作为该问题节点的分析入口。,事实,已核实,,
+r208,d.route-vla,d.vla-concept,采用,以该范式为核心,端到端 VLA 路线的核心做法就是把视觉、语言、动作联合进一个模型，VLA 概念是这条路线的定义性基础。,事实,待核实,,s.rt2;s.vla-survey
+r209,d.route-il,d.imitation-learning,采用,以该方法为核心,模仿学习小模型路线以遥操作示教加行为克隆为基本方法，ACT 与扩散策略都是这条路线的代表实现。,事实,已核实,,s.act;s.dp
+r210,d.sim2real,d.task-fetch-deliver,用于,提供低成本训练手段,取物策略可先在仿真中大规模训练再迁移真机，仿真降低了数据采集成本，但分布差异要求结论必须真机复核。,团队推断,来源待补,是,s.sim2real
+r211,c.case-cup,d.sim2real,体现,核心判断指向它,认知地图 C02 案例把换物体失败归因到仿真与真机的分布差异，正是仿真到真机迁移这一概念所描述的问题。,团队推断,待核实,是,s.sim2real
+r212,d.cross-object-gap,d.vla-concept,依赖,对策依赖这类模型,缓解跨物体泛化失败需要扩大训练数据的分布覆盖，VLA 这类用大规模跨本体数据训练的模型正是当前主流对策；但评测口径未统一，对策效果仍待核实。,他人观点,待核实,,s.vla-survey
+r213,d.vla-concept,d.imitation-learning,依赖,训练依赖该方法,VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法，只是数据规模与模型体量更大。,事实,待核实,,s.openvla;s.vla-survey
+r214,d.route-vla,d.imitation-learning,采用,训练同样用它,端到端 VLA 路线的模型同样以行为克隆在示教数据上训练；两条路线的差异在模型规模与数据来源，不在是否使用模仿学习。,事实,待核实,,s.openvla;s.vla-survey
+r215,d.route-vla,d.openvla,包含,代表模型,OpenVLA 是端到端 VLA 路线的开源代表实现，该路线的能力边界与复现门槛可由它具体检验。,事实,待核实,,s.openvla
+r216,d.route-il,d.act,包含,代表模型,ACT 是模仿学习小模型路线的代表实现，低成本双臂加示教数据即可完成精细操作，体现该路线数据可控、成本低的特点。,事实,已核实,,s.act
+r217,d.lerobot,d.route-il,提供,提供官方实现与数据工具,LeRobot 把该路线所需的 ACT、Diffusion Policy 实现、示教数据集与训练脚本开源并标准化，是这条路线成本最低的实践入口。,事实,已核实,,s.lerobot
