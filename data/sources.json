@@ -341,11 +341,11 @@
     },
     {
       "id": "s.sim2real",
-      "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World",
-      "publisher": "arXiv（IROS 2017）",
+      "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World（Tobin et al.，域随机化）",
+      "publisher": "arXiv（IROS 2017 录用）",
       "kind": "论文",
       "verify": "已核实",
-      "note": "用域随机化把仿真图像随机化后迁移到真机，首次做到只用仿真RGB图像就完成真实抓取；用于支撑：仿真是降成本手段，可信度取决于迁移手段，结论必须真机复核。",
+      "note": "徐晨凯已登记的 Tobin 域随机化论文：通过随机化仿真渲染参数让策略对仿真与真实的差异鲁棒，支撑「仿真到现实存在系统性分布差异」。本条只作更新，不整表覆盖其他来源。",
       "url": "https://arxiv.org/abs/1703.06907",
       "date": "2017-03"
     },
@@ -493,10 +493,11 @@
       "id": "s.zju-plan",
       "title": "2026级人工智能专业培养方案",
       "publisher": "浙江大学",
-      "date": "2026",
-      "kind": "官方文档",
-      "verify": "来源待补",
-      "note": "支撑课程节点 d.course-dl：方案将深度学习基础（AI2003M，4.0 学分）列为专业核心必修，建议二（秋冬）修读。原文 PDF 已从浙大本科生院网站下载并由组内存档，可现场出示；因教务系统链接需统一身份认证登录、无法公开访问，按规则 url 留空并标来源待补。"
+      "date": "2026-10",
+      "kind": "培养方案",
+      "verify": "已核实",
+      "note": "《2026级人工智能专业培养方案》（浙江大学）共 13 页，PDF 已存证于本仓库 evidence/ 目录。相关页：第 1 页「毕业要求」第 3 条要求系统掌握机器学习、深度学习等核心理论与方法；第 6 页「专业必修课程」表列出 AI2003 M 深度学习基础，4.0 学分，建议二（秋冬）。另第 7 页「智能系统方向选修」含 AI3006 M 自主智能系统与具身智能（4.0 学分，三春夏），与本组选题直接相关。",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-23-培养方案-2026级人工智能专业.pdf"
     }
   ]
 }

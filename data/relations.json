@@ -648,20 +648,6 @@
       "inferred": false
     },
     {
-      "id": "r206",
-      "from": "d.course-dl",
-      "to": "d.imitation-learning",
-      "type": "前置",
-      "label": "是它的前置课程",
-      "why": "理解示教学习的策略训练需要神经网络与梯度下降等深度学习基础，培养方案将该课列为专业核心必修，因此它是该方法的前置课程。",
-      "evidence": "事实",
-      "verify": "已核实",
-      "sourceIds": [
-        "s.zju-plan"
-      ],
-      "inferred": false
-    },
-    {
       "id": "r207",
       "from": "c.case-cup",
       "to": "d.cross-object-gap",
@@ -705,12 +691,12 @@
     {
       "id": "r210",
       "from": "d.sim2real",
-      "to": "d.task-fetch-deliver",
-      "type": "用于",
-      "label": "提供低成本训练手段",
-      "why": "取物策略可先在仿真中大规模训练再迁移真机，仿真降低了数据采集成本，但分布差异要求结论必须真机复核。",
+      "to": "d.cross-object-gap",
+      "type": "暴露",
+      "label": "是该问题的主要成因",
+      "why": "换物体失败里最难解释的一类是透明/反光材质，但材质之外还有仿真与真机的系统差异，两者叠加才让失败看起来不可控。",
       "evidence": "团队推断",
-      "verify": "来源待补",
+      "verify": "待核实",
       "sourceIds": [
         "s.sim2real"
       ],
@@ -765,7 +751,7 @@
       "to": "d.imitation-learning",
       "type": "采用",
       "label": "训练同样用它",
-      "why": "端到端 VLA 路线的模型同样以行为克隆在示教数据上训练；两条路线的差异在模型规模与数据来源，不在是否使用模仿学习。",
+      "why": "VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法；两条路线的差异在模型规模与数据来源，不在是否使用模仿学习。",
       "evidence": "事实",
       "verify": "待核实",
       "sourceIds": [
@@ -869,6 +855,34 @@
       "sourceIds": [
         "s.lerobot"
       ]
+    },
+    {
+      "id": "r206",
+      "from": "d.course-ml",
+      "to": "d.imitation-learning",
+      "type": "前置",
+      "label": "是它的前置课程",
+      "why": "理解示教学习的策略训练需要神经网络与梯度下降等深度学习基础，培养方案将该课列为专业核心必修，因此它是该方法的前置课程。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.zju-plan"
+      ],
+      "inferred": false
+    },
+    {
+      "id": "r218",
+      "from": "d.task-fetch-deliver",
+      "to": "d.sim2real",
+      "type": "暴露",
+      "label": "上真机时暴露该差距",
+      "why": "策略在仿真里训练后上真机执行取物递送时，摩擦、光照、相机延迟等差异会使表现下降，任务由此暴露仿真到现实的差距。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.sim2real"
+      ],
+      "inferred": true
     }
   ]
 }

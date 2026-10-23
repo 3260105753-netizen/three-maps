@@ -172,13 +172,27 @@ if (replaceMap) {
   }
   const old = data[replaceMap].nodes || [];
   const oldIds = new Set(old.map((n) => n.id));
+
+  // 只清掉「新表里也不存在」的节点；仍存在的节点保留，它的连线就不会被误删。
+  // 之前按旧 id 全删，会把指向仍然存在的节点的跨图连线一并清掉（踩过一次）。
+  const keepIds = new Set();
+  if (fs.existsSync(nodeFile)) {
+    const pre = parseCSV(fs.readFileSync(nodeFile, "utf8"));
+    pre.records.forEach((r) => {
+      if ((r.map || "").trim() === replaceMap && (r.id || "").trim()) keepIds.add(r.id.trim());
+    });
+  }
+  const dropIds = new Set([...oldIds].filter((id) => !keepIds.has(id)));
+
   const before = (data.relations.relations || []).length;
-  data[replaceMap].nodes = [];
+  data[replaceMap].nodes = old.filter((n) => keepIds.has(n.id));
   data.relations.relations = (data.relations.relations || []).filter(
-    (r) => !oldIds.has(r.from) && !oldIds.has(r.to)
+    (r) => !dropIds.has(r.from) && !dropIds.has(r.to)
   );
   const dropped = before - data.relations.relations.length;
-  console.log(C.dim("替换模式：" + replaceMap + " 清空 " + old.length + " 个旧节点，移除 " + dropped + " 条指向它们的连线"));
+  const kept = old.length - dropIds.size;
+  console.log(C.dim("替换模式：" + replaceMap + " 删除 " + dropIds.size + " 个旧节点（保留 " + kept +
+    " 个仍存在的），移除 " + dropped + " 条指向被删节点的连线"));
 }
 
 const nodeTable = readTable(nodeFile, "节点表");
