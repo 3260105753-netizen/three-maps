@@ -610,13 +610,13 @@
       "to": "d.route-vla",
       "type": "对比",
       "label": "专用小模型对通用大模型",
-      "why": "两条技术路线常被放在一起比较：模仿学习路线数据可控但泛化受限，端到端 VLA 路线泛化更强但依赖海量数据与算力。",
-      "evidence": "他人观点",
+      "why": "两条路线常被放在一起比较（模型规模、数据需求、泛化范围），但「哪条更好」取决于任务与评测口径。这是本组的比较框架，不是某一篇文献的结论，所以标团队推断。",
+      "evidence": "团队推断",
       "verify": "待核实",
       "sourceIds": [
         "s.vla-survey"
       ],
-      "inferred": false
+      "inferred": true
     },
     {
       "id": "r204",
@@ -624,9 +624,9 @@
       "to": "d.dataset-oxe",
       "type": "依赖",
       "label": "训练数据来自它",
-      "why": "OpenVLA 的策略能力来自 Open X-Embodiment 聚合的跨本体示教数据，缺了这批数据就无法复现其性能。",
+      "why": "OpenVLA 的策略能力来自 Open X-Embodiment 聚合的跨本体示教数据，缺了这批数据就无法复现其性能。（核对依据：OpenVLA 论文正文与图注：trained on 970k robot episodes from the Open X-Embodiment dataset（arXiv 2406.09246））",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "sourceIds": [
         "s.openvla",
         "s.oxe"
@@ -664,9 +664,9 @@
       "to": "d.vla-concept",
       "type": "采用",
       "label": "以该范式为核心",
-      "why": "端到端 VLA 路线的核心做法就是把视觉、语言、动作联合进一个模型，VLA 概念是这条路线的定义性基础。",
+      "why": "端到端 VLA 路线的核心做法就是把视觉、语言、动作联合进一个模型，VLA 概念是这条路线的定义性基础。（核对依据：该路线的定义就是「把视觉、语言、动作联合进一个模型」，与 VLA 概念同义；RT-2 与 VLA 综述对该范式有明确界定）",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "sourceIds": [
         "s.rt2",
         "s.vla-survey"
@@ -721,14 +721,14 @@
       "from": "d.cross-object-gap",
       "to": "d.vla-concept",
       "type": "依赖",
-      "label": "对策依赖这类模型",
-      "why": "缓解跨物体泛化失败需要扩大训练数据的分布覆盖，VLA 这类用大规模跨本体数据训练的模型正是当前主流对策；但评测口径未统一，对策效果仍待核实。",
-      "evidence": "他人观点",
+      "label": "缓解它要靠这类方法",
+      "why": "方向说明：不是「泛化失败依赖 VLA」，而是「缓解跨物体泛化失败，目前看要靠 VLA 这类用大规模跨本体数据训练的模型」。这是本组的判断，不是文献里的结论，所以标团队推断。",
+      "evidence": "团队推断",
       "verify": "待核实",
       "sourceIds": [
         "s.vla-survey"
       ],
-      "inferred": false
+      "inferred": true
     },
     {
       "id": "r213",
@@ -736,9 +736,9 @@
       "to": "d.imitation-learning",
       "type": "依赖",
       "label": "训练依赖该方法",
-      "why": "VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法，只是数据规模与模型体量更大。",
+      "why": "VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法，只是数据规模与模型体量更大。（核对依据：OpenVLA 在 970k 条示教轨迹上做监督训练，论文把它与 Diffusion Policy 等 from-scratch imitation learning 方法放在同一评测下比较，并称其为「模仿学习任务」的默认选项（arXiv 2406.09246））",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "sourceIds": [
         "s.openvla",
         "s.vla-survey"
@@ -751,9 +751,9 @@
       "to": "d.imitation-learning",
       "type": "采用",
       "label": "训练同样用它",
-      "why": "VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法；两条路线的差异在模型规模与数据来源，不在是否使用模仿学习。",
+      "why": "VLA 模型的策略训练本质是在示教数据上做行为克隆，模仿学习是其训练管线的基础方法；两条路线的差异在模型规模与数据来源，不在是否使用模仿学习。（核对依据：同 r213：端到端 VLA 路线的训练也是示教数据上的监督学习，与模仿学习小模型路线的差别在模型规模与预训练，不在训练目标）",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "sourceIds": [
         "s.openvla",
         "s.vla-survey"
@@ -766,9 +766,9 @@
       "to": "d.openvla",
       "type": "包含",
       "label": "代表模型",
-      "why": "OpenVLA 是端到端 VLA 路线的开源代表实现，该路线的能力边界与复现门槛可由它具体检验。",
+      "why": "OpenVLA 是端到端 VLA 路线的开源代表实现，该路线的能力边界与复现门槛可由它具体检验。（核对依据：OpenVLA 自述为 vision-language-action model(VLA)，即该路线的代表实现；路线定义见 d.route-vla（arXiv 2406.09246 摘要与标题））",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "sourceIds": [
         "s.openvla"
       ],
