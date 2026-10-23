@@ -64,6 +64,7 @@ node scripts/use-dataset.mjs filled-example
 | --- | --- |
 | `node scripts/serve.mjs [端口]` | 本地预览（默认 4173） |
 | `node scripts/validate.mjs` | 校验数据结构，报错指到具体节点；有错退出码 1 |
+| `node scripts/audit.mjs` | 体检：来源覆盖、孤立节点、占位内容、跨图连线、记录条数 |
 | `node scripts/selftest.mjs` | 自检：引擎、三项 AI 能力、布局、文件完整性 |
 | `node scripts/import-csv.mjs` | CSV → JSON，任何一条不合格整批不写 |
 | `node scripts/import-csv.mjs --dry` | 只校验不写盘 |
