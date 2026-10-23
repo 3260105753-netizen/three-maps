@@ -926,6 +926,35 @@
         "s.zju-plan",
         "s.zju-plan-elective"
       ]
+    },
+    {
+      "id": "r222",
+      "from": "d.course-ml",
+      "to": "d.course-llm",
+      "type": "前置",
+      "label": "是它的先修基础",
+      "why": "培养方案里两门课的建议学期是先后关系：深度学习基础建议二（秋冬），大模型基础建议二（春夏）。内容上也顺——不理解梯度下降与过拟合，就看不懂预训练在优化什么。方案未写硬性先修，故为推断。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.zju-plan"
+      ]
+    },
+    {
+      "id": "r223",
+      "from": "d.course-llm",
+      "to": "d.vla-concept",
+      "type": "前置",
+      "label": "是它的前置课程",
+      "why": "VLA 的骨干就是语言模型：RT-2 建在 PaLI-X 上、OpenVLA 建在 Llama 2 上，指令理解能力直接来自预训练。所以「大模型基础」讲的结构与训练范式，是看懂 VLA 为什么能听懂一句话的前提。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.zju-plan",
+        "s.openvla"
+      ]
     }
   ]
 }
