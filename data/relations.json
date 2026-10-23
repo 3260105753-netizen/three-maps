@@ -217,13 +217,13 @@
       "to": "e.ds-oxe",
       "type": "采用",
       "label": "用跨本体数据做预训练",
-      "why": "通用策略路线依赖大规模跨本体数据做预训练，单本体数据量不足以支撑泛化。",
-      "evidence": "他人观点",
+      "why": "通用策略路线需要大规模多本体数据做预训练，单本体数据量不足以支撑泛化；但 π0 摘要与正文并未点名 Open X-Embodiment，此条属于根据技术路线的推断，不是原文引用。",
+      "evidence": "团队推断",
       "verify": "待核实",
       "sourceIds": [
         "s.pi0"
       ],
-      "inferred": false
+      "inferred": true
     },
     {
       "id": "r.e04",
@@ -275,14 +275,14 @@
       "to": "e.oss-mujoco",
       "type": "采用",
       "label": "底层依赖物理仿真",
-      "why": "开源开发栈的仿真与数据回放环节需要物理引擎提供一致的接触行为。（核对依据：LeRobot 的 pyproject.toml 中 aloha 可选依赖为 gym-aloha；gym-aloha 的 pyproject.toml 直接声明 mujoco>=3.0.0,<3.9.0。即 LeRobot 通过 ALOHA 仿真环境间接依赖 MuJoCo，并非所有功能都用到，故这一条只在「仿真环境」范围内成立）",
-      "evidence": "他人观点",
-      "verify": "已核实",
+      "why": "开源开发栈的仿真与数据回放环节需要物理引擎提供一致的接触行为；但已核对 LeRobot 的 pyproject.toml，MuJoCo 只出现在一行注释里、并未列为依赖，故不写成事实。",
+      "evidence": "团队推断",
+      "verify": "待核实",
       "sourceIds": [
         "s.lerobot",
         "s.mujoco"
       ],
-      "inferred": false
+      "inferred": true
     },
     {
       "id": "r.e08",
@@ -436,7 +436,7 @@
       "to": "e.lab-stanford",
       "type": "提供",
       "label": "是它成果的发表渠道",
-      "why": "CoRL 是机器人学习方向的专门会议，该团队的低成本双臂采集（ALOHA 一类）正属于这一会议关注的议题方向，会议为这类工作提供发表与交流渠道。具体某篇论文是否在此发表需逐篇核对，故仍标待核实。",
+      "why": "CoRL 是机器人学习方向的专门会议，该团队的低成本双臂遥操作采集属于这一会议关注的议题方向；但 ALOHA 系列具体在哪一届发表未逐篇核对，故只主张「会议为该类工作提供发表与交流渠道」。",
       "evidence": "他人观点",
       "verify": "待核实",
       "sourceIds": [
@@ -545,7 +545,8 @@
       "verify": "已核实",
       "sourceIds": [
         "s.helix"
-      ]
+      ],
+      "inferred": false
     },
     {
       "id": "r313",
@@ -841,7 +842,8 @@
       "verify": "已核实",
       "sourceIds": [
         "s.oxe"
-      ]
+      ],
+      "inferred": false
     },
     {
       "id": "r311",
@@ -854,7 +856,8 @@
       "verify": "已核实",
       "sourceIds": [
         "s.lerobot"
-      ]
+      ],
+      "inferred": false
     },
     {
       "id": "r206",
@@ -1036,6 +1039,91 @@
       "sourceIds": [
         "s.robotwin-eval"
       ]
+    },
+    {
+      "id": "r.e30",
+      "from": "e.case-elderly-medicine",
+      "to": "e.co-pi",
+      "type": "采用",
+      "label": "通用策略作为底座",
+      "why": "家用场景的物体与指令长尾无法用专用抓取模型穷举，只能靠通用策略覆盖；π0 一类通用 VLA 正是这条底座。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.pi0"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e31",
+      "from": "e.case-elderly-medicine",
+      "to": "e.ds-oxe",
+      "type": "采用",
+      "label": "跨本体数据是训练底座",
+      "why": "家用场景没有自建数据工厂，只能先用公开的跨本体数据做预训练，再用少量自家采集微调；否则起步阶段没有数据可用。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.oxe"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e32",
+      "from": "e.case-elderly-medicine",
+      "to": "e.bench-rlbench",
+      "type": "质疑",
+      "label": "现有基准测不到确认环节",
+      "why": "公开基准的指标是任务成功率，没有一条测「拿错药」这类语义错误，因此基准上的高分不能作为家用可用的证据。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.rlbench",
+        "s.libero"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e33",
+      "from": "e.case-elderly-medicine",
+      "to": "e.co-unitree",
+      "type": "依赖",
+      "label": "低成本本体是家用前提",
+      "why": "家用场景要进得了普通家庭，整机价格必须压到消费级；低成本本体供应是这个案例能成立的硬件前置条件。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.unitree"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e34",
+      "from": "e.case-elderly-medicine",
+      "to": "e.oss-isaaclab",
+      "type": "采用",
+      "label": "用仿真先筛掉高风险策略",
+      "why": "家用场景真机采集成本高且涉及老人安全，只能在仿真里先把明显不可行的策略筛掉，再上真机做少量验证。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.isaaclab"
+      ],
+      "inferred": true
+    },
+    {
+      "id": "r.e35",
+      "from": "e.case-elderly-medicine",
+      "to": "e.co-galbot",
+      "type": "对比",
+      "label": "家用与零售两种落地场景",
+      "why": "两者都是先选场景再定形态，但零售货架是结构化环境、错误可回滚，家用场景有老人参与、错误不可逆，安全要求差一个量级。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "sourceIds": [
+        "s.galbot"
+      ],
+      "inferred": true
     }
   ]
 }

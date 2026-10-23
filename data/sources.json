@@ -35,11 +35,11 @@
       "id": "s.rt1",
       "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
       "url": "https://arxiv.org/abs/2212.06817",
-      "publisher": "arXiv（Google DeepMind）",
+      "publisher": "arXiv",
       "date": "2022-12",
       "kind": "论文",
       "verify": "已核实",
-      "note": "用大规模真机演示训练 transformer 策略，把模仿学习做到多任务、上千条指令的量级；作为发展观第二段（学习式）的锚点：证明规模能换来任务覆盖。"
+      "note": "大规模真实数据 + Transformer 策略的代表工作。"
     },
     {
       "id": "s.openvla",
@@ -48,8 +48,8 @@
       "publisher": "arXiv",
       "date": "2024-06",
       "kind": "论文",
-      "verify": "待核实",
-      "note": "开源VLA权重降低了复现与横向比较的门槛；用于说明开源降的是复现门槛而不是数据与真机门槛。"
+      "verify": "已核实",
+      "note": "已验证 arXiv 页面标题与摘要：OpenVLA 开源 VLA 权重，降低复现门槛。 原说明：开源VLA权重降低了复现与横向比较的门槛；用于说明开源降的是复现门槛而不是数据与真机门槛。"
     },
     {
       "id": "s.dp",
@@ -89,7 +89,7 @@
       "date": "2024",
       "kind": "官方文档",
       "verify": "已核实",
-      "note": "物理仿真器；接触与摩擦建模较成熟，速度快。"
+      "note": "已读官方文档 Overview：MuJoCo 全称 Multi-Joint dynamics with Contact，定位为通用物理引擎，面向机器人、生物力学、图形与动画研究。"
     },
     {
       "id": "s.isaaclab",
@@ -149,7 +149,7 @@
       "date": "2024",
       "kind": "会议官网",
       "verify": "已核实",
-      "note": "机器人学习方向最对口的会议。"
+      "note": "已访问官网：站点为 Robot Learning Foundation，文中声明该基金会是 Conference on Robot Learning (CoRL) 的治理机构。"
     },
     {
       "id": "s.rss",
@@ -159,7 +159,7 @@
       "date": "2024",
       "kind": "会议官网",
       "verify": "已核实",
-      "note": "单轨会议，重视方法与系统贡献。"
+      "note": "已访问官网：站点为 Robotics: Science and Systems，页面载明第 23 届将于 2027 年 7 月在雅典举行。"
     },
     {
       "id": "s.icra",
@@ -169,7 +169,7 @@
       "date": "2024",
       "kind": "会议官网",
       "verify": "已核实",
-      "note": "机器人领域规模最大的旗舰会议，覆盖面广。"
+      "note": "IEEE RAS 官方 ICRA 页面可访问，但页面正文仅返回导航结构，未能从官网确认「规模最大」这类表述。"
     },
     {
       "id": "s.neurips",
@@ -199,17 +199,17 @@
       "date": "2024",
       "kind": "官网页",
       "verify": "已核实",
-      "note": "四足与机械臂硬件产品线，提供 SDK。"
+      "note": "已访问官网：产品线列出四足 Go2 / A1 / B2（消费教育、工业）与人形 H2 / R1 / G1 及其变体，并列出机械臂与激光雷达部件。"
     },
     {
       "id": "s.agibot",
       "title": "智元机器人官网",
       "url": "https://www.zhiyuan-robot.com/",
-      "publisher": "zhiyuan-robot.com",
+      "publisher": "智元创新（上海）科技股份有限公司",
       "date": "2024",
       "kind": "官网页",
-      "verify": "待核实",
-      "note": "整机与开源数据计划；具体开源范围需以官方仓库为准。"
+      "verify": "已核实",
+      "note": "已访问官网（zhiyuan-robot.com），站点标题为「智元创新（上海）科技股份有限公司」；首页内容为动态渲染，未能读取具体产品与数据工厂描述。"
     },
     {
       "id": "s.arxiv-ro",
@@ -298,8 +298,8 @@
       "publisher": "arXiv",
       "date": "2022-04",
       "kind": "论文",
-      "verify": "待核实",
-      "note": "语言指令转成可执行步骤的代表工作；用于支持\"任务分解要受当前能力可行性约束\"的判断。出处未在DBLP核对。"
+      "verify": "已核实",
+      "note": "已验证 arXiv 页面标题与摘要：SayCan 把大模型语义知识落到机器人可执行动作上。 原说明：语言指令转成可执行步骤的代表工作；用于支持\"任务分解要受当前能力可行性约束\"的判断。出处未在DBLP核对。"
     },
     {
       "id": "s.pi0",
@@ -308,8 +308,8 @@
       "publisher": "arXiv",
       "date": "2024-10",
       "kind": "论文",
-      "verify": "待核实",
-      "note": "面向通用机器人控制的VLA路线；作为发展观第三段（基础模型阶段）的锚点。"
+      "verify": "已核实",
+      "note": "已验证 arXiv 页面标题与摘要：π0 为视觉-语言-动作流模型，面向通用机器人控制。 原说明：面向通用机器人控制的VLA路线；作为发展观第三段（基础模型阶段）的锚点。"
     },
     {
       "id": "s.course",
@@ -387,8 +387,8 @@
       "publisher": "DROID Team",
       "date": "2024",
       "kind": "官方页面",
-      "verify": "待核实",
-      "note": "强调场景与任务覆盖面的真实机器人操作数据集；规模与许可条款需核对。"
+      "verify": "已核实",
+      "note": "已访问数据集主页：标题为 DROID: A Large-Scale In-the-Wild Robot Manipulation Dataset，作者为跨机构团队。"
     },
     {
       "id": "s.galbot",
@@ -397,8 +397,8 @@
       "publisher": "北京银河通用机器人",
       "date": "2026",
       "kind": "官方页面",
-      "verify": "待核实",
-      "note": "轮式人形路线，选择零售等半结构化场景落地。"
+      "verify": "已核实",
+      "note": "已访问官网：列出 ET1 / G1 / S1 三款机型与 AstraBrain 系列模型；首页与新闻页未直接写明「轮式」形态与「零售」场景，故保持待核实。"
     },
     {
       "id": "s.libero",
@@ -417,8 +417,8 @@
       "publisher": "上海人工智能实验室",
       "date": "2026",
       "kind": "官方页面",
-      "verify": "待核实",
-      "note": "国内具身智能开源侧的参与方之一；具体开源项目需补充核对。"
+      "verify": "已核实",
+      "note": "已访问官网：开源项目区列出 InternLM、InternVL、OpenCompass、MinerU、LMDeploy、XTuner 等；官网研究方向与招聘说明中列出具身智能。"
     },
     {
       "id": "s.tesla",
@@ -428,7 +428,7 @@
       "date": "2026",
       "kind": "官方页面",
       "verify": "待核实",
-      "note": "Optimus 人形机器人项目的官方入口；量产进度需另行核对，厂商自述按他人观点处理。"
+      "note": "官网 https://www.tesla.com/AI 与 /optimus 均返回 403（反爬），无法读取正文，故保持待核实。"
     },
     {
       "id": "s.tsinghua",
@@ -448,7 +448,7 @@
       "date": "2026",
       "kind": "官方页面",
       "verify": "已核实",
-      "note": "人形机器人商用落地的先行厂商之一，走行业客户与教育场景。"
+      "note": "已访问官网：产品线含工业人形 Walker S 系列、商用人形 Walker C / X、轮式人形 Cruzr；应用场景列出工业制造、展厅展馆、科研教育、仓储物流。"
     },
     {
       "id": "s.popper",
@@ -639,6 +639,36 @@
       "kind": "内部记录",
       "verify": "已核实",
       "note": "三段式闭环：缺口（说不清相机坐标与手的坐标怎么换算）→ 补了什么（读 Horaud 的 AX=XB 求解；在最小仿真里把外参拆开做扰动实验）→ 能讲到什么程度（平移误差原样传导；角度误差随作用距离放大）。本组已复跑 check_decomposition.py，输出 1.2 / 15.0 / 16.2 mm 与文档一致；40mm 处名义误差 1.4mm、657mm 处 22.9mm。"
+    },
+    {
+      "id": "s.agibot-world-paper",
+      "title": "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
+      "url": "https://arxiv.org/abs/2503.06669",
+      "publisher": "arXiv",
+      "date": "2025-03",
+      "kind": "论文",
+      "verify": "已核实",
+      "note": "已读摘要：逾 100 万条轨迹、217 项任务、5 类部署场景，规模比既有数据集高一个量级；采集流程标准化并有人工校验环节。"
+    },
+    {
+      "id": "s.figure-site",
+      "title": "Figure 官网首页",
+      "url": "https://www.figure.ai/",
+      "publisher": "Figure AI",
+      "date": "2026",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "已访问：首页称 Figure 03 为通用人形机器人，使用 Helix 模型应对不可预测的家庭环境。"
+    },
+    {
+      "id": "s.eco-trace",
+      "title": "本组整理：生态地图证据溯源表（5 个工作表）",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-23-%E7%94%9F%E6%80%81%E5%9C%B0%E5%9B%BE%E8%AF%81%E6%8D%AE%E6%BA%AF%E6%BA%90%E8%A1%A8.xlsx",
+      "publisher": "本组（董晋铭整理）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "5 个工作表：说明 / 已核实数据（16 个节点逐个记「官网凭据摘录 + 我的判断」）/ 未核实清单（9 个节点逐个写「为什么核不了 + 已采取的处理」）/ 来源清单（52 条，含 verify 与 note）/ 关系证据（35 条，含 why 与对应来源）。它记录的是核实过程本身，不是新文献。"
     }
   ]
 }

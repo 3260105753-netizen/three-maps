@@ -14,17 +14,17 @@
       "id": "e.co-unitree",
       "name": "宇树科技",
       "type": "企业",
-      "summary": "四足与人形机器人本体供应商，靠低成本量产把具身智能的硬件门槛拉下来。",
+      "summary": "四足与人形机器人本体供应商，产品线覆盖消费与教育、工业、人形三类。",
       "detail": "硬件便宜是数据规模的前提：本体降到万元级，高校实验室才有能力买多台做批量采集。",
       "understanding": "已初步理解",
-      "understandingNote": "看过产品线与公开报价，没有实际采购或上手调试。",
+      "understandingNote": "已核对官网产品线，价格与采购规模仍未核实。",
       "evidence": "事实",
       "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "把四足与人形本体做到万元级，让高校与创业团队买得起多台",
+      "contribution": "把四足与人形本体做成多条产品线，消费教育、工业与人形并行",
       "whyIncluded": "技术逻辑里它占的是谁提供硬件这一环，缺了便宜本体就没有大规模数据采集",
-      "results": "四足与人形整机产品线，被大量高校与创业团队采购",
+      "results": "Go2 / A1 / B2 四足与 H2 / R1 / G1 人形等产品线",
       "sourceIds": [
         "s.unitree"
       ],
@@ -38,20 +38,22 @@
       "id": "e.co-agibot",
       "name": "智元机器人",
       "type": "企业",
-      "summary": "人形机器人整机厂，自建数据采集工厂并开源百万级轨迹数据集。",
+      "summary": "发布 AgiBot World 数据集的具身智能公司。",
       "detail": "它把数据采集做成工厂化流水线，而不是让每个实验室各自采集，这是数据规模上的结构性差异。",
       "understanding": "已初步理解",
-      "understandingNote": "读过数据集发布信息，没有用过其中数据。",
+      "understandingNote": "已读数据集论文摘要，公司侧信息未从官网正文核实。",
       "evidence": "事实",
       "verify": "待核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "把数据采集工业化，用集中式采集工厂产出高一致性轨迹",
+      "contribution": "用标准化采集流程加人工校验，保证数据一致性与规模",
       "whyIncluded": "商业逻辑上是整机加数据双轮，用数据资产筑护城河",
-      "results": "AgiBot World 开源数据集、人形整机产品",
+      "results": "AgiBot World：逾 100 万条轨迹、217 项任务、5 类部署场景",
       "sourceIds": [
         "s.agibot",
-        "s.agibot-world"
+        "s.agibot-world",
+        "s.agibot-world-paper",
+        "s.eco-trace"
       ],
       "tags": [
         "人形",
@@ -59,24 +61,24 @@
         "开源"
       ],
       "flags": [
-        "待核实"
+        "公司官网正文为动态渲染，整机形态与数据工厂描述未能核实"
       ]
     },
     {
       "id": "e.co-ubtech",
       "name": "优必选",
       "type": "企业",
-      "summary": "人形机器人商用落地较早的厂商，走行业客户与教育场景。",
+      "summary": "人形机器人厂商，产品线含工业、商用与轮式人形，覆盖制造、展馆、科研教育与仓储场景。",
       "detail": "它选择先接单再迭代，用客户场景倒逼产品成熟，而不是先在实验室把指标做到最好。",
       "understanding": "待深入学习",
-      "understandingNote": "只读过公开报道，没有核对财报或交付清单。",
+      "understandingNote": "已核对官网产品线与应用场景，未核对交付数量。",
       "evidence": "事实",
       "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "把人形机器人先卖进行业客户，验证商用可行性",
+      "contribution": "把人形机器人卖进工业与商用场景，同时做教育市场",
       "whyIncluded": "商业逻辑上它代表先接单再迭代这条路线",
-      "results": "行业与教育场景的人形机器人交付",
+      "results": "工业人形 Walker S 系列、商用人形 Walker C / X、轮式 Cruzr 与四类应用场景",
       "sourceIds": [
         "s.ubtech"
       ],
@@ -93,18 +95,19 @@
       "id": "e.co-figure",
       "name": "Figure AI",
       "type": "企业",
-      "summary": "人形机器人整机，与大型模型公司合作把语言模型接入本体控制。",
+      "summary": "人形机器人整机厂商，用自家 Helix 模型驱动机器人完成家庭任务。",
       "detail": "软硬一体路线：本体自己做，认知能力借外力，用合作换取模型侧的时间优势。",
       "understanding": "待深入学习",
-      "understandingNote": "看过官方演示视频，没有核对技术细节与发布时间。",
+      "understandingNote": "已核对官网与 Helix 页面，未核实历代机型的交付情况。",
       "evidence": "事实",
       "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "把通用语言模型接到人形本体上，走软硬一体路线",
+      "contribution": "把视觉-语言-动作模型直接装进人形本体，主攻家庭场景",
       "whyIncluded": "商业逻辑上代表整机厂与模型厂结盟这一形态",
-      "results": "Figure 系列人形整机与模型合作",
+      "results": "Figure 03 整机与 Helix 模型",
       "sourceIds": [
+        "s.figure-site",
         "s.helix"
       ],
       "tags": [
@@ -132,7 +135,8 @@
       "whyIncluded": "商业逻辑上是自带场景的极端案例，省掉了找客户这一步",
       "results": "Optimus 样机与工厂试点",
       "sourceIds": [
-        "s.tesla"
+        "s.tesla",
+        "s.eco-trace"
       ],
       "tags": [
         "人形",
@@ -147,7 +151,7 @@
       "id": "e.co-pi",
       "name": "Physical Intelligence",
       "type": "企业",
-      "summary": "通用机器人策略公司，把跨本体预训练推到商业公司主导。",
+      "summary": "提出 π0 视觉-语言-动作流模型的公司。",
       "detail": "它卖的是策略而不是本体，这是商业模式上的分叉：本体可以买，泛化能力只能自己训。",
       "understanding": "待深入学习",
       "understandingNote": "读过 π0 的公开介绍，没有复现过训练流程。",
@@ -155,9 +159,9 @@
       "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "提出通用策略路线，用多本体数据训练单一策略",
+      "contribution": "提出通用策略路线，用大规模机器人数据训练单一策略",
       "whyIncluded": "商业逻辑上它代表卖模型卖策略而不是卖本体",
-      "results": "π0 通用策略与相关模型",
+      "results": "π0 通用策略模型",
       "sourceIds": [
         "s.pi0"
       ],
@@ -183,7 +187,8 @@
       "whyIncluded": "商业逻辑上代表先选场景再定形态的务实路线",
       "results": "零售场景的机器人落地",
       "sourceIds": [
-        "s.galbot"
+        "s.galbot",
+        "s.eco-trace"
       ],
       "tags": [
         "轮式",
@@ -202,20 +207,24 @@
       "detail": "它定义了运动能力的上限，其他人做路线选择时都拿它对标，这是参照系的价值而不是市场份额。",
       "understanding": "已初步理解",
       "understandingNote": "看过官方演示与论文，没有接触过实机。",
-      "evidence": "事实",
-      "verify": "已核实",
+      "evidence": "他人观点",
+      "verify": "待核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "把动态运动控制做到工程可用，定义了高端整机的性能参照",
+      "contribution": "把动态运动控制做到工程可用，是高端整机常见的性能参照",
       "whyIncluded": "技术逻辑上它是运动能力上限的参照系",
       "results": "Atlas、Spot 等整机与运动控制成果",
       "sourceIds": [
-        "s.bd"
+        "s.bd",
+        "s.eco-trace"
       ],
       "tags": [
         "运动控制",
         "整机",
         "标杆"
+      ],
+      "flags": [
+        "「技术标杆」为主观评价"
       ]
     },
     {
@@ -235,7 +244,8 @@
       "results": "RT 系列与 RT-X 跨本体模型",
       "sourceIds": [
         "s.rt1",
-        "s.rt2"
+        "s.rt2",
+        "s.oxe"
       ],
       "tags": [
         "跨本体",
@@ -247,7 +257,7 @@
       "id": "e.lab-stanford",
       "name": "斯坦福机器人团队",
       "type": "实验室",
-      "summary": "低成本双臂遥操作路线的代表，用便宜硬件做高质量数据采集。",
+      "summary": "低成本双臂遥操作的公开工作，用便宜硬件做精细双臂操作。",
       "detail": "它证明了数据质量比硬件贵不贵更重要，这是把具身智能从大厂拉回实验室的关键一步。",
       "understanding": "已初步理解",
       "understandingNote": "看过 ALOHA 的采集流程介绍，没有动手搭过。",
@@ -271,17 +281,17 @@
       "id": "e.lab-shlab",
       "name": "上海人工智能实验室",
       "type": "实验室",
-      "summary": "国内具身智能开源生态的主要参与方之一。",
+      "summary": "国内开源侧供给方之一，开源 InternLM、InternVL、OpenCompass 等，并设具身智能方向。",
       "detail": "国内开源侧的主要供给方，具体成果需要进一步核对再细化。",
       "understanding": "待深入学习",
-      "understandingNote": "只知道机构存在，没有核对具体开源项目。",
-      "evidence": "他人观点",
-      "verify": "待核实",
+      "understandingNote": "已核对官网开源项目列表，未逐个使用过这些项目。",
+      "evidence": "事实",
+      "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "在开源模型与评测工具上持续产出",
+      "contribution": "在开源模型、评测与数据平台上持续产出",
       "whyIncluded": "技术逻辑上它代表国内开源侧的供给",
-      "results": "开源具身模型与工具链（具体成果待补充）",
+      "results": "InternLM、InternVL、OpenCompass、MinerU、LMDeploy、XTuner 等开源项目",
       "sourceIds": [
         "s.shlab"
       ],
@@ -310,7 +320,8 @@
       "whyIncluded": "技术逻辑上它是国内学术供给的一极",
       "results": "待补充具体课题组与代表工作",
       "sourceIds": [
-        "s.tsinghua"
+        "s.tsinghua",
+        "s.eco-trace"
       ],
       "tags": [
         "国内",
@@ -374,15 +385,15 @@
       "id": "e.oss-mujoco",
       "name": "MuJoCo",
       "type": "开源社区",
-      "summary": "接触动力学精度较高的物理仿真引擎，学术界做 sim2real 的常用底座。",
+      "summary": "以接触动力学为核心的通用物理引擎（MuJoCo 全称 Multi-Joint dynamics with Contact）。",
       "detail": "接触仿真的可信度决定仿真里的结论能不能迁移到真机，这是 sim2real 的成败关键。",
       "understanding": "已经尝试",
-      "understandingNote": "装过并跑过示例模型，没有做过完整的 sim2real 迁移实验。",
+      "understandingNote": "跑过示例模型，未做完整 sim2real 迁移实验。",
       "evidence": "事实",
       "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "提供可信的接触仿真，是 sim2real 迁移的参考实现平台",
+      "contribution": "提供接触仿真，是机器人研究常用的仿真平台",
       "whyIncluded": "技术逻辑上它决定了仿真结论能否迁移到真机",
       "results": "开源物理引擎与大量论文的实验平台",
       "sourceIds": [
@@ -403,26 +414,30 @@
       "understanding": "待深入学习",
       "understandingNote": "看过仓库结构，没有按文档搭过硬件。",
       "evidence": "事实",
-      "verify": "已核实",
+      "verify": "待核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
       "contribution": "把入门门槛压到几百美元级，让个人与小团队能跑通全流程",
       "whyIncluded": "商业逻辑上它是教育市场与长尾开发者的入口",
       "results": "开源硬件方案、数据格式与训练脚本",
       "sourceIds": [
-        "s.lerobot"
+        "s.lerobot",
+        "s.eco-trace"
       ],
       "tags": [
         "低成本",
         "开发栈",
         "入门"
+      ],
+      "flags": [
+        "成本区间为估计值，未核实"
       ]
     },
     {
       "id": "e.ds-oxe",
       "name": "Open X-Embodiment 数据集",
       "type": "数据集",
-      "summary": "汇聚二十余种机器人本体的操作轨迹，是目前跨本体训练的主要数据来源。",
+      "summary": "汇聚二十余种机器人本体的操作轨迹。",
       "detail": "让不同机械臂、不同场景的数据第一次能被同一个模型一起使用。",
       "understanding": "待深入学习",
       "understandingNote": "读过数据集论文与统计信息，没有下载使用。",
@@ -446,15 +461,15 @@
       "id": "e.ds-droid",
       "name": "DROID 数据集",
       "type": "数据集",
-      "summary": "强调场景与任务覆盖面的真实机器人操作数据集。",
+      "summary": "大规模真实场景（in-the-wild）机器人操作数据集。",
       "detail": "它用多样化真实场景换泛化，而不是靠单一场景堆数量，补的是场景多样性这一维。",
       "understanding": "待深入学习",
-      "understandingNote": "只读过介绍，没有核对数据规模与许可条款。",
+      "understandingNote": "已核对数据集主页，未下载使用。",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "用多样化真实场景换泛化，而不是靠单一场景堆数量",
+      "contribution": "用真实场景的自然多样性换泛化，而不是靠单一场景堆数量",
       "whyIncluded": "技术逻辑上它补的是场景多样性这一维",
       "results": "多场景多任务的真实操作数据",
       "sourceIds": [
@@ -473,19 +488,20 @@
       "id": "e.ds-agibot-world",
       "name": "AgiBot World 数据集",
       "type": "数据集",
-      "summary": "百万级真实采集轨迹的开源具身数据集。",
+      "summary": "逾 100 万条轨迹、217 项任务的大规模具身数据集，规模比既有数据集高一个量级。",
       "detail": "用集中式采集工厂保证数据一致性与规模，是整机厂把数据资产外溢、换取生态话语权的样本。",
       "understanding": "待深入学习",
-      "understandingNote": "读过发布信息，没有下载使用。",
+      "understandingNote": "已读论文摘要，未下载使用。",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
       "contribution": "用集中式采集工厂保证数据一致性与规模",
       "whyIncluded": "商业逻辑上它是整机厂把数据资产外溢、换取生态话语权的样本",
-      "results": "开源大规模真实轨迹数据集",
+      "results": "逾 100 万条轨迹、217 项任务、5 类部署场景",
       "sourceIds": [
-        "s.agibot-world"
+        "s.agibot-world",
+        "s.agibot-world-paper"
       ],
       "tags": [
         "数据集",
@@ -500,7 +516,7 @@
       "id": "e.bench-rlbench",
       "name": "RLBench",
       "type": "基准",
-      "summary": "大量仿真操作任务的基准，用于比较方法在受控条件下的成功率。",
+      "summary": "机器人学习的仿真基准与实验环境。",
       "detail": "提供可复现的受控实验条件，让不同方法之间的成功率数字可以互相比。",
       "understanding": "待深入学习",
       "understandingNote": "知道它是什么，没有跑过评测。",
@@ -524,7 +540,7 @@
       "id": "e.bench-libero",
       "name": "LIBERO",
       "type": "基准",
-      "summary": "长程操作与知识迁移基准，测的是学过的东西能不能迁移。",
+      "summary": "知识迁移方向的基准，测学过的东西能否迁移。",
       "detail": "把评测重点从单任务成功率转到迁移能力，这对应具身智能真正的难点。",
       "understanding": "待深入学习",
       "understandingNote": "读过任务设计，没有实际评测过。",
@@ -560,7 +576,8 @@
       "whyIncluded": "技术逻辑上它是判断工作是否体系性的基准场",
       "results": "历届论文集中在操作、运动控制与自主系统",
       "sourceIds": [
-        "s.icra"
+        "s.icra",
+        "s.eco-trace"
       ],
       "tags": [
         "会议",
@@ -575,15 +592,15 @@
       "id": "e.conf-corl",
       "name": "CoRL",
       "type": "会议",
-      "summary": "专注机器人学习的会议，VLA 与操作类工作最集中的发表地。",
+      "summary": "由 Robot Learning Foundation 治理的机器人学习专门会议。",
       "detail": "把机器学习方法与机器人任务对接，评审偏好可复现的真实机器人实验。",
       "understanding": "待深入学习",
-      "understandingNote": "知道它聚焦机器人学习，没有系统读过往届论文。",
+      "understandingNote": "已核对官网，未系统读过往届论文集。",
       "evidence": "事实",
-      "verify": "待核实",
+      "verify": "已核实",
       "owner": "董晋铭",
       "updated": "2026-10-18",
-      "contribution": "把机器学习方法与机器人任务对接，评审偏好可复现的真实实验",
+      "contribution": "把机器学习方法与机器人任务对接，只收机器人学习方向",
       "whyIncluded": "技术逻辑上具身智能近年的关键进展大多先落在这里",
       "results": "多条 VLA 与低成本操作路线在此系列发表",
       "sourceIds": [
@@ -614,7 +631,8 @@
       "whyIncluded": "技术逻辑上它提供严谨性这一维的标尺",
       "results": "理论与方法类代表工作",
       "sourceIds": [
-        "s.rss"
+        "s.rss",
+        "s.eco-trace"
       ],
       "tags": [
         "会议",
@@ -653,6 +671,50 @@
       ],
       "owner": "张艺邦",
       "updated": "2026-10-23"
+    },
+    {
+      "id": "e.case-elderly-medicine",
+      "name": "案例：把药递到老人手里",
+      "type": "案例",
+      "summary": "把「帮老人拿药」从抓取任务变成可交付服务，卡点在用药确认与责任边界，不在手的灵巧度。",
+      "detail": "生态视角看这条链：本体（宇树/智元供低成本整机）→ 策略（π0、Helix 这类通用 VLA）→ 数据（OXE/DROID/AgiBot World）→ 评测（LIBERO/RLBench）→ 场景（Figure、Tesla 用自有场景；银河通用用零售）。家用用药场景把最后一段从工厂与货架换成有老人、有小字药盒、有责任归属的客厅，于是暴露三处断点：语义确认、失败可解释性、责任划分。",
+      "understanding": "待深入学习",
+      "understandingNote": "只做了生态链与任务结构的推理，没有接触过真实的家用给药设备，也没有访谈。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "owner": "董晋铭",
+      "updated": "2026-10-23",
+      "sourceIds": [
+        "s.saycan",
+        "s.pi0",
+        "s.openvla",
+        "s.oxe",
+        "s.droid",
+        "s.act",
+        "s.helix",
+        "s.vla-survey",
+        "s.libero",
+        "s.rlbench",
+        "s.eco-trace"
+      ],
+      "tags": [
+        "案例",
+        "家用场景",
+        "用药确认",
+        "生态链"
+      ],
+      "flags": [
+        "缺真实用户访谈",
+        "家用安全责任依据未取得",
+        "Helix 的时长与数量为厂商自述，未独立核实"
+      ],
+      "caseStudy": {
+        "problem": "老人能否只靠一次指令就吃对药，并在吃错之前被拦住？验收标准不是「抓起来」，而是「拿对、递到、确认吃下」。",
+        "method": "先用问题定义把验收标准从抓取改写为用药正确，再沿生态链逐环找供给方：本体谁供、策略谁出、数据谁产、评测谁定、场景谁买单；最后用「失败长什么样」反推断点在哪一环。",
+        "evidence": "涉及的组织与团队：Figure（Helix 宣称一句话抓取数千种未见物品，训练数据约 500 小时遥操作）、Physical Intelligence（π0 通用策略）、宇树与智元（低成本本体与自建数据工厂）、银河通用（零售场景落地）、Google DeepMind（RT 系列与跨本体训练）、斯坦福（ALOHA 低成本遥操作采集）。相关论文有 SayCan、OpenVLA、π0、Open X-Embodiment；相关会议为 CoRL 与 ICRA；相关数据集与基准为 DROID、AgiBot World、LIBERO、RLBench。公开事实是：这些工作的成功判定都建立在自家测试或公开仿真基准上，没有一条能回答「药递错了没有」。",
+        "judgment": "关键问题在语义确认与纠错路径，需要「药盒识别 + 用药表比对 + 不确定时拒答」三段，而不是更强的抓取。可能的三条解法：一是多视角识别加置信度阈值，低于阈值就停下来问人；二是把用药表结构化，与药盒文字识别做双通道交叉校验；三是在流程上引入二次确认，递出前让老人或家属复述药名。商业上，家用场景的付费方很可能是子女或社区养老机构而非老人本人，产品形态因此更可能走向机构采购加按月服务，而不是一次性买一台机器人。",
+        "open": "没有真实用户访谈，全部是任务结构与公开资料的推理；家用场景的安全责任划分（厂商、家属、使用者）没有查到明确依据；药盒在反光、小字、异形包装上的识别失败率缺乏公开数据；拒答机制的误报率与老人耐心的权衡也没有数据。"
+      }
     }
   ]
 }

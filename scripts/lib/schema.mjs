@@ -8,7 +8,7 @@ export const REQUIRED_NODE = ["id", "name", "type", "summary", "understanding", 
 export const REQUIRED_REL = ["id", "from", "to", "type", "why", "evidence", "verify"];
 export const REQUIRED_SOURCE = ["id", "title", "kind", "verify"];
 
-export const ECO_TYPES = ["会议", "实验室", "企业", "开源社区", "数据集", "基准", "信息渠道"];
+export const ECO_TYPES = ["会议", "实验室", "企业", "开源社区", "数据集", "基准", "信息渠道", "案例"];
 export const CASE_KEYS = ["problem", "method", "evidence", "judgment", "open"];
 export const REVISION_KEYS = ["before", "trigger", "now", "unknown"];
 export const CASE_LABELS = {
@@ -95,7 +95,9 @@ export function validateNode(node, ctx) {
     if (isBlank(node.courseBasis)) errors.push(`${where}：课程节点必须有 courseBasis（依据哪份培养方案或大纲）`);
   }
 
-  if (ECO_TYPES.includes(node.type)) {
+  // 生态地图的「参与者/资源」类节点才需要生态三要素；
+  // 生态里的「案例」是把参与者串成一条链的视角，不要求 contribution/whyIncluded。
+  if (node.type !== "案例" && ECO_TYPES.includes(node.type)) {
     if (isBlank(node.contribution)) errors.push(`${where}：${node.type} 节点必须写 contribution（主要贡献）`);
     if (isBlank(node.whyIncluded)) errors.push(`${where}：${node.type} 节点必须写 whyIncluded（入选理由）`);
     if (isBlank(node.results)) warnings.push(`${where}：没写 results（相关成果）`);
