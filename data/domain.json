@@ -327,14 +327,15 @@
       "type": "模型",
       "summary": "蚂蚁灵波开源的具身智能基座模型，用约 6 万小时数据预训练，覆盖 20 种本体，是国产 VLA 的代表之一。",
       "detail": "与只做双臂操作的开源模型不同，它把动作空间扩到了夹爪、灵巧手、腰、头与移动底盘，并引入未来预测作为辅助任务。对学生的意义是：权重与后训练代码都开放，能在公开基准上真正跑一遍。",
-      "understanding": "已初步理解",
-      "understandingNote": "读过 README 的数据规模与能力说明，没跑过推理。",
+      "understanding": "已经尝试",
+      "understandingNote": "用其后训练流程在 RoboTwin 上跑过一轮评测（8 任务 21 局、13 次成功），但没有与其官方报告的成绩逐项对照。",
       "evidence": "事实",
       "verify": "已核实",
       "sourceIds": [
         "s.lingbot-github",
         "s.lingbot-hf",
-        "s.lingbot-report"
+        "s.lingbot-report",
+        "s.robotwin-eval"
       ],
       "tags": [
         "模型",
@@ -350,15 +351,16 @@
       "name": "RoboTwin 2.0 基准",
       "type": "数据与资源",
       "summary": "面向双臂操作的公开仿真基准，含 50 个任务与官方数据集，是当前比较 VLA 后训练效果的常用平台。",
-      "detail": "它的价值在于「同一套任务 + 官方数据 + 统一评测脚本」，让不同方法至少能在同一平台上比。本组用它走过一遍从原始数据到 LeRobot 格式、再到仿真评测的完整流程。",
+      "detail": "它的价值在于「同一套任务 + 官方数据 + 统一评测脚本」，让不同方法至少能在同一平台上比。本组用它走过一遍从原始数据到 LeRobot 格式、再到仿真评测的完整流程。 本组这一轮的观察：满分集中在「按压/点击」这类单步动作（点铃、按闹钟、按订书机），零分集中在需要精确对准或处理铰链的任务（盖章、开笔记本），开微波炉与拧开关居中。这只是 3 局/任务的粗观察，不能当结论。",
       "understanding": "已经尝试",
-      "understandingNote": "按官方流程把 RoboTwin 原始数据转成 LeRobot 格式、并准备了 50 任务的仿真评测；完整评测结果尚未产出（记录见来源）。",
+      "understandingNote": "按官方流程完成数据转换与评测，并在 8 个任务上跑出 21 局结果（13 次成功；记录见来源）。样本很小，只说明流程走通，不足以判断模型强弱。",
       "evidence": "事实",
       "verify": "已核实",
       "sourceIds": [
         "s.robotwin-github",
         "s.robotwin-hf",
-        "s.robotwin-record"
+        "s.robotwin-record",
+        "s.robotwin-eval"
       ],
       "tags": [
         "基准",

@@ -2,6 +2,21 @@
   "_note": "更新记录。课程要求记录「日期、更新对象、依据、修改内容及原因」，所以每条都必须有 date / target / what / why / basis。type 决定页面上的颜色：技术、内容、反馈、修正、发布。",
   "entries": [
     {
+      "id": "ch-20261023-20",
+      "date": "2026-10-23",
+      "week": "第 6 周",
+      "type": "内容",
+      "who": "张艺邦（竞赛实践）",
+      "target": "接入首个真实评测结果（8 任务 / 21 局）",
+      "what": "把竞赛里的 RoboTwin 评测输出截图存入 evidence/，新增来源 s.robotwin-eval 写清逐任务数字与局限；挂到 d.bench-robotwin、d.model-lingbot（理解程度升到「已经尝试」）、c.h-practice（升到「已经尝试」）、c.m-decompose。",
+      "why": "这是全站第一份「我们自己跑出来的数字」。之前所有节点要么引文献、要么写推断，没有一个能说「我们做过并留下了输出」。它也正好补上徐晨凯一直缺的「可视化调试/小规模尝试」证据。",
+      "basis": "终端评测输出截图（2026-10-23）",
+      "links": [
+        "domain.html#node=d.bench-robotwin",
+        "cognitive.html#node=c.h-practice"
+      ]
+    },
+    {
       "id": "ch-20261023-19",
       "date": "2026-10-23",
       "week": "第 6 周",

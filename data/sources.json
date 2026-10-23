@@ -568,6 +568,16 @@
       "kind": "内部记录",
       "verify": "已核实",
       "note": "本组整理的流程笔记：从拉取 RoboTwin 仓库、下载官方数据、转 HDF5、生成 LeRobotDataset v2.1，到启动 50 任务仿真评测。证明跑通过流程，不含训练结果与成功率。"
+    },
+    {
+      "id": "s.robotwin-eval",
+      "title": "本组评测记录：RoboTwin 8 个任务、21 局",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-23-RoboTwin评测结果-8任务21局.png",
+      "publisher": "本组（张艺邦）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "终端输出截图，已跑 21 局（7 个任务 × 3 局），13 次成功，约 61.9%。逐任务：click_bell 3/3、click_alarmclock 3/3、press_stapler 3/3、stamp_seal 0/3、turn_switch 2/3、open_microwave 2/3、open_laptop 0/3；lift_pot 未给出数字。局限：每任务仅 3 局、未注明 checkpoint 与随机种子、没有基线对照，因此只能说明「流程跑通并产出结果」，不能作为模型能力结论。"
     }
   ]
 }
