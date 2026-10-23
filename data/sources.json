@@ -468,6 +468,26 @@
       "kind": "官方页面",
       "verify": "已核实",
       "note": "用药错误会发生在开方、转抄、调配、给药与监测等多个环节，是全球可避免伤害的主要来源之一；用于支撑：拿药场景的真正风险在识别与确认环节，而不在抓取。"
+    },
+    {
+      "id": "s.cleargrasp",
+      "title": "ClearGrasp: 3D Shape Estimation of Transparent Objects for Manipulation",
+      "url": "https://arxiv.org/abs/1910.02550",
+      "publisher": "arXiv（Synthesis.ai / Google / Columbia）",
+      "date": "2019-10",
+      "kind": "论文",
+      "verify": "已核实",
+      "note": "摘要指出：透明物体因折射与镜面反射不满足经典立体视觉的几何假设，标准 3D 传感器给出的深度往往是「有噪声或失真的近似」，需要专门方法修正。它支撑的是机制，不是相关性——「换物体就失败」里最难的那类（透明、反光、无纹理）确实会让感知层先失效。（2026-10-23 核：读 PDF 首页摘要）"
+    },
+    {
+      "id": "s.gr1",
+      "title": "Unleashing Large-Scale Video Generative Pre-training for Visual Robot Manipulation（GR-1）",
+      "url": "https://arxiv.org/abs/2312.13139",
+      "publisher": "arXiv（ByteDance Research）",
+      "date": "2023-12",
+      "kind": "论文",
+      "verify": "已核实",
+      "note": "GR-1：GPT 式模型先在大规模视频上做生成式预训练，再在机器人数据上微调；在 CALVIN 基准上成功率 88.9%→94.9%，未见场景零样本 53.3%→85.4%。两点用处：(1) 是「基础模型＋预训练」阶段的一条具体路线；(2) 说明 CALVIN 这类基准真实存在且被用来横向报数——这与「没有统一基准」的说法需要区分开。（2026-10-23 核：读 PDF 首页摘要）"
     }
   ]
 }
