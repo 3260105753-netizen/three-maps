@@ -276,8 +276,23 @@
   };
   MS.state = state;
 
-  function boot(opts) {
-    opts = opts || {};
+  /* 渲染完成后再按 #锚点 滚动一次；node=xxx 由地图页自己处理 */
+  function scrollToHash() {
+    var raw = (location.hash || "").replace(/^#/, "");
+    if (!raw || raw.indexOf("=") >= 0) return;
+    var id = raw;
+    try { id = decodeURIComponent(raw); } catch (e) { /* 保留原样 */ }
+    var el = document.getElementById(id);
+    if (!el) return;
+    requestAnimationFrame(function () {
+      var top = el.getBoundingClientRect().top + window.scrollY - 76;
+      window.scrollTo({ top: top > 0 ? top : 0, behavior: "auto" });
+      el.classList.add("anchor-flash");
+      setTimeout(function () { el.classList.remove("anchor-flash"); }, 1500);
+    });
+  }
+
+  function boot(opts) {    opts = opts || {};
     state.page = opts.page || document.body.getAttribute("data-page");
     var root = qs("#page-root");
     if (root) root.innerHTML = '<div class="wrap"><div class="loading"><div class="spinner"></div>正在读取地图数据…</div></div>';
@@ -319,6 +334,10 @@
         var page = MS.pages[state.page];
         if (typeof page === "function") page(state, root);
         else if (root) root.innerHTML = '<div class="wrap"><div class="fatal"><h3>页面脚本缺失</h3><p>没有注册 ' + esc(state.page) + " 的渲染函数。</p></div></div>";
+
+        // 页面内容是渲染出来的，浏览器的自动锚点跳转在内容出现之前就失败了，
+        // 所以这里渲染完再自己滚一次（#feedback、#members、#access 等都靠它）
+        scrollToHash();
       });
     }).catch(function (err) {
       console.error(err);
@@ -327,6 +346,8 @@
   }
 
   /* ---------- 导出 ---------- */
+  window.addEventListener("hashchange", scrollToHash);
+
   MS.boot = boot;
   MS.pages = {};
   MS.esc = esc;

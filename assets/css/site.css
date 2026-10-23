@@ -581,3 +581,7 @@ tbody tr:hover { background: rgba(148, 163, 184, 0.04); }
   *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
   html { scroll-behavior: auto; }
 }
+
+/* 通过 #锚点 跳转后短暂高亮，让人确认「跳到了」 */
+.anchor-flash { animation: anchorFlash 1.5s ease-out; }
+@keyframes anchorFlash { from { box-shadow: 0 0 0 3px rgba(94,234,212,.55); } to { box-shadow: 0 0 0 3px rgba(94,234,212,0); } }

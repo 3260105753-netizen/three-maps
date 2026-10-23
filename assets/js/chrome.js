@@ -42,7 +42,7 @@
         "</a>" +
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="展开导航">☰</button>' +
         '<nav class="nav" id="site-nav" aria-label="主导航">' + links +
-          '<a class="nav-cta" href="about.html#feedback">给本组反馈</a>' +
+          '<a class="nav-cta" href="changelog.html#feedback">给本组反馈</a>' +
         "</nav>" +
       "</div>";
 
