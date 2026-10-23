@@ -911,6 +911,21 @@
       "sourceIds": [
         "s.zju-plan"
       ]
+    },
+    {
+      "id": "r221",
+      "from": "d.course-ml",
+      "to": "d.course-embodied",
+      "type": "前置",
+      "label": "是它的先修基础",
+      "why": "两门课在培养方案里的建议修读时间有明确先后：深度学习基础（AI2003 M）建议二年级秋冬，自主智能系统与具身智能（AI3006 M）建议三年级春夏。内容上也顺：后者要判断各技术路线的能力边界，需要先有训练与泛化的基础。但培养方案没有写硬性先修要求，所以「必须先修」是我们的推断。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.zju-plan",
+        "s.zju-plan-elective"
+      ]
     }
   ]
 }
