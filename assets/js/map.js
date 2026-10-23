@@ -43,6 +43,7 @@
             "</div>" +
             pathWidgetHtml() +
             sectionsHtml(all, order) +
+            (mapId === "cognitive" ? openQuestionsHtml(state, all) : "") +
           "</div>" +
         "</div>";
 
@@ -275,9 +276,11 @@
       }
 
       function wireSections() {
-        var host = root.querySelector("#type-sections");
-        if (!host) return;
-        MS.on(host, "click", "[data-tile]", function (ev, el) { selectNode(el.getAttribute("data-tile"), { scroll: true }); });
+        // 绑定在整页上：按类型浏览的方块，以及「还没解决」区块里的链接，都能点
+        MS.on(root, "click", "[data-tile]", function (ev, el) {
+          ev.preventDefault();
+          selectNode(el.getAttribute("data-tile"), { scroll: true });
+        });
       }
 
       /* ---------------- 浏览路径 ---------------- */
@@ -400,6 +403,63 @@
               "</span></button>";
           }).join("") + "</div></div>";
       }).join("") + "</div></section>";
+  }
+
+  /* ---------------- 还没解决的问题（认知页专用） ----------------
+     不手写内容，直接从案例的「尚存疑问」和认识修正的「仍不知道」汇总，
+     改案例就会自动更新，避免另写一份会和正文对不上的清单。 */
+  function openQuestionsHtml(state, nodes) {
+    var fromCases = nodes.filter(function (n) {
+      return n.type === "案例" && n.caseStudy && n.caseStudy.open;
+    }).map(function (n) {
+      return { node: n, text: n.caseStudy.open, from: "案例" };
+    });
+    var fromRev = nodes.filter(function (n) {
+      return n.type === "认识修正" && n.revision && n.revision.unknown;
+    }).map(function (n) {
+      return { node: n, text: n.revision.unknown, from: "认识修正" };
+    });
+    var open = fromCases.concat(fromRev);
+
+    var courses = state.index.nodes.filter(function (n) { return n.type === "课程"; });
+    var weak = state.index.nodes.filter(function (n) {
+      return n.understanding === "待深入学习" &&
+        ["模型", "软件", "数据与资源", "技术路线", "课程"].indexOf(n.type) >= 0;
+    });
+
+    function item(x) {
+      return '<li class="rel"><div class="rel-top">' + MS.typeBadge(x.node.type) +
+        '<a href="#node=' + esc(x.node.id) + '" data-tile="' + esc(x.node.id) + '">' + esc(x.node.name) + "</a>" +
+        '<span class="rel-dir">来自' + esc(x.from) + "</span></div>" +
+        '<p class="rel-why">' + esc(x.text) + "</p></li>";
+    }
+    function entry(n) {
+      return '<li class="rel"><div class="rel-top">' + MS.typeBadge(n.type) +
+        '<a href="#node=' + esc(n.id) + '" data-tile="' + esc(n.id) + '">' + esc(n.name) + "</a>" +
+        "</div>" +
+        (n.courseBasis ? '<p class="rel-why">依据：' + esc(n.courseBasis) + "</p>" : "") +
+        (n.summary && !n.courseBasis ? '<p class="rel-why">' + esc(n.summary) + "</p>" : "") +
+        "</li>";
+    }
+
+    return '<section class="section-block" id="unknown">' +
+      '<div class="section-head"><div><h2>还没解决的问题 &amp; 下一步学什么</h2>' +
+      "<p>左栏是从每个案例的「尚存疑问」和认识修正的「仍不知道」自动汇总来的——改案例，这里就跟着变。右栏是我们认为该先去补的入口。</p></div></div>" +
+      '<div class="grid g2">' +
+        '<div class="panel"><h4 style="margin-top:0">仍然不知道（' + open.length + " 条）</h4>" +
+          (open.length
+            ? '<ul class="rel-list">' + open.map(item).join("") + "</ul>"
+            : '<p class="small muted" style="margin:0">案例还没有写「尚存疑问」，这一栏是空的。</p>') +
+        "</div>" +
+        '<div class="panel"><h4 style="margin-top:0">后续学习入口</h4>' +
+          (courses.length ? '<p class="small muted" style="margin:0 0 6px">课程入口</p><ul class="rel-list">' +
+            courses.map(entry).join("") + "</ul>" : "") +
+          (weak.length ? '<p class="small muted" style="margin:8px 0 6px">还没掌握、需要补的具体东西（' + weak.length + " 个）</p>" +
+            '<ul class="rel-list">' + weak.slice(0, 8).map(entry).join("") + "</ul>" : "") +
+          (!courses.length && !weak.length ? '<p class="small muted" style="margin:0">还没有登记课程或待补的工具。</p>' : "") +
+        "</div>" +
+      "</div>" +
+    "</section>";
   }
 
   /* ---------------- 辅助 ---------------- */
