@@ -883,6 +883,34 @@
         "s.sim2real"
       ],
       "inferred": true
+    },
+    {
+      "id": "r219",
+      "from": "d.course-embodied",
+      "to": "d.vla-concept",
+      "type": "前置",
+      "label": "是它的前置课程",
+      "why": "这门课讲具身智能的整体框架：感知、决策、控制怎么分工与耦合。先有这个整体结构，才看得懂 VLA 这条端到端路线取代了其中哪几环、又放弃了什么。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.zju-plan"
+      ]
+    },
+    {
+      "id": "r220",
+      "from": "d.course-embodied",
+      "to": "d.sim2real",
+      "type": "前置",
+      "label": "是它的前置课程",
+      "why": "仿真与现实的差距不是纯工程问题，它来自具身系统的组成方式：传感器、执行器、时延、标定。课程给的是这个系统图，理解差距从哪来需要先有这张图。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.zju-plan"
+      ]
     }
   ]
 }

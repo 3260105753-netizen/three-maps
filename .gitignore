@@ -6,3 +6,5 @@ Thumbs.db
 .vscode/
 .idea/
 node_modules/
+# 校内文件（培养方案等）不公开，不要提交
+evidence/*.pdf
