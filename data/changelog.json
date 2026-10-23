@@ -2,6 +2,21 @@
   "_note": "更新记录。课程要求记录「日期、更新对象、依据、修改内容及原因」，所以每条都必须有 date / target / what / why / basis。type 决定页面上的颜色：技术、内容、反馈、修正、发布。",
   "entries": [
     {
+      "id": "ch-20261023-01",
+      "date": "2026-10-23",
+      "week": "第 6 周",
+      "type": "修正",
+      "who": "技术（张艺邦）",
+      "target": "3 条关系的核实状态 + 2 条来源",
+      "what": "把 r202（OpenVLA 体现 VLA 范式）、r204（OpenVLA 依赖 Open X-Embodiment）、r.e04（智元提供 AgiBot World 数据集）从「待核实」改为「已核实」，并在 why 里写明核对依据；s.openvla、s.agibot-world 同步改为已核实。",
+      "why": "这三条标的是「事实」，却一直没核——说自己是事实又没核，是最容易被抓的一种不一致。核完能让「事实类关系」不再是空的。",
+      "basis": "arXiv 2406.09246 摘要；agibot-world.com 官网与智元官方发布",
+      "links": [
+        "domain.html#node=d.openvla",
+        "ecosystem.html#node=e.co-agibot"
+      ]
+    },
+    {
       "id": "ch-20261022-01",
       "date": "2026-10-22",
       "week": "第 6 周",
