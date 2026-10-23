@@ -624,6 +624,35 @@
       "flags": [
         "待核实"
       ]
+    },
+    {
+      "id": "e.co-robbyant",
+      "name": "蚂蚁灵波（Robbyant）",
+      "type": "企业",
+      "summary": "蚂蚁集团旗下的具身智能公司，开源了 LingBot-VLA 系列基座模型，并主办面向开发者的具身大模型挑战赛。",
+      "contribution": "把 VLA 基座模型连同后训练代码一起开源，并联合魔搭、天池办赛，把「用得起、改得动」这件事推给高校与个人开发者。",
+      "whyIncluded": "它是本组唯一有直接接触的国内具身智能企业：我们参加了它的比赛、用了它的模型和数据流程，这比读新闻可靠。",
+      "results": "LingBot-VLA 2.0（2026-07 开源，含 6B 权重与后训练代码）、LingBot-World 系列世界模型、首届具身大模型挑战赛（2026-09 启动）。",
+      "relatedNodes": [
+        "d.model-lingbot",
+        "d.bench-robotwin"
+      ],
+      "understanding": "已经尝试",
+      "understandingNote": "本组参加其主办的挑战赛初赛，用过它开源的模型与 RoboTwin 评测流程。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lingbot-github",
+        "s.lingbot-hf"
+      ],
+      "tags": [
+        "企业",
+        "国产",
+        "开源",
+        "办赛方"
+      ],
+      "owner": "张艺邦",
+      "updated": "2026-10-23"
     }
   ]
 }

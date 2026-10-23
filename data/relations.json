@@ -955,6 +955,61 @@
         "s.zju-plan",
         "s.openvla"
       ]
+    },
+    {
+      "id": "r230",
+      "from": "e.co-robbyant",
+      "to": "d.model-lingbot",
+      "type": "提供",
+      "label": "开源了该模型",
+      "why": "LingBot-VLA 2.0 由蚂蚁灵波开源发布，权重与后训练代码同在官方仓库；生态地图记「谁在推动」，领域地图记「有哪些模型」，这条把同一对象的两侧连起来，避免两处说法不一致。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lingbot-github"
+      ]
+    },
+    {
+      "id": "r231",
+      "from": "d.model-lingbot",
+      "to": "d.vla-concept",
+      "type": "体现",
+      "label": "是该范式的国产实例",
+      "why": "它把图像、语言与动作联合进一个模型，正是 VLA 范式；与 OpenVLA、RT-2 相比，它的差别在动作空间扩到了灵巧手与移动底盘，而不是范式本身。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lingbot-github",
+        "s.lingbot-report"
+      ]
+    },
+    {
+      "id": "r232",
+      "from": "d.bench-robotwin",
+      "to": "d.task-fetch-deliver",
+      "type": "用于",
+      "label": "提供统一的评测环境",
+      "why": "取物递送这类任务要比较两条路线谁更稳，必须固定任务集与评测脚本；RoboTwin 的 50 个任务正是这样的公共平台，否则只能比成功率数字。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.robotwin-github"
+      ]
+    },
+    {
+      "id": "r233",
+      "from": "d.bench-robotwin",
+      "to": "d.sim2real",
+      "type": "暴露",
+      "label": "让它显现",
+      "why": "RoboTwin 是纯仿真基准，在它上面刷到高分并不等于真机能跑；换本体或换材质上真机时，仿真与现实的差距才会被看见。这也是「谁更强」不能只看仿真数字的原因。",
+      "evidence": "团队推断",
+      "verify": "待核实",
+      "inferred": true,
+      "sourceIds": [
+        "s.robotwin-record",
+        "s.sim2real"
+      ]
     }
   ]
 }

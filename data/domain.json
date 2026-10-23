@@ -320,6 +320,54 @@
       "courseBasis": "《2026级人工智能专业培养方案》（浙江大学）第 6 页「专业必修课程」表：AI2007 M 大模型基础，4.0 学分，建议二（春夏）。表页截图见来源。",
       "owner": "卢哲瑜",
       "updated": "2026-10-23"
+    },
+    {
+      "id": "d.model-lingbot",
+      "name": "LingBot-VLA 2.0",
+      "type": "模型",
+      "summary": "蚂蚁灵波开源的具身智能基座模型，用约 6 万小时数据预训练，覆盖 20 种本体，是国产 VLA 的代表之一。",
+      "detail": "与只做双臂操作的开源模型不同，它把动作空间扩到了夹爪、灵巧手、腰、头与移动底盘，并引入未来预测作为辅助任务。对学生的意义是：权重与后训练代码都开放，能在公开基准上真正跑一遍。",
+      "understanding": "已初步理解",
+      "understandingNote": "读过 README 的数据规模与能力说明，没跑过推理。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.lingbot-github",
+        "s.lingbot-hf",
+        "s.lingbot-report"
+      ],
+      "tags": [
+        "模型",
+        "国产开源",
+        "VLA",
+        "基座"
+      ],
+      "owner": "张艺邦",
+      "updated": "2026-10-23"
+    },
+    {
+      "id": "d.bench-robotwin",
+      "name": "RoboTwin 2.0 基准",
+      "type": "数据与资源",
+      "summary": "面向双臂操作的公开仿真基准，含 50 个任务与官方数据集，是当前比较 VLA 后训练效果的常用平台。",
+      "detail": "它的价值在于「同一套任务 + 官方数据 + 统一评测脚本」，让不同方法至少能在同一平台上比。本组用它走过一遍从原始数据到 LeRobot 格式、再到仿真评测的完整流程。",
+      "understanding": "已经尝试",
+      "understandingNote": "按官方流程把 RoboTwin 原始数据转成 LeRobot 格式、并准备了 50 任务的仿真评测；完整评测结果尚未产出（记录见来源）。",
+      "evidence": "事实",
+      "verify": "已核实",
+      "sourceIds": [
+        "s.robotwin-github",
+        "s.robotwin-hf",
+        "s.robotwin-record"
+      ],
+      "tags": [
+        "基准",
+        "仿真",
+        "双臂",
+        "评测"
+      ],
+      "owner": "张艺邦",
+      "updated": "2026-10-23"
     }
   ]
 }

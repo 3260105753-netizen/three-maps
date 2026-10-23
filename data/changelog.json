@@ -2,6 +2,22 @@
   "_note": "更新记录。课程要求记录「日期、更新对象、依据、修改内容及原因」，所以每条都必须有 date / target / what / why / basis。type 决定页面上的颜色：技术、内容、反馈、修正、发布。",
   "entries": [
     {
+      "id": "ch-20261023-19",
+      "date": "2026-10-23",
+      "week": "第 6 周",
+      "type": "内容",
+      "who": "张艺邦（竞赛实践）",
+      "target": "新增 3 个节点：蚂蚁灵波（生态）、LingBot-VLA 2.0（领域·模型）、RoboTwin 2.0（领域·基准）+ 4 条关系 + 6 条来源",
+      "what": "把本组参加蚂蚁灵波具身大模型挑战赛时接触到的公开对象纳入三张地图：生态侧补上主办方蚂蚁灵波；领域侧补上国产 VLA 基座 LingBot-VLA 2.0 与双臂仿真基准 RoboTwin 2.0；并把本组的 RoboTwin→LeRobot 操作笔记作为内部记录存证（evidence/）。",
+      "why": "生态地图 24 个节点里没有一家我们真正接触过的公司；领域地图的 VLA 模型只有国外的 OpenVLA 与 RT-2。这两处都是「材料来自网上」而非「我们自己碰过」。RoboTwin 节点用了已经尝试这一档，因为流程确实走过一遍。",
+      "basis": "LingBot 官方仓库与 HF 模型页、RoboTwin 官方仓库与 HF 数据集、本组操作记录（2026-10）",
+      "links": [
+        "ecosystem.html#node=e.co-robbyant",
+        "domain.html#node=d.bench-robotwin",
+        "evidence/2026-10-23-RoboTwin转LeRobot操作记录.md"
+      ]
+    },
+    {
       "id": "ch-20261023-18",
       "date": "2026-10-23",
       "week": "第 6 周",

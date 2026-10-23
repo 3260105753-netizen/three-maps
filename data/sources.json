@@ -508,6 +508,66 @@
       "kind": "培养方案",
       "verify": "已核实",
       "note": "培养方案第 7 页「3)智能系统方向 B.选修」表的截图，可见 AI3006 M 自主智能系统与具身智能：4.0 学分、80 总学时、建议三（春夏）。仅截取该表，非全文。"
+    },
+    {
+      "id": "s.lingbot-github",
+      "title": "LingBot-VLA 2.0 官方代码仓库（Robbyant）",
+      "url": "https://github.com/Robbyant/lingbot-vla-v2",
+      "publisher": "GitHub",
+      "date": "2026-07",
+      "kind": "代码仓库",
+      "verify": "已核实",
+      "note": "蚂蚁灵波开源的具身智能基座模型，含预训练权重、后训练代码与 RoboTwin 评测脚本。README 载明：约 6 万小时预训练数据（5 万小时机器人轨迹、覆盖 20 种本体；1 万小时第一人称人类视频）。"
+    },
+    {
+      "id": "s.lingbot-hf",
+      "title": "LingBot-VLA 2.0 模型合集（Hugging Face）",
+      "url": "https://huggingface.co/collections/robbyant/lingbot-vla-v2",
+      "publisher": "Hugging Face",
+      "date": "2026-07",
+      "kind": "官方页面",
+      "verify": "已核实",
+      "note": "模型权重托管页，含 lingbot-vla-v2-6b 与面向 RoboTwin 的后训练权重。"
+    },
+    {
+      "id": "s.lingbot-report",
+      "title": "LingBot-VLA 2.0 技术报告（arXiv 2607.06403）",
+      "url": "https://arxiv.org/abs/2607.06403",
+      "publisher": "arXiv",
+      "date": "2026-07",
+      "kind": "论文",
+      "verify": "已核实",
+      "note": "技术报告入口；本组只核对了链接可访问与标题，未逐节阅读。"
+    },
+    {
+      "id": "s.robotwin-github",
+      "title": "RoboTwin 2.0 官方仓库",
+      "url": "https://github.com/RoboTwin-Platform/RoboTwin",
+      "publisher": "GitHub",
+      "date": "2026",
+      "kind": "代码仓库",
+      "verify": "已核实",
+      "note": "双臂操作仿真基准，含 50 个任务、数据生成与评测脚本；本组用的是它的 pi0 训练/评测流程。"
+    },
+    {
+      "id": "s.robotwin-hf",
+      "title": "RoboTwin 2.0 数据集（Hugging Face）",
+      "url": "https://huggingface.co/datasets/TianxingChen/RoboTwin2.0",
+      "publisher": "Hugging Face",
+      "date": "2026",
+      "kind": "数据集",
+      "verify": "已核实",
+      "note": "官方公开数据集（按任务与设置分目录，如 adjust_bottle / aloha-agilex_clean_50）。"
+    },
+    {
+      "id": "s.robotwin-record",
+      "title": "本组操作记录：RoboTwin → LeRobot 数据转换与仿真评测",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-23-RoboTwin转LeRobot操作记录.md",
+      "publisher": "本组（张艺邦整理）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "本组整理的流程笔记：从拉取 RoboTwin 仓库、下载官方数据、转 HDF5、生成 LeRobotDataset v2.1，到启动 50 任务仿真评测。证明跑通过流程，不含训练结果与成功率。"
     }
   ]
 }
