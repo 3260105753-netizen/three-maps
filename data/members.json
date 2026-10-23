@@ -98,25 +98,6 @@
         "00-填写说明.md"
       ],
       "status": "已交表"
-    },
-    {
-      "id": "m5",
-      "name": "（待填）证据与互评负责人",
-      "duty": "来源核查、失效链接标记、非本组反馈收集与转任务",
-      "pages": [
-        "changelog.html 的反馈处理表",
-        "about.html#access"
-      ],
-      "work": [
-        "（待填）"
-      ],
-      "canExplain": [
-        "（待填）"
-      ],
-      "records": [
-        "（待填）"
-      ],
-      "status": "待填"
     }
   ]
 }
