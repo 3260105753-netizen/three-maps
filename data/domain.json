@@ -335,7 +335,8 @@
         "s.lingbot-github",
         "s.lingbot-hf",
         "s.lingbot-report",
-        "s.robotwin-eval"
+        "s.robotwin-eval",
+        "s.debug-manual"
       ],
       "tags": [
         "模型",
@@ -360,7 +361,8 @@
         "s.robotwin-github",
         "s.robotwin-hf",
         "s.robotwin-record",
-        "s.robotwin-eval"
+        "s.robotwin-eval",
+        "s.debug-manual"
       ],
       "tags": [
         "基准",

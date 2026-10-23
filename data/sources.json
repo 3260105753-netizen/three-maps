@@ -578,6 +578,16 @@
       "kind": "内部记录",
       "verify": "已核实",
       "note": "终端输出截图，已跑 21 局（7 个任务 × 3 局），13 次成功，约 61.9%。逐任务：click_bell 3/3、click_alarmclock 3/3、press_stapler 3/3、stamp_seal 0/3、turn_switch 2/3、open_microwave 2/3、open_laptop 0/3；lift_pot 未给出数字。局限：每任务仅 3 局、未注明 checkpoint 与随机种子、没有基线对照，因此只能说明「流程跑通并产出结果」，不能作为模型能力结论。"
+    },
+    {
+      "id": "s.debug-manual",
+      "title": "本组记录：训练与文件传输报错排查手册（30 类问题）",
+      "url": "https://3260105753-netizen.github.io/three-maps/evidence/2026-10-23-训练与传输报错排查手册.md",
+      "publisher": "本组（张艺邦整理）",
+      "date": "2026-10",
+      "kind": "内部记录",
+      "verify": "已核实",
+      "note": "按「训练 / 检查点与备份 / 文件传输」三个阶段整理的 30 类报错，每条含现象、根因、改法（例如：管道加 timeout 会丢缓冲区、备份脚本让两个盘互相纠正会死循环、sftp 在高延迟下比 scp 慢两个数量级）。它证明的是排障过程本身，不含模型效果数据。"
     }
   ]
 }
