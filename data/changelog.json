@@ -2,6 +2,20 @@
   "_note": "更新记录。课程要求记录「日期、更新对象、依据、修改内容及原因」，所以每条都必须有 date / target / what / why / basis。type 决定页面上的颜色：技术、内容、反馈、修正、发布。",
   "entries": [
     {
+      "id": "ch-20261023-26",
+      "date": "2026-10-23",
+      "week": "第 6 周",
+      "type": "修正",
+      "who": "张艺邦（技术代核）",
+      "target": "生态关系 r.e07：LeRobot → MuJoCo",
+      "what": "核实为「已核实」，并把依赖链写进 why：LeRobot 的 aloha 可选依赖是 gym-aloha，gym-aloha 的 pyproject 直接声明 mujoco>=3.0.0,<3.9.0。同时注明这是间接依赖、只在仿真环境范围内成立。",
+      "why": "原来标「他人观点/待核实」且没有依据，是生态地图里少数能核却没核的关系之一。核完之后董晋铭只剩两条要处理。",
+      "basis": "huggingface/lerobot pyproject.toml；huggingface/gym-aloha pyproject.toml",
+      "links": [
+        "ecosystem.html#node=e.oss-lerobot"
+      ]
+    },
+    {
       "id": "ch-20261023-24",
       "date": "2026-10-23",
       "week": "第 6 周",
